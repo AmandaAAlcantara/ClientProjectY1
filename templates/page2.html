@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+  <title>Page2</title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+</head>
+{%extends'Home.html'%}
+<body>
+  <header>
+
+    <h2>{% block titleBlock%} page2 {%endblock%}</h2>
+  </header>
+
+  <div class="mainAndAside">
+    <main>
+      <p>
+        {%if msg%}
+        {{msg}}
+        {%endif%}
+      <p>
+        {% block mainBlock%}
+        {%endblock%}
+    </main>
+
+  </div>
+
+  <footer>
+
+  </footer>
+</body>
