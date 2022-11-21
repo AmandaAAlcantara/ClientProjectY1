@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+  <title>Home Page</title>
+  <link href="/static/style.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <nav>
+      <a href="/Home">Home</a>
+      <a href="/Page1">Page1</a>
+      <a href="/Page2">Page2</a>
+      <a href="/Page3">Page3</a>
+      <a href="/Page4">Page4
+      </a>
+    </nav>
+    <h2>{% block titleBlock%} This is the Home Page {%endblock%}</h2>
+  </header>
+
+  <div class="mainAndAside">
+    <main>
+      <p>
+        {%if msg%}
+        {{msg}}
+        {%endif%}
+      <p>
+        {% block mainBlock%}
+        <p>Info about Route</p>
+        <p>Heath and Fitness</p>
+        <p>Tip and Tricks</p>
+        {%endblock%}
+    </main>
+    <aside>
+      {% block asideBlock%} {%endblock%}
+    </aside>
+  </div>
+
+  <footer>
+
+  </footer>
+</body>
+</html>
