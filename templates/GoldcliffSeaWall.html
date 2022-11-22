@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <title>Goldcliff Sea Wall</title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+</head>
+{%extends'Home.html'%}
+<body>
+  <header>
+
+    <h2>{% block titleBlock%} Checkpoint C {%endblock%}</h2>
+  </header>
+
+  <div class="mainAndAside">
+    <main>
+      <p>
+        {%if msg%}
+        {{msg}}
+        {%endif%}
+      <p>
+        {% block mainBlock%}
+        <h2> Goldcliff Sea Wall </h2>
+        <table border = 1>
+          <thead>
+            <td>ID</td>
+            <td>Name</td>
+            <td>Pictures</td>
+            <td>Facts</td>
+            <td>Contacts</td>
+          </thead>
+
+        {% for row in data %}
+          <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+            <td>{{row[4]}}</td>
+            <td>{{row[5]}}</td>
+          </tr>
+        {% endfor %}
+        </table>
+        {%endblock%}
+
+    </main>
+
+  </div>
+
+  <footer>
+    even cooler footer stuff..............
+  </footer>
+</body>
