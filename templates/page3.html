@@ -13,12 +13,13 @@
 
   <div class="mainAndAside">
     <main>
-      <p>
-        {%if msg%}
-        {{msg}}
-        {%endif%}
-      <p>
+    
         {% block mainBlock%}
+        <ul>
+          <li> <button>Checkpoint A </button></li>
+          <li> <button>Checkpoint B </button></li>
+          <li> <button> Checkpoint C</button></li>
+          <li> <button>Checkpoint D </button></li>
         {%endblock%}
     </main>
 
