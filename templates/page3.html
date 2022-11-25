@@ -3,23 +3,32 @@
 <head>
   <title>Page3</title>
   <link href="/static/simplecss.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
 {%extends'Home.html'%}
 <body>
   <header>
 
-    <h2>{% block titleBlock%} Page 3{%endblock%}</h2>
+    <h2>{% block titleBlock%} Route for Newport Coast{%endblock%}</h2>
   </header>
 
   <div class="mainAndAside">
     <main>
-    
+
         {% block mainBlock%}
-        <ul>
-          <li> <button>Checkpoint A </button></li>
-          <li> <button>Checkpoint B </button></li>
-          <li> <button> Checkpoint C</button></li>
-          <li> <button>Checkpoint D </button></li>
+<div id="Links to Checkpoints">
+  <ul>
+<li>  <a class="btn btn-danger" href="/" role="button">CheckpointA </a></li>
+<br>
+ <li><a class="btn btn-danger" href="/Whitson" role="button">CheckpointB </a></li>
+ <br>
+ <li><a class="btn btn-danger" href="/" role="button">CheckpointC </a></li>
+ <br>
+ <li><a class="btn btn-danger" href="/" role="button">CheckpointD </a></li>
+
+ <ul>
+</div>
+
         {%endblock%}
     </main>
 
@@ -28,4 +37,5 @@
   <footer>
 
   </footer>
+
 </body>

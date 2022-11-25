@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+<head>
+  <title>CheckpointB</title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+</head>
+{%extends'Home.html'%}
+<body>
+  <header>
+
+    <h2>{% block titleBlock%}  {%endblock%}</h2>
+  </header>
+
+  <div class="Info">
+    <main>
+
+
+        {% block mainBlock%}
+
+<table #id= "InfoWhiston" border = 1>
+   <!--<thead>
+      <td>Name</td>
+      <td>Picture</td>
+      <td>Facts</td>
+   </thead>
+-->
+   {% for column in data %}
+   <!-- A List of tuples so row is each item in the list
+        and then the index is the column number.-->
+
+
+        <tr ="name">
+          <td>{{column[1]}}</td>
+          </tr>
+        <tr>
+          <td><img src="{{ url_for('static', filename='LandmarkImg/Whitson.jpg/')}}"></td>
+        </tr>
+        <tr>
+        <td>  {{column[3]}} </td>
+        </tr>
+
+   {% endfor %}
+</table>
+{%endblock%}
+
+
+    </main>
+
+  </div>
+
+  <footer>
+    even cooler footer stuff..............
+  </footer>
+</body>
