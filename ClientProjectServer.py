@@ -48,11 +48,7 @@ def returnCheckpointB():
     if request.method =='GET':
         print("staring")
         try:
-            # TODO (2) retrieve all public students here
-            # connect to the Database,
-            # create a cursor object and execute the SQL on that
-            # Retrieve the data from the cursor
-            # close is in the finally block. un comment it
+            
             conn = sqlite3.connect(DATABASE)
             print("connecting to database")
             cur = conn.cursor()

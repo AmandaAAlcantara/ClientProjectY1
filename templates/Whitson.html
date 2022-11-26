@@ -18,25 +18,19 @@
         {% block mainBlock%}
 
 <table #id= "InfoWhiston" border = 1>
-   <!--<thead>
-      <td>Name</td>
-      <td>Picture</td>
-      <td>Facts</td>
-   </thead>
--->
-   {% for column in data %}
-   <!-- A List of tuples so row is each item in the list
-        and then the index is the column number.-->
+
+   {% for row in data %}
+
 
 
         <tr ="name">
-          <td>{{column[1]}}</td>
+          <td>{{row[1]}}</td>
           </tr>
         <tr>
-          <td><img src="{{ url_for('static', filename='LandmarkImg/Whitson.jpg/')}}"></td>
+          <td><img src="{{row[2]}}"></td>
         </tr>
         <tr>
-        <td>  {{column[3]}} </td>
+        <td>  {{row[3]}} </td>
         </tr>
 
    {% endfor %}
