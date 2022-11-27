@@ -1,13 +1,9 @@
 import os
 from flask import Flask, redirect, request,render_template, jsonify
+import sqlite3
 
-app = Flask(__name__)
-
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
-allpageMessage = "This is the breaking news"
-messagesDirectory = {'GoingViral':'The virus R factor is currently 5',
-                     'ContactUs':'Today we will be in Cardiff',
-                     'Symptoms': ["symptom1", "symptom2","symptom3"]}
+DATABASE = 'Checkpoints.db'
+ALLOWED_EXTENSIONS = set(['txt','pdf','png','jpg','jpeg','gif'])
 
 app = Flask(__name__)
 
@@ -36,6 +32,20 @@ def returnFourth():
     if request.method == 'GET':
         return render_template('page4.html')
 
+@app.route("/GoldcliffSeaWall", methods=['GET'])
+def CheckpointC():
+    if request.method == 'GET':
+        try:
+            conn = sqlite3.connect(DATABASE)
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM Checkpoints WHERE ID = '3';")
+            data = cur.fetchall()
+            print('Hello')
+        except:
+            print("Error occured")
+        finally:
+            return render_template("GoldcliffSeaWall.html", data=data)
+        return render_template('GoldcliffSeaWall.html')
 
 
 
