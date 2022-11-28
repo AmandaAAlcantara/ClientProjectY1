@@ -4,8 +4,8 @@ import sqlite3
 
 DATABASE = 'Checkpoints.db'
 
-ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
+ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 
 app = Flask(__name__)
@@ -36,6 +36,21 @@ def returnFourth():
     if request.method == 'GET':
         return render_template('page4.html')
 
+
+@app.route("/TheWetlandsCentre", methods=['GET'])
+def CheckpointsD():
+    if request.method == 'GET':
+        try:
+            conn = sqlite3.connect(DATABASE)
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM Checkpoints WHERE ID = '4';")
+            data = cur.fetchall()
+        except:
+            print("There was an error!")
+        finally:
+            return render_template('TheWetlandsCentre.html',data=data)
+
+
 @app.route("/GoldcliffSeaWall", methods=['GET'])
 def CheckpointC():
     if request.method == 'GET':
@@ -50,6 +65,7 @@ def CheckpointC():
         finally:
             return render_template("GoldcliffSeaWall.html", data=data)
         return render_template('GoldcliffSeaWall.html')
+
 
 @app.route("/Redwick", methods=['GET'])
 def CheckpointA():
