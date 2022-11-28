@@ -1,74 +1,40 @@
 <!doctype html>
 <html>
 <head>
-  <title>Goldcliff Sea Wall</title>
+  <title>Page4</title>
   <link href="/static/simplecss.css" rel="stylesheet">
-
 </head>
 {%extends'Home.html'%}
 <body>
   <header>
 
-    <h2>{% block titleBlock%} Checkpoint A {%endblock%}</h2>
+    <h2>{% block titleBlock%} CheckpointA {%endblock%}</h2>
   </header>
 
   <div class="mainAndAside">
     <main>
-        <p>
-          {%if msg%}
-          {{msg}}
-          {%endif%}
-        </p>
-          {% block mainBlock%}
-
-          <section id = "containerC">
-            <section id = "a">
-
-
-              <div class= "ContainerImage">
-                <img src= "/static/AdditionalImg/ImgTitle.jpg" class= "ImgTitle" width="1000px">
-                <div class="centered">REDWICK</div>
-              </div>
-
-              <section id = "C-data">
-              {% for row in data %}
-                <tr>
-                    <div class = "InfoC">
-                      <div class = "FactsC">
-                        <td>{{row[3]}}</td><br>
-                      </div>
-
-                        <h4>Wildlife to look for:</h4>
-                        Various duck species, Curlews,Dunlins, Ringed and Little Plover
-
-                    </div>
-                  <td>{{row[4]}}</td>
-                </tr>
-              </section>
-                  <td><img id = "C-image" src={{row[2]}} label="Goldcliff"></td>
-            </section>
-
-
-            {% endfor %}
-
-            <section id = "b">
-              <p>Other places you might want to visit!</p>
-              <img id = "A-image"src="/static/LandmarkImg/Redwick.jpg">
-              Redwick
-              <img id = "B-image"src="/static/LandmarkImg/Whitson.jpg">
-              Whitson
-              <img id = "D-image"src="/static/LandmarkImg/TheWetlandsCentre.jpg">
-              Wetlands Centre
-              <img id = "image1"src="/static/AdditionalImg/Img1.jpg">
-              Transporter Bridge
-              <img id = "image2"src="/static/AdditionalImg/Img2.jpg">
-              Newport Tower
-            </section>
-
-
-          </section>
+      <p>
+        {%if msg%}
+        {{msg}}
+        {%endif%}
+      <p>
+        {% block mainBlock%}
+        <h2>Redwick</h2>
+        <table border = 1>
+          <thead>
+            <td>Name</td>
+            <td>Pictures</td>
+            <td>Facts</td>
+          </thead>
+          {% for row in data %}
+          <tr>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+          </tr>
+          {% endfor %}
+          </table>
         {%endblock%}
-
     </main>
 
   </div>
