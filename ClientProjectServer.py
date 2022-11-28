@@ -3,7 +3,9 @@ from flask import Flask, redirect, request,render_template, jsonify
 import sqlite3
 
 DATABASE = 'Checkpoints.db'
+
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
+
 
 
 app = Flask(__name__)
@@ -29,29 +31,40 @@ def returnThird():
         if request.method == 'GET':
             return render_template('page3.html')
 
-
-
-
 @app.route("/Page4", methods=['GET'])
 def returnFourth():
     if request.method == 'GET':
         return render_template('page4.html')
 
+@app.route("/GoldcliffSeaWall", methods=['GET'])
+def CheckpointC():
+    if request.method == 'GET':
+        try:
+            conn = sqlite3.connect(DATABASE)
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM Checkpoints WHERE ID = '3';")
+            data = cur.fetchall()
+            print('Hello')
+        except:
+            print("Error occured")
+        finally:
+            return render_template("GoldcliffSeaWall.html", data=data)
+        return render_template('GoldcliffSeaWall.html')
+
 @app.route("/Redwick", methods=['GET'])
 def CheckpointA():
     if request.method == 'GET':
-        print("starting")
         try:
             conn = sqlite3.connect(DATABASE)
-            print("connectobg")
             cur = conn.cursor()
             cur.execute("SELECT * FROM Checkpoints WHERE ID = '1';")
             data = cur.fetchall()
+            print('Hello')
         except:
-            print("error")
+            print("Error occured")
         finally:
-            return render_template('Redwick.html', data=data)
-
+            return render_template("Redwick.html", data=data)
+        return render_template('Redwick.html')
 
 @app.route("/Whitson", methods = ['GET'])
 def returnCheckpointB():
