@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <title>Page4</title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+</head>
+{%extends'Home.html'%}
+<body>
+  <header>
+
+    <h2>{% block titleBlock%} CheckpointA {%endblock%}</h2>
+  </header>
+
+  <div class="mainAndAside">
+    <main>
+      <p>
+        {%if msg%}
+        {{msg}}
+        {%endif%}
+      <p>
+        {% block mainBlock%}
+        <h2>Redwick</h2>
+        <table border = 1>
+          <thead>
+            <td>Name</td>
+            <td>Pictures</td>
+            <td>Facts</td>
+          </thead>
+          {% for row in data %}
+          <tr>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+          </tr>
+          {% endfor %}
+          </table>
+        {%endblock%}
+    </main>
+
+  </div>
+
+  <footer>
+    even cooler footer stuff..............
+  </footer>
+</body>

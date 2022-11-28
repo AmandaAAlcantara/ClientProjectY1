@@ -8,6 +8,7 @@ ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
 app = Flask(__name__)
 
+
 @app.route("/Home", methods=['GET'])
 def returnHome():
     if request.method == 'GET':
@@ -36,11 +37,20 @@ def returnFourth():
     if request.method == 'GET':
         return render_template('page4.html')
 
-
-
-
-
-
+@app.route("/Redwick", methods=['GET'])
+def CheckpointA():
+    if request.method == 'GET':
+        print("starting")
+        try:
+            conn = sqlite3.connect(DATABASE)
+            print("connectobg")
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM Checkpoints WHERE ID = '1';")
+            data = cur.fetchall()
+        except:
+            print("error")
+        finally:
+            return render_template('Redwick.html', data=data)
 
 
 @app.route("/Whitson", methods = ['GET'])
@@ -48,7 +58,7 @@ def returnCheckpointB():
     if request.method =='GET':
         print("staring")
         try:
-            
+
             conn = sqlite3.connect(DATABASE)
             print("connecting to database")
             cur = conn.cursor()
