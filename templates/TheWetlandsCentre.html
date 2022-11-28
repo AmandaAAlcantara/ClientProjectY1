@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+<head>
+  <title>The Wetlands</title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+</head>
+{%extends'Home.html'%}
+<body>
+  <header>
+
+    <h2>{% block titleBlock%} The Wetlands Centre {%endblock%}</h2>
+  </header>
+
+  <div class="mainAndAside">
+    <main>
+      <p>
+        {%if msg%}
+        {{msg}}
+        {%endif%}
+      <p>
+        {% block mainBlock%}
+<table border = 1>
+  <thead>
+    <td>Name</td>
+    <td>Picture</td>
+    <td>Facts</td>
+    <td>Contacts</td>
+  </thead>
+  {%for row in data%}
+  <tr>
+    <td>{{row[1]}}</td>
+    <td img src="url_for('static', filename='LandImg/TheWetlandsCentre.Jpeg/'">{{row[2]}}</td>
+    <td>{<img src={{row[2]}}</td>
+    <td>{{row[3]}}</td>
+    <td>{{row[4]}}</td>
+  </tr>
+  {%endfor%}
+</table>
+        {%endblock%}
+    </main>
+
+
+
+  </div>
+</body>
