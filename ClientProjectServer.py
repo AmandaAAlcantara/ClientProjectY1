@@ -37,15 +37,18 @@ def returnFourth():
 @app.route("/Redwick", methods=['GET'])
 def CheckpointA():
     if request.method == 'GET':
+        print("starting")
         try:
             conn = sqlite3.connect(DATABASE)
+            print("connectobg")
             cur = conn.cursor()
             cur.execute("SELECT * FROM Checkpoints WHERE ID = '1';")
             data = cur.fetchall()
         except:
-            print('error')
+            print("error")
         finally:
-            return render_template("Redwick.html", data=data)
+            return render_template('Redwick.html', data=data)
+
 
 if __name__ == "__main__":
     app.run(debug=True)
