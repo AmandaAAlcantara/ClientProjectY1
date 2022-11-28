@@ -47,6 +47,21 @@ def CheckpointC():
             return render_template("GoldcliffSeaWall.html", data=data)
         return render_template('GoldcliffSeaWall.html')
 
+@app.route("/Redwick", methods=['GET'])
+def CheckpointA():
+    if request.method == 'GET':
+        try:
+            conn = sqlite3.connect(DATABASE)
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM Checkpoints WHERE ID = '1';")
+            data = cur.fetchall()
+            print('Hello')
+        except:
+            print("Error occured")
+        finally:
+            return render_template("Redwick.html", data=data)
+        return render_template('Redwick.html')
+
 
 
 if __name__ == "__main__":

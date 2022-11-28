@@ -1,55 +1,75 @@
 
 html {
-  font-family: sans-serif;
+  font-family: Helvetica;
 }
 
 /*Styling for the GoldcliffSeaWall page*/
-#titleC{
-  text-align: center;
-  background-color:#d5f3fe;
-  color: gray;
-  margin-top: 10px;
-  text-align: center;
-  display: table-cell;
-  vertical-align: middle;
-  font-weight: bold;
-  font-size: 40px;
-  line-height: 150px;
-  width: 1100px;
-}
-#containerC{
-  display: flex;
-  padding: 10px;
+body {
+  background-color: #f6f6f6
 }
 
+#containerC{
+  display: flex;
+  padding: 5px;
+}
 #a {
   flex: 4;
+  color: white;
+  background-color: #2c2f33;
+  text-align: center;
 }
 
 .InfoC{
   padding: 10px;
-  width: 900px;
+  style: none;
+  width: 800px;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 20px;
+  margin-left: 20px;
 }
-
 .FactsC{
-  text-align:center;
-
+  width: 800px;
+  font-size: 20px;
+  line-height: 30px;
+  padding: 20px;
+  margin-left: 20px;
 }
 #b {
   flex: 1;
-  height: 1100px;
+  height: 1075px;
   text-align: center;
-  background-color: #c0c0c0;
 }
-#A-image,#B-image,#D-image{
+#A-image,#B-image,#D-image,#image1,#image2{
   width: 200px;
   margin-left: auto;
   margin-right: auto;
   padding-right: 5px;
+  border-radius: 5px
 }
+
 #C-image{
-  width: 900px;
+  width: 800px;
   margin-left: auto;
   margin-right: auto;
-  padding-right: 5px;
+  padding-right: 20px;
+}
+
+/* Container holding the image and the text */
+
+.ContainerImage {
+  position: relative;
+  text-align: center;
+  color: #2c2f33;
+  font-weight: bold;
+  font-size: 50px;
+  text-shadow: 2px 2px white;
+}
+
+/* Centered text */
+.centered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
