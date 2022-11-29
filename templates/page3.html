@@ -11,19 +11,24 @@
 
   </header>
 
-<h1 class="titlep3">{% block titleBlock%} Route for Newport Coast{%endblock%}</h1>
+<h1 class="titlep3">{% block titleBlock%} {%endblock%}</h1>
   <div class="mainAndAside">
     <main>
 
         {% block mainBlock%}
-<div class="LinkstoCheckpoints">
-  <ul>
- <li><a class="btn btn-danger" href="/" role="button">CheckpointA </a></li>
- <li><a class="btn btn-danger" href="/Whitson" role="button">CheckpointB </a></li>
- <li><a class="btn btn-danger" href="/" role="button">CheckpointC </a></li>
- <li><a class="btn btn-danger" href="/" role="button">CheckpointD </a></li>
 
- <ul>
+<div id = "Container">
+  <div>
+    <img src="/static/Maps/Map.JPG" style="width:700px">
+  </div>
+  <div class="LinkstoCheckpoints">
+    <ul>
+       <li><a class="btn btn-danger" href="/Redwick" role="button">CheckpointA </a></li>
+       <li><a class="btn btn-danger" href="/Whitson" role="button">CheckpointB </a></li>
+       <li><a class="btn btn-danger" href="/GoldcliffSeaWall" role="button">CheckpointC </a></li>
+       <li><a class="btn btn-danger" href="/TheWetlandsCentre" role="button">CheckpointD </a></li>
+    </ul>
+  </div>
 </div>
 
         {%endblock%}
