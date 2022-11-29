@@ -1,0 +1,135 @@
+
+main{
+  padding: 20px;
+  border:solid black 5px;
+  width:80%;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: #FFFFF0;
+}
+
+#footer{
+  display: flex;
+  justify-content: center;
+  text-align: center
+}
+
+
+/*Styling Page 3*/
+.titlep3{
+  width: 100%;
+  text-align: center;
+}
+
+.LinkstoCheckpoints{
+  flex: 2;
+  text-align: center;
+  padding-right: 10px;
+}
+
+.LinkstoCheckpoints li{
+list-style: none;
+margin-top: 4px;
+}
+#Map{
+  flex: 4;
+}
+
+#Container{
+  display: flex;
+}
+/*End Styling Page 3*/
+
+/*Styling for Page1*/
+.container1{
+  display: flex;
+  background-color: #AFEEEE;
+  padding: 5px;
+  }
+.container2{
+  display: flex;
+  background-color: #66BB046A;
+  padding: 5px;
+  }
+.container3{
+  display: flex;
+  background-color: coral;
+  padding: 5px;
+}
+.flexbox-map-1, .flexbox-map-2, .flexbox-map-3 {
+  min-height: 100px;
+  width: 410px;
+  margin: 10px;
+  border: 3px solid black;
+  background-color: #d5f3fe;
+}
+.flexbox-text-1, .flexbox-text-2, .flexbox-text-3  {
+  min-height: 100px;
+  width: 400px;
+  padding: 5px;
+  margin: 5px;
+}
+#googleMap_hard,#googleMap_medium,#googleMap_easy{
+    width: 400px;
+    height: 300px;
+}
+/*End Styling for Page1*/
+
+/*Style for Checkpoints */
+.info{
+  padding: 5px;
+  border: 5px solid black;
+  background-color: #F5FFFF;
+}
+#TitleCheckpoint{
+  width: 100%;
+  height: 70px;
+  background-color: #004225;
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
+  color: white;
+  text-shadow: 4px 4px black;
+}
+
+.BlockCheckpoint{
+  display: flex;
+  margin: auto;
+  padding: 10px;
+}
+.a{
+  flex: 3;
+  padding: 5px;
+  text-align: left;
+  font-size: 19px;
+}
+.b {
+  flex: 2;
+  font-size: 19px;
+}
+.MoreInfo{
+  padding-bottom: 20px;
+}
+.image{
+   width: 500px;
+   padding-bottom: 20px;
+}
+
+#ContactsCheckpoints{
+  text-align: left;
+}
+#title{
+    text-align: center;
+  }
+#GoogleMap{
+  width: 300px;
+  height: 400px;
+}
+
+.TitleInfoCheckpoint{
+  font-weight: bold;
+  font-size: 28px;
+  color: black;
+  text-shadow: 2px 2px #FFBF00;
+}
+/*end of style for Checkpoints*/
