@@ -133,3 +133,9 @@ margin-top: 4px;
   text-shadow: 2px 2px #FFBF00;
 }
 /*end of style for Checkpoints*/
+
+#check{
+  text-align: right;
+  margin-top: 4px;
+}
+/*style for checkpoint buttons */
