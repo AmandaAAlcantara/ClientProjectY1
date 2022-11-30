@@ -1,0 +1,24 @@
+
+{%block mainBlock%}
+<div id="allcheckpointsTitle">
+<h2>  All Checkpoints</h2>
+</div>
+<table border = 1>
+   <thead>
+      <td>ID</td>
+      <td>Name</td>
+      <td>Facts</td>
+      <td>Contacts</td>
+    </thead>
+ {% for row in data %}
+      <tr>
+
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+        <td>{{row[3]}}</td>
+
+      </tr>
+   {% endfor %}
+</table>
+{%endblock%}

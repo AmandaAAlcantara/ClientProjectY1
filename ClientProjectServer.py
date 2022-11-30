@@ -49,7 +49,7 @@ def AddCheckpoints():
 		picture = request.form.get('picture', default="Error")
 		facts = request.form.get('facts', default="Error")
 		contacts = request.form.get('contacts', default="Error")
-		print("TO DO"+name)
+		print("Your checkpoint is "+name)
 
 		try:
 			conn = sqlite3.connect(DATABASE)
@@ -145,7 +145,22 @@ def retrunCheck(checkpoints= None):
                 #conn.close()
                 return render_template('info.html',data=data, id=id)
 
+@app.route("/AllCheckpoints", methods = ['GET'])
+def SeeCheckpoints():
+	if request.method =='GET':
+		try:
+			conn = sqlite3.connect(DATABASE)
+			cur = conn.cursor()
+			cur.execute("SELECT * FROM Checkpoints;")
+			data = cur.fetchall()
 
+
+			print("getting data")
+		except:
+			print('there was an error',)
+		finally:
+			conn.close()
+			return render_template('AllCheckpoints.html', data =data)
 
 
 if __name__ == "__main__":

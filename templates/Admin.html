@@ -1,13 +1,18 @@
 
-{%extends'Home.html'%}  <header>
+{%extends'Home.html'%}
+ <header>
 
-    <h2>{% block titleBlock%} Admin{%endblock%}</h2>
+    <h2>{% block titleBlock%}  {%endblock%}</h2>
   </header>
 
 
     <main>
 
         {% block mainBlock%}
+        <div id="SeeCheckpoints">
+        <a id="seecheck-btn" href="/AllCheckpoints" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> See All Checkpoints</a>
+        </div>
+
 <div id="formForCheckpoints">
   <h2> Add checkpoint </h2>
   <form id='addCheckForm' onsubmit="return loadCheck()">
