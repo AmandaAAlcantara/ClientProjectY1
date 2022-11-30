@@ -117,6 +117,31 @@ def retrunCheck(checkpoints= None):
 
 
 
+#Enquiry page
+@app.route("/Enquiries", methods = ['POST','GET'])
+def Enquiry():
+    if request.method == 'GET':
+        return render_template('Enquiries.html')
+    if request.method == 'POST':
+        text = request.form.get('text',default="Error")
+        email = request.form.get('email',default="Error")
+        print("TO DO" + text)
+
+        try:
+            conn = sqlite3.connect(DATABASE2)
+            cur = conn.cursor()
+            cur.execute("INSERT INTO Enquiries ('Text','Email')VALUES (?,?)",
+            (text,email))
+            conn.commit()
+            msg = "Thank you for sending us an enquiry"
+        except:
+            conn.rollback()
+            msg = "failed"
+        finally:
+            return msg
+            conn.close()
+
+
 
 
 if __name__ == "__main__":
