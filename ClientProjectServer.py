@@ -100,5 +100,10 @@ def returnCheckpointB():
             return render_template('Whitson.html' ,data=data)
 
 
+
+
+
+#Enquiry page
+
 if __name__ == "__main__":
     app.run(debug=True)
