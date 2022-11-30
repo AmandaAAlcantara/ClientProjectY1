@@ -16,15 +16,15 @@ def returnHome():
     if request.method == 'GET':
         return render_template('Home.html')
 
-@app.route("/Page1", methods=['GET'])
+@app.route("/ChooseyourRoutes", methods=['GET'])
 def returnFirst():
     if request.method == 'GET':
-        return render_template('page1.html')
+        return render_template('ChooseyourRoutes.html')
 
-@app.route("/Page2", methods=['GET'])
+@app.route("/Difficulty", methods=['GET'])
 def returnSecond():
     if request.method == 'GET':
-        return render_template('page2.html')
+        return render_template('Difficulty.html')
 
 @app.route("/Location", methods=['GET'])
 def returnLocation():
