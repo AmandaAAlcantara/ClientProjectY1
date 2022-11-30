@@ -31,10 +31,40 @@ def returnLocation():
         if request.method == 'GET':
             return render_template('Location.html')
 
-@app.route("/Page4", methods=['GET'])
-def returnFourth():
-    if request.method == 'GET':
-        return render_template('page4.html')
+#@app.route("/Admin", methods=['GET'])
+#def returnFourth():
+#    if request.method == 'GET':
+#        return render_template('Admin.html')
+
+
+
+
+
+@app.route("/Admin", methods = ['POST','GET'])
+def AddCheckpoints():
+	if request.method =='GET':
+		return render_template('Admin.html')
+	if request.method =='POST':
+		name = request.form.get('name', default="Error")
+		picture = request.form.get('picture', default="Error")
+		facts = request.form.get('facts', default="Error")
+		contacts = request.form.get('contacts', default="Error")
+		print("Your checkpoint is "+name)
+
+		try:
+			conn = sqlite3.connect(DATABASE)
+			cur = conn.cursor()
+			cur.execute("INSERT INTO Checkpoints ('Name', 'Picture','Facts' , 'Contacts')VALUES (?,?,?,?)",
+			(name,picture,facts,contacts,))
+			conn.commit()
+			msg = "Checkpoint Added"
+		except:
+			conn.rollback()
+			msg = "failed"
+		finally:
+			return msg
+			conn.close()
+
 
 
 #@app.route("/TheWetlandsCentre", methods=['GET'])
@@ -115,7 +145,22 @@ def retrunCheck(checkpoints= None):
                 #conn.close()
                 return render_template('info.html',data=data, id=id)
 
+@app.route("/AllCheckpoints", methods = ['GET'])
+def SeeCheckpoints():
+	if request.method =='GET':
+		try:
+			conn = sqlite3.connect(DATABASE)
+			cur = conn.cursor()
+			cur.execute("SELECT * FROM Checkpoints;")
+			data = cur.fetchall()
 
+
+			print("getting data")
+		except:
+			print('there was an error',)
+		finally:
+			conn.close()
+			return render_template('AllCheckpoints.html', data =data)
 
 
 if __name__ == "__main__":
