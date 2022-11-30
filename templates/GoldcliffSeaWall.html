@@ -1,79 +1,63 @@
+<!--
 <!doctype html>
 <html>
 <head>
-  <title>Goldcliff Sea Wall</title>
+
+  <title id = "title">Checkpoint C</title>
   <link href="/static/simplecss.css" rel="stylesheet">
 
 </head>
 {%extends'Home.html'%}
 <body>
-  <header>
 
-    <h2>{% block titleBlock%} Checkpoint C {%endblock%}</h2>
+  <header>
+    <h2>{% block titleBlock%}  {%endblock%}</h2>
   </header>
 
-  <div class="mainAndAside">
+  <div>
     <main>
-        <p>
-          {%if msg%}
-          {{msg}}
-          {%endif%}
-        </p>
-          {% block mainBlock%}
-
-          <section id = "containerC">
-            <section id = "a">
-
-
-              <div class= "ContainerImage">
-                <img src= "/static/AdditionalImg/ImgTitle.jpg" class= "ImgTitle" width="1000px">
-                <div class="centered">GOLDCLIFF SEAWALL AND PRIORY</div>
+        {% block mainBlock%}
+        <section class = "info">
+          {% for row in data %}
+            <div id = "TitleCheckpoint">
+              {{row[1]}}
+            </div>
+            <div class = "BlockCheckpoint">
+              <section class = "a">
+                <p class = "TitleInfoCheckpoint">Historic Facts </p>
+                {{row[3]}}
+                <div id = "ContactsCheckpoints">
+                  <br>
+                <h1 class = "TitleInfoCheckpoint">Contacts</h1>
+                {{row[4]}}
+                </div>
+              <div>
+                <br>
+                <p class = "TitleInfoCheckpoint">Places to take a break near you</p>
+                <iframe id = "GoogleMap"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1967.657321130371!2d-2.9181597448416454!3d51.542918546494064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871e5eb5afe50af%3A0xc6a15829106a1a04!2sThe%20Farmers%20Arms!5e1!3m2!1sen!2suk!4v1669666476137!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
               </div>
-
-              <section id = "C-data">
-              {% for row in data %}
-                <tr>
-                    <div class = "InfoC">
-                      <div class = "FactsC">
-                        <td>{{row[3]}}</td><br>
-                      </div>
-
-                        <h4>Wildlife to look for:</h4>
-                        Various duck species, Curlews,Dunlins, Ringed and Little Plover
-                      
-                    </div>
-                  <td>{{row[4]}}</td>
-                </tr>
               </section>
-                  <td><img id = "C-image" src={{row[2]}} label="Goldcliff"></td>
-            </section>
-
-
+              <section class = "b">
+                <img class="image" src="{{row[2]}}">
+                <section class = "MoreInfo">
+                  <h1 class = "TitleInfoCheckpoint">Wildlife</h1>
+                  {{row[3]}}
+                </section>
+              </section>
+          </div>
             {% endfor %}
+        </section>
 
-            <section id = "b">
-              <p>Other places you might want to visit!</p>
-              <img id = "A-image"src="/static/LandmarkImg/Redwick.jpg">
-              Redwick
-              <img id = "B-image"src="/static/LandmarkImg/Whitson.jpg">
-              Whitson
-              <img id = "D-image"src="/static/LandmarkImg/TheWetlandsCentre.jpg">
-              Wetlands Centre
-              <img id = "image1"src="/static/AdditionalImg/Img1.jpg">
-              Transporter Bridge
-              <img id = "image2"src="/static/AdditionalImg/Img2.jpg">
-              Newport Tower
-            </section>
-
-
-          </section>
         {%endblock%}
 
-    </main>
 
+
+
+    </main>
   </div>
 
   <footer>
     even cooler footer stuff..............
   </footer>
 </body>
+-->
