@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+<head>
+  <title>Enquiries</title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+</head>
+{%extends'Home.html'%}
+<body>
+  <header>
+
+    <h2>{% block titleBlock%} {%endblock%}</h2>
+  </header>
+
+  <div class="mainAndAside">
+    <main>
+      <p>
+        {%if msg%}
+        {{msg}}
+        {%endif%}
+      <p>
+        {% block mainBlock%}
+        <h3>Enquiries</h3>
+
+        <div id = "block">
+
+        <div id = "EnquiryForm">
+        <form method="post" onsubmit="return validate()" name = "Enquiry">
+          <div>
+          <p id="TitleEnquiry">Type of Enquiry</p>
+          <input type="checkbox" name="General" id="General" value="yes" />
+          <label for="General">General</label>
+          <br>
+          <input type="checkbox" name="Routes" id="Routes" value="yes" />
+          <label for="Routes">Routes</label>
+          <br>
+          <input type="checkbox" name="Level_of_Dificulty" id="Level_of_Dificulty" value="yes" />
+          <label for="Level_of_Dificulty">Level of Dificulty</label>
+          <br>
+          <input type="checkbox" name="Health" id="Health" value="yes" />
+          <label for="Health">Health</label>
+          <br>
+          <input type="checkbox" name="Tips_and_Tricks" id="Tips_and_Tricks" value="yes" />
+          <label for="Tips_and_Tricks">Tips and Tricks</label>
+          <br>
+          <input type="checkbox" name="DS" id="DS" value="yes" />
+          <label for="DS">Direct Contact</label>
+          <br>
+          <input type="checkbox" name="Other" id="Other" value="yes" />
+          <label for="Other">Other</label>
+          <br><br>
+
+
+          <label>Opinion/Enquiry:<br>
+            <textarea id = "text" rows="5" cols="50" type="text"  placeholder="" name="Text" width="20px"></textarea>
+          </label>
+
+          <div class="form-group">
+            <br>
+
+          <label>So we can contact you<br>Email:<br>
+            <input id = "email" type="email" name="email" placeholder="(optional)" class="form-control"/>
+          </label><br><br>
+          <button id="myBtn" type="submit" onclick="return submission()">Submit</button>
+
+
+          </div>
+          </div>
+          </form>
+        </div>
+        </div>
+        {%endblock%}
+    </main>
+
+  </div>
+
+  <footer>
+
+  </footer>
+{% block javascript %}
+
+  {% endblock %}
+</body>
