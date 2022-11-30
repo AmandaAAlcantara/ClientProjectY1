@@ -31,10 +31,40 @@ def returnLocation():
         if request.method == 'GET':
             return render_template('Location.html')
 
-@app.route("/Page4", methods=['GET'])
-def returnFourth():
-    if request.method == 'GET':
-        return render_template('page4.html')
+#@app.route("/Admin", methods=['GET'])
+#def returnFourth():
+#    if request.method == 'GET':
+#        return render_template('Admin.html')
+
+
+
+
+
+@app.route("/Admin", methods = ['POST','GET'])
+def AddCheckpoints():
+	if request.method =='GET':
+		return render_template('Admin.html')
+	if request.method =='POST':
+		name = request.form.get('name', default="Error")
+		picture = request.form.get('picture', default="Error")
+		facts = request.form.get('facts', default="Error")
+		contacts = request.form.get('contacts', default="Error")
+		print("TO DO"+name)
+
+		try:
+			conn = sqlite3.connect(DATABASE)
+			cur = conn.cursor()
+			cur.execute("INSERT INTO Checkpoints ('Name', 'Picture','Facts' , 'Contacts')VALUES (?,?,?,?)",
+			(name,picture,facts,contacts,))
+			conn.commit()
+			msg = "Checkpoint Added"
+		except:
+			conn.rollback()
+			msg = "failed"
+		finally:
+			return msg
+			conn.close()
+
 
 
 #@app.route("/TheWetlandsCentre", methods=['GET'])

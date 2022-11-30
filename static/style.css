@@ -156,3 +156,60 @@ font-size: 18px;
   width: 5%;
   font-size: 13px;
 }
+
+
+/* style for adding checkpoint form */
+
+/* adapted from   https://www.w3schools.com/css/css_form.asp */
+input[type=text], select #inputcheck {
+ width: 100%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-sizing: border-box;
+}
+
+input[type=submit] #inputcheck {
+ width: 100%;
+ background-color: #4CAF50;
+ color: white;
+ padding: 14px 20px;
+ margin: 8px 0;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+
+
+}
+
+input[type=submit]:hover #inputcheck {
+ background-color: #45a049;
+}
+
+
+
+#addCheckTitle{
+ text-align: center;
+}
+
+#formForCheckpoints{
+text-align: center;
+border: solid black;
+width: 50%;
+margin: 0 auto;
+padding-bottom: 10px;
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
+}
+
+#message {
+ text-align: center;
+ font-size: 20px;
+}
+#addingcheckpoints{
+  background-color: #50C878;
+  padding: 5px;
+}
