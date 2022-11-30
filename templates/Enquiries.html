@@ -77,6 +77,35 @@
 
   </footer>
 {% block javascript %}
+  <script>
+  function validate(){
+    var pass = true;
+    var text = document.forms["Enquiry"]["text"].value;
+    if (text.length > 200){pass=false; }
+    if (!pass){alert("ERROR, number of characters limit reached")}
+    return pass;
+  }
 
+
+  function submission() {
+    var text = document.forms["Enquiry"]["text"].value;
+    var email = document.forms["Enquiry"]["email"].value;
+    params = 'text='+text+'&email='+email;
+
+  var xhttp = new XMLHttpRequest();
+    xhttp.open("POST",'Enquiry', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.onload = function(){
+      if(xhttp.readyState === 4 && xhttp.status === 200) {
+        console.log(xhttp.responseText);
+        document.getElementById("message").innerHTML = xhttp.responseText;
+      } else {
+        console.error(xhttp.statusText);
+      }
+    };
+    xhttp.send(params);
+    return false;
+  }
+  </script>
   {% endblock %}
 </body>
