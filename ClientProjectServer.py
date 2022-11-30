@@ -3,7 +3,7 @@ from flask import Flask, redirect, request,render_template, jsonify
 import sqlite3
 
 DATABASE = 'Checkpoints.db'
-DATABASE2 = 'Enquiries.db'
+DATABASE2 = 'Enquiries.db' 
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
