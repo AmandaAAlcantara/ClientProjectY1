@@ -75,6 +75,9 @@ margin-top: 4px;
 }
 /*End Styling for Page1*/
 
+
+/*styling of map image on location page */
+
 /*Style for Checkpoints */
 .info{
   padding: 5px;
@@ -133,3 +136,23 @@ margin-top: 4px;
   text-shadow: 2px 2px #FFBF00;
 }
 /*end of style for Checkpoints*/
+
+
+
+/*style for checkpoint buttons and title */
+
+#checkpointTitle{
+
+text-align: right;
+font-size: 18px;
+}
+#check{
+  text-align: right;
+}
+
+#c {
+  padding: 10px;
+  margin-top: 10px;
+  width: 5%;
+  font-size: 13px;
+}
