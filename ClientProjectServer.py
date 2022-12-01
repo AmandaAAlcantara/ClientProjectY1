@@ -31,10 +31,16 @@ def returnLocation():
         if request.method == 'GET':
             return render_template('Location.html')
 
+
 @app.route("/Login", methods=['GET'])
 def returnLogin():
     if request.method == 'GET':
         return render_template('Login.html')
+
+#@app.route("/Admin", methods=['GET'])
+#def returnFourth():
+#    if request.method == 'GET':
+#        return render_template('Admin.html')
 
 
 
