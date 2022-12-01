@@ -1,7 +1,4 @@
-* body  {
-  background-image: url("https://images.squarespace-cdn.com/content/v1/5b7fcdb28ab722e3da4af3cc/1592214224497-BA2L6ILI920Y3L9XH81A/Light+Grey.jpeg");
-  background-color: #cccccc;
-}
+
 /*Styling for the GoldcliffSeaWall page*/
 body {
   background-color: #f6f6f6
@@ -11,6 +8,7 @@ body {
   display: flex;
   padding: 5px;
 }
+
 #a {
   flex: 4;
   color: white;
@@ -24,59 +22,15 @@ body {
   width: 800px;
   font-size: 20px;
   line-height: 30px;
-  padding: 20px;
-  margin-left: 20px;
-}
-.FactsC{
-  width: 800px;
-  font-size: 20px;
-  line-height: 30px;
-  padding: 20px;
-  margin-left: 20px;
-}
-#b {
-  flex: 1;
-  height: 1075px;
-  text-align: center;
-}
-#A-image,#B-image,#D-image,#image1,#image2{
-  width: 200px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 5px;
-  border-radius: 5px
-}
 
-#C-image{
-  width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-  padding-right: 20px;
-}
-
-/* Container holding the image and the text */
-
-.ContainerImage {
-  position: relative;
-  text-align: center;
-  color: #2c2f33;
-  font-weight: bold;
-  font-size: 50px;
-  text-shadow: 2px 2px white;
-}
-
-/* Centered text */
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
 
 }
+
 #footer{
   text-align: center
   display: flex;
   justify-content: center;
+
 
 }
 #hometitle{
@@ -96,46 +50,212 @@ td {
   border-width: 3px;
 }
 
+/*Styling Location*/
 .titlep3{
   width: 100%;
   text-align: center;
 }
 
 .LinkstoCheckpoints{
-  text-align: right;
+  flex: 2;
+  text-align: center;
   padding-right: 10px;
 }
 
 .LinkstoCheckpoints li{
 list-style: none;
 margin-top: 4px;
-
 }
-/*adding admin changes
-input[type=text], select, textarea {
+#Map{
+  flex: 4;
+}
+
+#Container{
+  display: flex;
+}
+/*End Styling Page 3*/
+
+/*Styling for Page1*/
+.container1{
+  display: flex;
+  background-color: #AFEEEE;
+  padding: 5px;
+  }
+.container2{
+  display: flex;
+  background-color: #66BB046A;
+  padding: 5px;
+  }
+.container3{
+  display: flex;
+  background-color: coral;
+  padding: 5px;
+}
+.flexbox-map-1, .flexbox-map-2, .flexbox-map-3 {
+  min-height: 100px;
+  width: 410px;
+  margin: 10px;
+  border: 3px solid black;
+  background-color: #d5f3fe;
+}
+.flexbox-text-1, .flexbox-text-2, .flexbox-text-3  {
+  min-height: 100px;
+  width: 400px;
+  padding: 5px;
+  margin: 5px;
+}
+#googleMap_hard,#googleMap_medium,#googleMap_easy{
+    width: 400px;
+    height: 300px;
+}
+/*End Styling for Page1*/
+
+
+/*styling of map image on location page */
+
+/*Style for Checkpoints */
+.info{
+  padding: 5px;
+  border: 5px solid black;
+  background-color: #F5FFFF;
+}
+#TitleCheckpoint{
   width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
-}
-
-input[type=submit] {
-  background-color: #04AA6D;
+  height: 70px;
+  background-color: #004225;
+  text-align: center;
+  font-weight: bold;
+  font-size: 35px;
   color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+  text-shadow: 4px 4px black;
 }
 
-input[type=submit]:hover {
-  background-color: #45a049;
+.BlockCheckpoint{
+  display: flex;
+  margin: auto;
+  padding: 10px;
 }
-*/
+.a{
+  flex: 3;
+  padding: 5px;
+  text-align: left;
+  font-size: 19px;
+}
+.b {
+  flex: 2;
+  font-size: 19px;
+}
+.MoreInfo{
+  padding-bottom: 20px;
+}
+.image{
+   width: 500px;
+   padding-bottom: 20px;
+}
+
+#ContactsCheckpoints{
+  text-align: left;
+}
+#title{
+    text-align: center;
+  }
+#GoogleMap{
+  width: 300px;
+  height: 400px;
+}
+
+.TitleInfoCheckpoint{
+  font-weight: bold;
+  font-size: 28px;
+  color: black;
+  text-shadow: 2px 2px #FFBF00;
+}
+/*end of style for Checkpoints*/
+
+
+
+/*style for checkpoint buttons and title */
+
+#checkpointTitle{
+
+text-align: right;
+font-size: 18px;
+}
+#check{
+  text-align: right;
+}
+
+#c {
+  padding: 10px;
+  margin-top: 10px;
+  width: 5%;
+  font-size: 13px;
+}
+
+
+/* style for adding checkpoint form */
+
+
+/* adapted from   https://www.w3schools.com/css/css_form.asp */
+input[type=text], select #inputcheck {
+ width: 100%;
+ padding: 12px 20px;
+ margin: 8px 0;
+ display: inline-block;
+ border: 1px solid #ccc;
+ border-radius: 4px;
+ box-sizing: border-box;
+}
+
+input[type=submit] #inputcheck {
+ width: 100%;
+ background-color: #4CAF50;
+ color: white;
+ padding: 14px 20px;
+ margin: 8px 0;
+ border: none;
+ border-radius: 4px;
+ cursor: pointer;
+
+
+}
+
+input[type=submit]:hover #inputcheck {
+ background-color: #45a049;
+}
+
+
+
+#addCheckTitle{
+ text-align: center;
+}
+
+#formForCheckpoints{
+text-align: center;
+border: solid black;
+width: 50%;
+margin: 0 auto;
+padding-bottom: 10px;
+border-radius: 5px;
+background-color: #f2f2f2;
+padding: 20px;
+}
+
+#message {
+ text-align: center;
+ font-size: 20px;
+}
+#addingcheckpoints{
+  background-color: #50C878;
+  padding: 5px;
+}
+
+/*See checkpoint button */
+#SeeCheckpoints{
+  text-align: center;
+  padding-bottom: 20px;
+
+}
 .navbar {
            background-color: #006400;
 }
@@ -238,6 +358,7 @@ input[type=text], input[type=password] {
 
 /* Set a style for all buttons */
 button {
+  text-align: center;
   background-color: #023020;
   color: white;
   padding: 14px 20px;
@@ -265,10 +386,7 @@ button:hover {
   position: relative;
 }
 
-img.avatar {
-  width: 40%;
-  border-radius: 50%;
-}
+
 
 .container {
   padding: 16px;
@@ -342,5 +460,4 @@ span.psw {
   }
   .cancelbtn {
      width: 100%;
-  }
 }
