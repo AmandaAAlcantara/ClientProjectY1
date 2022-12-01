@@ -1,46 +1,18 @@
-
 main{
   padding: 20px;
-  border:solid black 5px;
-  width:80%;
+  width:90%;
   margin-left: auto;
   margin-right: auto;
-  background-color: #FFFFF0;
 }
 
 #footer{
   display: flex;
   justify-content: center;
-  text-align: center
-}
-
-
-/*Styling Page 3*/
-.titlep3{
-  width: 100%;
   text-align: center;
 }
 
-.LinkstoCheckpoints{
-  flex: 2;
-  text-align: center;
-  padding-right: 10px;
-}
 
-.LinkstoCheckpoints li{
-list-style: none;
-margin-top: 4px;
-}
-#Map{
-  flex: 4;
-}
-
-#Container{
-  display: flex;
-}
-/*End Styling Page 3*/
-
-/*Styling for Page1*/
+/*Styling for ChooseyourRoutes*/
 .container1{
   display: flex;
   background-color: #AFEEEE;
@@ -73,46 +45,68 @@ margin-top: 4px;
     width: 400px;
     height: 300px;
 }
-/*End Styling for Page1*/
+/*End Styling for ChooseyourRoutes*/
 
-
-/*styling of map image on location page */
-
-/*Style for Checkpoints */
-.info{
-  padding: 5px;
-  border: 5px solid black;
-  background-color: #F5FFFF;
-}
-#TitleCheckpoint{
-  width: 100%;
-  height: 70px;
-  background-color: #004225;
+/*Styling Location*/
+#Location{
+  padding: 10px;
+  display: flex;
+  flex-direction: row;
   text-align: center;
-  font-weight: bold;
-  font-size: 35px;
-  color: white;
-  text-shadow: 4px 4px black;
+  background-color: #e4e4e4 ;
 }
+#mapImg{
+  padding: 5px;
+}
+#Check{
+  text-align: right;
+  padding: 10px;
+}
+
+#c {
+  padding: 10px;
+  margin-top: 10px;
+  width: 100%;
+  font-size: 13px;
+  text-align: center;
+}
+
+#checkpointTitle{
+  text-align: left;
+  padding: 30px;
+  margin-top: 20px;
+}
+
+.TitleInfoCheckpoint{
+  font-size: 22px;
+  font-weight: bold;
+  padding-right: 20px:
+}
+
 
 .BlockCheckpoint{
   display: flex;
   margin: auto;
   padding: 10px;
+  background:#e4e4e4 ;
 }
+
 .a{
   flex: 3;
   padding: 5px;
   text-align: left;
   font-size: 19px;
 }
+
 .b {
   flex: 2;
   font-size: 19px;
 }
+
 .MoreInfo{
   padding-bottom: 20px;
 }
+
 .image{
    width: 500px;
    padding-bottom: 20px;
@@ -121,44 +115,31 @@ margin-top: 4px;
 #ContactsCheckpoints{
   text-align: left;
 }
-#title{
-    text-align: center;
-  }
+
 #GoogleMap{
   width: 300px;
   height: 400px;
 }
 
-.TitleInfoCheckpoint{
+
+#TitleCheckpoint{
+  width: 100%;
+  height: 70px;
+  text-align: center;
   font-weight: bold;
-  font-size: 28px;
-  color: black;
-  text-shadow: 2px 2px #FFBF00;
+  font-size: 35px;
+  color: #55b4b0;
 }
+
+#HistoricFacts{
+  padding: 5px;
+  margin-right: 2px;
+}
+/*End Styling Location*/
+
 /*end of style for Checkpoints*/
 
 
-
-/*style for checkpoint buttons and title */
-
-#checkpointTitle{
-
-text-align: right;
-font-size: 18px;
-}
-#check{
-  text-align: right;
-}
-
-#c {
-  padding: 10px;
-  margin-top: 10px;
-  width: 5%;
-  font-size: 13px;
-}
-
-
-/* style for adding checkpoint form */
 
 
 /* adapted from   https://www.w3schools.com/css/css_form.asp */
@@ -188,6 +169,7 @@ input[type=submit] #inputcheck {
 input[type=submit]:hover #inputcheck {
  background-color: #45a049;
 }
+
 
 
 
@@ -246,9 +228,7 @@ input[type=submit]:hover {
   background-color: #45a049;
 }
 */
-.navbar {
-           background-color: #006400;
-}
+
 
 {box-sizing: border-box;}
 body {font-family: Verdana, sans-serif;}
@@ -347,6 +327,11 @@ input[type=text], input[type=password] {
 }
 
 /* Set a style for all buttons */
+
+#menu{
+  border: none;
+  cursor: pointer;
+}
 button {
   background-color: #023020;
   color: white;

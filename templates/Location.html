@@ -15,25 +15,24 @@
     <main> -->
 
         {% block mainBlock%}
-        <div id="check">
-          <h3 id="checkpointTitle"> Checkpoints</h3>
-        <button id="c" type="button" onclick="loadDoc1()" class="btn btn-outline-danger">1</button>
-        <br>
-        <button id="c" type="button" onclick="loadDoc2()" class="btn btn-outline-danger">2</button>
-        <br>
-        <button  id="c" type="button" onclick="loadDoc3()" class="btn btn-outline-danger">3</button>
-        <br>
-        <button  id="c" type="button" onclick="loadDoc4()"class="btn btn-outline-danger"> 4</button>
-
-
+      <div id = "Location">
+        <div id="mapImg">
+          <img src="/static/Maps/Map.JPG" style="width:700px">
         </div>
+        <div id="Check">
+          <h3 id="checkpointTitle">Checkpoints</h3>
+            <button id="c" type="button" onclick="loadDoc1()" class="btn btn-outline-danger">1</button>
+            <br>
+            <button id="c" type="button" onclick="loadDoc2()" class="btn btn-outline-danger">2</button>
+            <br>
+            <button  id="c" type="button" onclick="loadDoc3()" class="btn btn-outline-danger">3</button>
+            <br>
+            <button  id="c" type="button" onclick="loadDoc4()"class="btn btn-outline-danger"> 4</button>
+        </div>
+      </div>
 
-<div id = "Container">
-  <div id="mapImg">
-    <img src="/static/Maps/Map.JPG" style="width:700px">
-  </div>
 
-  </div>
+
 
 <section id= "info" class = "info">
   {% for row in data %}
@@ -43,7 +42,9 @@
     <div class = "BlockCheckpoint">
       <section class = "a">
         <p class = "TitleInfoCheckpoint">Historic Facts </p>
+        <div id = "HistoricFacts">
         {{row[3]}}
+        </div>
         <div id = "ContactsCheckpoints">
           <br>
         <h1 class = "TitleInfoCheckpoint">Contacts</h1>
