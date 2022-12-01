@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
 <head>
-  <title id = "title">Newport Coastal Routes</title>
+  <title style="text-align:center">Newport Coastal Routes</title>
   <link href="/static/style.css" rel="stylesheet">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
 </head>
@@ -16,19 +16,22 @@
 
         </div>
       </div>
-
-
-      <nav class="navbar navbar-dark bg-success">
+      <nav class="navbar navbar-dark bg-dark">
         <a class="navbar-brand" href="/Home">Discover your coasts</a>
     <a class="navbar-brand" href="/Home">Home</a>
     <a class="navbar-brand" href="/ChooseyourRoutes">Choose your Routes</a>
-    <a class="navbar-brand" href="/Admin">Admin</a>
+    <!--<a class="navbar-brand" href="/Difficulty">Difficulty</a>-->
+    <a class="navbar-brand" href="/Login">Login</a>
+
+
+          <span class="navbar-toggler-icon"></span>
+
+        </button>
       </nav>
 
 
-    {% block titleBlock%}<h2 id = "hometitle">Newport Coastal Routes</h2>{%endblock%}
-
-  </header>
+    {% block titleBlock%}<h2 id = "hometitle"><center>Newport Coastal Routes</center></h2>{%endblock%}
+</header>
 
   <div class="mainAndAside">
     <main>
@@ -103,6 +106,7 @@
       <img src="https://www.millets.co.uk/templates/millets.co.uk/_images/blog/2019/buying-guide-footwear/boots.jpg" id="imagetwo" width="200" height="200">
       <p>Comfortable and sensible footwear(no flip-flops or high heels),Water,Sturdy footwear/Hillwalking boots, Tell someone where you are going, Tell someone how long you will be, Remember to let them know when you return.Remember that a poor choice of clothing is one of the best ways of ruining a day's walking and can be potentially fatal!  Also remember to ensure that any clothing you are not wearing is stored somewhere waterproof - there's not much point bringing spare clothes if they are sodden before you put them on!</p>
     </div>
+
 
     <div class="column"id=column3>
       <h2>Health and Fitness</h2>

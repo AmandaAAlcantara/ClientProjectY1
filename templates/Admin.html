@@ -1,14 +1,22 @@
 
+<!doctype html>
+<html>
+<head>
+  <title></title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+</head>
 {%extends'Home.html'%}
- <header>
 
-    <h2>{% block titleBlock%}  {%endblock%}</h2>
-  </header>
+    <h2>{% block titleBlock%} {%endblock%}</h2>
 
 
-    <main>
 
         {% block mainBlock%}
+
+
+
+
+
         <div id="SeeCheckpoints">
         <a id="seecheck-btn" href="/AllCheckpoints" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> See All Checkpoints</a>
         </div>
@@ -80,6 +88,5 @@
   return false;
 }
 
-
-    </script>
+</script>
     {%endblock%}
