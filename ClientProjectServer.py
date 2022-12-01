@@ -3,7 +3,7 @@ from flask import Flask, redirect, request,render_template, jsonify
 import sqlite3
 
 DATABASE = 'Checkpoints.db'
-
+DATABASE2 = 'Enquiries.db'
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
@@ -167,6 +167,37 @@ def SeeCheckpoints():
 			conn.close()
 			return render_template('AllCheckpoints.html', data =data)
 
+#Enquiry page
+@app.route("/Enquiries", methods = ['POST','GET'])
+def Enquiry():
+    if request.method == 'GET':
+        return render_template('Enquiries.html')
+    if request.method == 'POST':
+        text = request.form.get('text',default="Error")
+        email = request.form.get('email',default="Error")
+        print("TO DO" + text)
+
+        try:
+            conn = sqlite3.connect(DATABASE2)
+            cur = conn.cursor()
+            cur.execute("INSERT INTO Enquiries ('Text','Email')VALUES (?,?)",
+            (text,email))
+            conn.commit()
+            msg = "Thank you for sending us an enquiry"
+        except:
+            conn.rollback()
+            msg = "failed"
+        finally:
+            return msg
+            conn.close()
+
+
+
+
+
+
+
+#Enquiry page
 
 if __name__ == "__main__":
     app.run(debug=True)
