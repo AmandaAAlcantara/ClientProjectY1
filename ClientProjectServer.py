@@ -99,6 +99,22 @@ def returnCheckpointB():
             #conn.close()
             return render_template('Whitson.html' ,data=data)
 
+@app.route("/routeToHandleFormSubmission" , methods = ['POST'])
+ def     ():
+     if request.method == 'POST':
+         try:
+             conn = sqlite3.connect(DATABASE)
+             cur = conn.cursor()
+             cur.execute("SELECT * FROM Checkpoints WHERE ID = ' ';")
+             data = cur.fetchall()
+             print('   ')
+         except:
+             print("Error occured")
+         finally:
+             return render_template('Comments.html', data=data)
+         return render_template('Comment.html')
+
+
 
 
 

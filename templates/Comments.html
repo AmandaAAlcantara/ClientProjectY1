@@ -32,7 +32,7 @@ function loadName() {
         var name = document.forms["comment"]["name"].value;
         params = 'name='+name+'&name='+num'&name='+num ;
         var xhttp = new XMLHttpRequest();
-        xhttp.open("POST", '/routeToHandleFormSubmission', true); // true is asynchronous
+        xhttp.open("POST",'/routeToHandleFormSubmission', true); // true is asynchronous
         xhttp.setRequestHeader("Content-type", "          ");
         xhttp.onreadystatechange = function() {
           if (xhttp.readyState === 4 && xhttp.status === 200) {
@@ -46,15 +46,6 @@ function loadName() {
         xhttp.send(params);
         return false;
       }
-
-
-
-
-
-
-
-
-
 
 </script>
 
