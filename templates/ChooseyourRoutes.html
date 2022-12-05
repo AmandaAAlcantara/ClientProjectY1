@@ -23,6 +23,257 @@
 
         {% block mainBlock%}
 
+        <!--adapted from w3schools-->
+
+        <h2>ROUTES</h2>
+        <div id="myBtnContainer">
+          <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+          <button class="btn" onclick="filterSelection('nature')"> Nature Walks</button>
+          <button class="btn" onclick="filterSelection('cars')"> City Walks</button>
+          <button class="btn" onclick="filterSelection('people')">Events</button>
+        </div>
+
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+          <div class="column nature">
+            <div class="content">
+              <img src="static/Routes/N.jpg" alt="Newport" style="width:100%">
+              <h4>Newport Coastal Path</h4>
+              <p>Lorem ipsum dolor...</p>
+              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+
+            </div>
+          </div>
+          <div class="column nature">
+            <div class="content">
+              <img src="static/Routes/N2.jpg" alt="Lights" style="width:100%">
+              <h4>Dyffryn Gardens and Tredegar House</h4>
+              <p>Lorem ipsum dolor..</p>
+              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+            </div>
+          </div>
+          <div class="column nature">
+            <div class="content">
+              <img src="static/Routes/N5.jpeg" alt="Nature" style="width:100%">
+              <h4>Caerleon Roman Fortress and Baths</h4>
+              <p>Lorem ipsum dolor..</p>
+              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+            </div>
+          </div>
+
+          <div class="column cars">
+            <div class="content">
+              <img src="static/Routes/N3.jpg" alt="Car" style="width:100%">
+              <h4>Newport City Centre</h4>
+              <p>Lorem ipsum dolor..</p>
+              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+            </div>
+          </div>
+          <div class="column cars">
+            <div class="content">
+              <img src="static/Routes/N4.jpg" alt="Car" style="width:100%">
+              <h4>River Usk Path</h4>
+              <p>Lorem ipsum dolor..</p>
+              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+            </div>
+          </div>
+          <div class="column cars">
+            <div class="content">
+              <img src="static/Routes/N6.jpg" alt="Car" style="width:100%">
+              <h4>Arcades, Cafe and Shopping Walk</h4>
+              <p>Lorem ipsum dolor..</p>
+            <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+            </div>
+          </div>
+
+          <div class="column people">
+            <div class="content">
+              <img src="static/Routes/N10.jpg" alt="People" style="width:100%">
+              <h4>Jazz Festival</h4>
+              <p>Lorem ipsum dolor..</p>
+              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+            </div>
+          </div>
+          <div class="column nature">
+            <div class="content">
+              <img src="static/Routes/Forest.jpg" alt="Nature" style="width:100%">
+              <h4>Belle Vue Park Walk</h4>
+              <p>Lorem ipsum dolor..</p>
+              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+            </div>
+          </div>
+          <div class="column cars">
+            <div class="content">
+              <img src="static/Routes/N12.jpeg" alt="Car" style="width:100%">
+              <h4>Newport Boat Club Walk</h4>
+              <p>Lorem ipsum dolor..</p>
+              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+            </div>
+          </div>
+
+            <div class="column people">
+              <div class="content">
+                <img src="static/Routes/N7.jpg" alt="People" style="width:100%">
+                <h4>Newport Marathon</h4>
+                <p>Lorem ipsum dolor..</p>
+                <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+              </div>
+            </div>
+            <div class="column people">
+              <div class="content">
+                <img src="static/Routes/N11.jpg" alt="People" style="width:100%">
+                <h4>Christmas Lights Path</h4>
+                <p>Lorem ipsum dolor..</p>
+                <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+              </div>
+            </div>
+            <div class="column people">
+              <div class="content">
+                <img src="static/Routes/Food.jpg" alt="People" style="width:100%">
+                <h4>Newport Food Festival</h4>
+                <p>Lorem ipsum dolor..</p>
+                <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+              </div>
+            </div>
+        <!-- END GRID -->
+        </div>
+
+
+        <style media="screen">
+          * {
+            box-sizing: border-box;
+          }
+
+          body {
+            background-color: #f1f1f1;
+            padding: 20px;
+            font-family: Arial;
+          }
+
+          /* Center website */
+          .main {
+            max-width: 1000px;
+            margin: auto;
+          }
+
+          h1 {
+            font-size: 50px;
+            word-break: break-all;
+          }
+
+          h2 {
+            font-family: sans-serif;
+            font-weight: bold;
+          }
+
+          .row {
+            margin: 8px -16px;
+          }
+
+          /* Add padding BETWEEN each column (if you want) */
+          .row,
+          .row > .column {
+            padding: 8px;
+          }
+
+          /* Create three equal columns that floats next to each other */
+          .column {
+            float: left;
+            width: 33.33%;
+            display: none; /* Hide columns by default */
+          }
+
+          /* Clear floats after rows */
+          .row:after {
+            content: "";
+            display: table;
+            clear: both;
+          }
+
+          /* Content */
+          .content {
+            background-color: white;
+            padding: 10px;
+          }
+
+          /* The "show" class is added to the filtered elements */
+          .show {
+            display: block;
+          }
+
+          /* Style the buttons */
+          .btn.active {
+            background-color: #666;
+             color: white;
+          }
+
+          .btn:hover {
+            background-color: #ddd;
+          }
+
+
+
+        </style>
+
+        <script type="text/javascript">
+          filterSelection("all") // Execute the function and show all columns
+        function filterSelection(c) {
+          var x, i;
+          x = document.getElementsByClassName("column");
+          if (c == "all") c = "";
+          // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+          for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+          }
+        }
+
+        // Show filtered elements
+        function w3AddClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {
+              element.className += " " + arr2[i];
+            }
+          }
+        }
+
+        // Hide elements that are not selected
+        function w3RemoveClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+              arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+          }
+          element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function(){
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+          });
+        }
+
+        </script>
+
+
+
+
+
+
+
+
+<!--
         <p class = "TitleInfoCheckpoint">Level 1 Route</p>
         <div class="container1">
         <div class="flexbox-map-1">
@@ -84,7 +335,8 @@
           <br><br>
           <a role="button" class="btn btn-dark" href="/Location">Choose this path</a>
         </div>
-        </div>
+      </div>
+    -->
         {%endblock%}
 
     </main>
