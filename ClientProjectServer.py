@@ -2,8 +2,7 @@ import os
 from flask import Flask, redirect, request,render_template, jsonify
 import sqlite3
 
-DATABASE = 'Checkpoints.db'
-DATABASE2 = 'Enquiries.db'
+DATABASE = 'ClientProject.db'
 
 ALLOWED_EXTENSIONS = set(['txt', 'pdf', 'png', 'jpg', 'jpeg', 'gif'])
 
@@ -17,9 +16,20 @@ def returnHome():
         return render_template('Home.html')
 
 @app.route("/ChooseyourRoutes", methods=['GET'])
-def returnFirst():
+def Routes():
     if request.method == 'GET':
-        return render_template('ChooseyourRoutes.html')
+        try:
+            conn = sqlite3.connect(DATABASE)
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM Routes;")
+            naturewalksdata = cur.fetchall()
+            cur.execute("SELECT * FROM RoutesC;")
+            citywalksdata = cur.fetchall()
+            data = cur.fetchall()
+        except:
+            print("There was an error!")
+        finally:
+            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata=citywalksdata)
 
 @app.route("/Difficulty", methods=['GET'])
 def returnSecond():
@@ -41,9 +51,6 @@ def returnLogin():
 #def returnFourth():
 #    if request.method == 'GET':
 #        return render_template('Admin.html')
-
-
-
 
 @app.route("/Admin", methods = ['POST','GET'])
 def AddCheckpoints():
@@ -175,10 +182,10 @@ def Enquiry():
     if request.method == 'POST':
         text = request.form.get('text',default="Error")
         email = request.form.get('email',default="Error")
-        print("TO DO" + text)
+        print("Enquiry:" + text)
 
         try:
-            conn = sqlite3.connect(DATABASE2)
+            conn = sqlite3.connect(DATABASE)
             cur = conn.cursor()
             cur.execute("INSERT INTO Enquiries ('Text','Email')VALUES (?,?)",
             (text,email))
@@ -190,6 +197,8 @@ def Enquiry():
         finally:
             return msg
             conn.close()
+
+
 
 
 
