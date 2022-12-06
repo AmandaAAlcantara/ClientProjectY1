@@ -22,11 +22,14 @@ def Routes():
             conn = sqlite3.connect(DATABASE)
             cur = conn.cursor()
             cur.execute("SELECT * FROM Routes;")
+            naturewalksdata = cur.fetchall()
+            cur.execute("SELECT * FROM RoutesC;")
+            citywalksdata = cur.fetchall()
             data = cur.fetchall()
         except:
             print("There was an error!")
         finally:
-            return render_template('ChooseyourRoutes.html',data=data)
+            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata=citywalksdata)
 
 @app.route("/Difficulty", methods=['GET'])
 def returnSecond():
@@ -194,7 +197,7 @@ def Enquiry():
         finally:
             return msg
             conn.close()
-        
+
 
 
 

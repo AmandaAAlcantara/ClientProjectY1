@@ -36,7 +36,7 @@
         <div class="row">
 
 
-          {% for row in data %}
+          {% for row in naturewalksdata %}
           <div class="column nature">
             <button id="button" type="button" onclick="window.location.href='/Location';">
             <div class="content">
@@ -49,7 +49,8 @@
           {% endfor %}
 
 
-          {% for row in data %}
+
+          {% for row in citywalksdata%}
           <div class="column city">
             <div class="content">
               <img src="{{row[0]}}" style="width:100%">
@@ -57,32 +58,8 @@
               <p>{{row[2]}}</p>
             </div>
           </div>
-
           {% endfor %}
 
-          <div class="column city">
-            <div class="content">
-              <img src="static/Routes/N4.jpg" alt="Car" style="width:100%">
-              <h4>River Usk Path</h4>
-              <p>Lorem ipsum dolor..</p>
-            </div>
-          </div>
-
-          <div class="column cars">
-            <div class="content">
-              <img src="static/Routes/N6.jpg" alt="Car" style="width:100%">
-              <h4>Arcades, Cafe and Shopping Walk</h4>
-              <p>Lorem ipsum dolor..</p>
-            </div>
-          </div>
-
-          <div class="column cars">
-            <div class="content">
-              <img src="static/Routes/N12.jpeg" alt="Car" style="width:100%">
-              <h4>Newport Boat Club Walk</h4>
-              <p>Lorem ipsum dolor..</p>
-            </div>
-          </div>
         <!-- END GRID -->
         </div>
 

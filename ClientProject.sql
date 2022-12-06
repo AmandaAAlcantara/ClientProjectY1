@@ -67,4 +67,11 @@ CREATE TABLE if not EXISTS "Routes" ( "Picture" TEXT, "Name" TEXT, "Info" TEXT);
 INSERT INTO Routes ("Picture", "Name", "Info") VALUES ("/static/Routes/TredegarHouse.jpg", "Dyffryn Gardens and Tredegar House", "Free entry perfect for an afternoon walk");
 INSERT INTO Routes ("Picture", "Name", "Info") VALUES ("/static/Routes/Coalstal.jpg", "Newport Coastal Paths", "Free entry perfect for an afternoon walk");
 INSERT INTO Routes ("Picture", "Name", "Info") VALUES ("/static/Routes/RomanFortress.jpeg", "Caerleon Roman Fortress and Baths", "Free entry perfect for an afternoon walk");
-INSERT INTO Routes ("Picture", "Name", "Info") VALUES ("/static/Routes/BelleWalk.jpg", "Belle Vue Park Walk", "Free entry perfect for an afternoon walk");
+INSERT INTO Routes ("Picture", "Name", "Info") VALUES ("/static/Routes/BelleVue.jpg", "Belle Vue Park Walk", "Free entry perfect for an afternoon walk");
+
+DROP TABLE if EXISTS RoutesC;
+CREATE TABLE if not EXISTS "RoutesC" ( "Picture" TEXT, "Name" TEXT, "Info" TEXT);
+INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/CityCentre.jpg", "City Centre Walk", "Free entry perfect for an afternoon walk");
+INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/RiverUsk.jpg", "River Usk Path", "Free entry perfect for an afternoon walk");
+INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/Arcades.jpg", "Arcades, Cafes and Stores", "Free entry perfect for an afternoon walk");
+INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/BoatClub.jpeg", "Newport Boat Club", "Free entry perfect for an afternoon walk");
