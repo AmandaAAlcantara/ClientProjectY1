@@ -134,20 +134,6 @@ def AddCheckpoints():
             #conn.close()
             #return render_template('Whitson.html' ,data=data)
 
-@app.route("/routeToHandleFormSubmission" , methods = ['POST'])
- def     ():
-     if request.method == 'POST':
-         try:
-             conn = sqlite3.connect(DATABASE)
-             cur = conn.cursor()
-             cur.execute("SELECT * FROM Checkpoints WHERE ID = ' ';")
-             data = cur.fetchall()
-             print('   ')
-         except:
-             print("Error occured")
-         finally:
-             return render_template('Comments.html', data=data)
-         return render_template('Comment.html')
 @app.route("/Location/<checkpoints>", methods=['GET','POST'])
 def retrunCheck(checkpoints= None):
         if request.method =='GET':
@@ -194,7 +180,7 @@ def Enquiry():
         try:
             conn = sqlite3.connect(DATABASE2)
             cur = conn.cursor()
-            cur.execute("INSERT INTO Enquiries ('Text','Email')VALUES (?,?)",
+            cur.execute("INSERT INTO Enquiries ('text','email')VALUES (?,?)",
             (text,email))
             conn.commit()
             msg = "Thank you for sending us an enquiry"
@@ -204,6 +190,26 @@ def Enquiry():
         finally:
             return msg
             conn.close()
+
+@app.route("/Commentssubmission" , methods = ['POST','GET'])
+def Comments():
+      if request.method == 'GET':
+             return render_template('Comments.html')
+      if request.method == 'POST':
+         location = request.form.get('NameOfLocation', default="Error")
+         Route = request.form.get('NameOfRoute', default="Error")
+         try:
+             conn = sqlite3.connect(DATABASE)
+             cur = conn.cursor()
+             cur.execute("INSERT INTO Enquiries ('NameOfRoute','NameOfLocation','Comment')VALUES (?,?,?)" , [NameOfRoute] , [NameOfLocation] , [Comments])
+             conn.commit()
+             msg = "Thank you for your comment, we will look into it as soon as possible"
+         except:
+             conn.rollback()
+             msg = "Failed"
+         finally:
+             return msg
+             conn.close()
 
 
 
