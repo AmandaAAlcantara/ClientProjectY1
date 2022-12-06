@@ -1,16 +1,15 @@
 <!doctype html>
 <html>
 <head>
+  {%extends'Home.html'%}
   <title></title>
-  <link href="/static/simplecss.css" rel="stylesheet">
 </head>
-{%extends'Home.html'%}
+
 <body>
 
   <header>
     <h2>{% block titleBlock%}  {%endblock%}</h2>
   </header>
-
 
   <div class="main">
     <main>
@@ -24,196 +23,70 @@
         {% block mainBlock%}
 
         <!--adapted from w3schools-->
-
+        <br>
         <h2>ROUTES</h2>
         <div id="myBtnContainer">
           <button class="btn active" onclick="filterSelection('all')"> Show all</button>
           <button class="btn" onclick="filterSelection('nature')"> Nature Walks</button>
-          <button class="btn" onclick="filterSelection('cars')"> City Walks</button>
-          <button class="btn" onclick="filterSelection('people')">Events</button>
+          <button class="btn" onclick="filterSelection('city')"> City Walks</button>
         </div>
-
+        <br>
+        <br>
         <!-- Portfolio Gallery Grid -->
         <div class="row">
-          <div class="column nature">
-            <div class="content">
-              <img src="static/Routes/N.jpg" alt="Newport" style="width:100%">
-              <h4>Newport Coastal Path</h4>
-              <p>Lorem ipsum dolor...</p>
-              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
 
-            </div>
-          </div>
+
+          {% for row in data %}
           <div class="column nature">
+            <button id="button" type="button" onclick="window.location.href='/Location';">
             <div class="content">
-              <img src="static/Routes/N2.jpg" alt="Lights" style="width:100%">
-              <h4>Dyffryn Gardens and Tredegar House</h4>
-              <p>Lorem ipsum dolor..</p>
-              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+              <img class="image" src="{{row[0]}}" style="width:100%">
+              <h4>{{row[1]}}</h4>
+              <p>{{row[2]}}</p>
             </div>
+            </button>
           </div>
-          <div class="column nature">
+          {% endfor %}
+
+
+          {% for row in data %}
+          <div class="column city">
             <div class="content">
-              <img src="static/Routes/N5.jpeg" alt="Nature" style="width:100%">
-              <h4>Caerleon Roman Fortress and Baths</h4>
-              <p>Lorem ipsum dolor..</p>
-              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
+              <img src="{{row[0]}}" style="width:100%">
+              <h4>{{row[1]}}</h4>
+              <p>{{row[2]}}</p>
             </div>
           </div>
 
-          <div class="column cars">
-            <div class="content">
-              <img src="static/Routes/N3.jpg" alt="Car" style="width:100%">
-              <h4>Newport City Centre</h4>
-              <p>Lorem ipsum dolor..</p>
-              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
-            </div>
-          </div>
-          <div class="column cars">
+          {% endfor %}
+
+          <div class="column city">
             <div class="content">
               <img src="static/Routes/N4.jpg" alt="Car" style="width:100%">
               <h4>River Usk Path</h4>
               <p>Lorem ipsum dolor..</p>
-              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
             </div>
           </div>
+
           <div class="column cars">
             <div class="content">
               <img src="static/Routes/N6.jpg" alt="Car" style="width:100%">
               <h4>Arcades, Cafe and Shopping Walk</h4>
               <p>Lorem ipsum dolor..</p>
-            <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
             </div>
           </div>
 
-          <div class="column people">
-            <div class="content">
-              <img src="static/Routes/N10.jpg" alt="People" style="width:100%">
-              <h4>Jazz Festival</h4>
-              <p>Lorem ipsum dolor..</p>
-              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
-            </div>
-          </div>
-          <div class="column nature">
-            <div class="content">
-              <img src="static/Routes/Forest.jpg" alt="Nature" style="width:100%">
-              <h4>Belle Vue Park Walk</h4>
-              <p>Lorem ipsum dolor..</p>
-              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
-            </div>
-          </div>
           <div class="column cars">
             <div class="content">
               <img src="static/Routes/N12.jpeg" alt="Car" style="width:100%">
               <h4>Newport Boat Club Walk</h4>
               <p>Lorem ipsum dolor..</p>
-              <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
             </div>
           </div>
-
-            <div class="column people">
-              <div class="content">
-                <img src="static/Routes/N7.jpg" alt="People" style="width:100%">
-                <h4>Newport Marathon</h4>
-                <p>Lorem ipsum dolor..</p>
-                <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
-              </div>
-            </div>
-            <div class="column people">
-              <div class="content">
-                <img src="static/Routes/N11.jpg" alt="People" style="width:100%">
-                <h4>Christmas Lights Path</h4>
-                <p>Lorem ipsum dolor..</p>
-                <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
-              </div>
-            </div>
-            <div class="column people">
-              <div class="content">
-                <img src="static/Routes/Food.jpg" alt="People" style="width:100%">
-                <h4>Newport Food Festival</h4>
-                <p>Lorem ipsum dolor..</p>
-                <button onclick="window.location.href='/Location';" type ="button" class = "btn btn-success d-flex justify-content text-center">More About</button>
-              </div>
-            </div>
         <!-- END GRID -->
         </div>
 
 
-        <style media="screen">
-          * {
-            box-sizing: border-box;
-          }
-
-          body {
-            background-color: #f1f1f1;
-            padding: 20px;
-            font-family: Arial;
-          }
-
-          /* Center website */
-          .main {
-            max-width: 1000px;
-            margin: auto;
-          }
-
-          h1 {
-            font-size: 50px;
-            word-break: break-all;
-          }
-
-          h2 {
-            font-family: sans-serif;
-            font-weight: bold;
-          }
-
-          .row {
-            margin: 8px -16px;
-          }
-
-          /* Add padding BETWEEN each column (if you want) */
-          .row,
-          .row > .column {
-            padding: 8px;
-          }
-
-          /* Create three equal columns that floats next to each other */
-          .column {
-            float: left;
-            width: 33.33%;
-            display: none; /* Hide columns by default */
-          }
-
-          /* Clear floats after rows */
-          .row:after {
-            content: "";
-            display: table;
-            clear: both;
-          }
-
-          /* Content */
-          .content {
-            background-color: white;
-            padding: 10px;
-          }
-
-          /* The "show" class is added to the filtered elements */
-          .show {
-            display: block;
-          }
-
-          /* Style the buttons */
-          .btn.active {
-            background-color: #666;
-             color: white;
-          }
-
-          .btn:hover {
-            background-color: #ddd;
-          }
-
-
-
-        </style>
 
         <script type="text/javascript">
           filterSelection("all") // Execute the function and show all columns
