@@ -19,20 +19,20 @@
   <label for="Comment">Comment:</label>
   <input type="text" name="Comment" id="Comment" maxlength="300" style="height:50px; width:200px;">
 
-  <button type="submit" onclick="alert('Your comment has been submitted!')">Submit</button>
+  <button type="submit" onlick="Commentssubmission" click="alert('Your comment has been submitted!')">Submit</button>
 
   </form>
 </div>
 
 <script>
 
-function loadName() {
+function Commentssubmission() {
         var name = document.forms["NameOfRoute"]["name"].value;
         var name = document.forms["NameOfLocation"]["name"].value;
         var name = document.forms["Comments"]["name"].value;
-        params = 'name='+name+'&name='+num'&name='+num ;
+        params = 'name='+name+'&name='+num+'&name='+num ;
         var xhttp = new XMLHttpRequest();
-        xhttp.open("POST",'/Commentssubmission', true); // true is asynchronous
+        xhttp.open("POST",'/Commentssubmission', true);
         xhttp.setRequestHeader("Content-type", "          ");
         xhttp.onreadystatechange = function() {
           if (xhttp.readyState === 4 && xhttp.status === 200) {
@@ -40,7 +40,7 @@ function loadName() {
             document.getElementById("txt").innerHTML = xhttp.responseText;
           } else {
             console.error(xhttp.statusText);
-            console.error("OK, so why the errors. Try printing the xhttp.readyState here ");
+            console.error("         ");
           }
         };
         xhttp.send(params);
