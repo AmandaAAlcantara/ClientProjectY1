@@ -3,6 +3,7 @@
 <head>
   <title>Page2</title>
   <link href="/static/simplecss.css" rel="stylesheet">
+  <script src="/static/scripts.js"></script>
 </head>
 {%extends'Home.html'%}
 <body>
@@ -19,6 +20,10 @@
         {%endif%}
       <p>
         {% block mainBlock%}
+        <script src="../static/html5-qrcode.min.js"></script>
+        <body onload= "qrScanner()">
+          <div style="width:100%; length:100%" id = "reader"></div>
+        </body>
         {%endblock%}
     </main>
 
