@@ -25,11 +25,13 @@ def Routes():
             naturewalksdata = cur.fetchall()
             cur.execute("SELECT * FROM RoutesC;")
             citywalksdata = cur.fetchall()
+            cur.execute("SELECT * FROM DisabilityF;")
+            disabilitydata = cur.fetchall()
             data = cur.fetchall()
         except:
             print("There was an error!")
         finally:
-            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata=citywalksdata)
+            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata = citywalksdata, disabilitydata = disabilitydata)
 
 @app.route("/Difficulty", methods=['GET'])
 def returnSecond():

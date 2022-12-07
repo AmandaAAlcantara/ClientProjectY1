@@ -30,7 +30,7 @@
             <button class="btn active" onclick="filterSelection('all')"> Show all</button>
             <button class="btn" onclick="filterSelection('nature')"> Nature Walks</button>
             <button class="btn" onclick="filterSelection('city')"> City Walks</button>
-            <button class="btn" onclick="filterSelection('SpecialNeeds')">Special Needs</button>
+            <button class="btn" onclick="filterSelection('SpecialNeeds')">Disability Friendly</button>
           </div>
         </div>
         <br>
@@ -63,13 +63,15 @@
           </div>
           {% endfor %}
 
+          {% for row in disabilitydata%}
           <div class="column SpecialNeeds">
             <div class="content">
-              <img src="static/Routes/IndorMarket.jpg" style="width:100%">
-              <h4>City Tour Walk</h4>
-              <p>Accessible for </p>
+              <img src="{{row[0]}}" style="width:100%">
+              <h4>{{row[1]}}</h4>
+              <p>{{row[2]}}</p>
             </div>
           </div>
+          {% endfor %}
 
         <!-- END GRID -->
         </div>
