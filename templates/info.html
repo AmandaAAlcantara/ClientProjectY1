@@ -1,3 +1,7 @@
+<head>
+    <link href="/static/style.css" rel="stylesheet">
+  </head>
+
 <section id ="info" class = "info">
 {% for row in data %}
   <div id = "TitleCheckpoint">
@@ -26,4 +30,39 @@
       </section>
     </section>
 </div>
+
+
+<div id="points" class ="points">
+  <img class ="rewards-icon" src= "/static/Cookies/prize.png">
+  <span class ="message"> Collect your 100 points.</span>
+  <button class="accept" onclick="loadCookies()">Collect</button>
+  <input type="text" id="noOfPoints" value="100"></input>
+  </div>
+
+
   {% endfor %}
+  <!---  adapted from w3schools -->
+  <script>
+    function loadCookies() {
+      var x = document.getElementById("points");
+      if (x.style.display === "none") {
+        x.style.display = "block";
+      } else {
+        x.style.display = "none";
+      }
+      document.cookie = 100;
+      writeValue();
+    function writeValue (){
+      document.getElementById('noOfPoints').value = document.cookie;
+    }
+    window.onload = function(){
+      document.cookie = 100;
+    }
+    writeValue();
+    }
+
+
+    </script>
+  {% block javascriptBlock%}
+
+  {%endblock%}

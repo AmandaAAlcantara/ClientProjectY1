@@ -1,3 +1,4 @@
+
 * {
   box-sizing: border-box;
 }
@@ -163,4 +164,57 @@ footer{
 
 #MapForC{
   margin-left: 50px;
+
 }
+
+
+.points {
+  margin-left: 23%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: #5F8575;
+  height: 250px;
+  width: 50%;
+  padding: 10px;
+  border-radius: 5px;
+  position: fixed;
+  bottom:0%;
+
+}
+
+
+
+
+.rewards-icon {
+
+  font-size: 50px;
+  height: 70px;
+  width: 70px;
+}
+
+.message {
+  height: 36px;
+  padding: 0px 10px;
+  line-height: 36px;
+  color: #FFFFFF;
+  font-size: 30px;
+
+}
+
+.accept {
+  height: 30px;
+  padding: 0 15px;
+  line-height: 30px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 20px;
+  text-align: center;
+  background: #616B75;
+
+
+}
+
+.accept:hover {
+  background: red;
