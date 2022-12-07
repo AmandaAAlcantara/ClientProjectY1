@@ -81,3 +81,16 @@ h2 {
   outline: inherit;
   text-align: left
 }
+
+
+#ChosenRouteTitle{
+  text-align: center;
+}
+
+#qrCodeFlex{
+  display: flex;
+}
+
+#MapForC{
+  margin-left: 50px;
+}
