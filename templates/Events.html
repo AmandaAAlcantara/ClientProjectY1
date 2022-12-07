@@ -1,0 +1,32 @@
+{%extends'Home.html'%}
+<html>
+<head>
+  <title>Events</title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+</head>
+
+<body>
+  <header>
+
+    <h2>{% block titleBlock%} <center>Events</center> {%endblock%}</h2>
+  </header>
+
+  <div class="mainAndAside">
+    <main>
+      <p>
+        {%if msg%}
+        {{msg}}
+        {%endif%}
+      <p>
+
+
+        {% block mainBlock%}
+
+        {%endblock%}
+    </main>
+
+  </div>
+  <footer>
+
+  </footer>
+</body>

@@ -37,6 +37,11 @@ def returnLogin():
     if request.method == 'GET':
         return render_template('Login.html')
 
+@app.route("/Events", methods=['GET'])
+def returnEvents():
+    if request.method == 'GET':
+        return render_template('Events.html')
+
 #@app.route("/Admin", methods=['GET'])
 #def returnFourth():
 #    if request.method == 'GET':
