@@ -1,16 +1,15 @@
 <!doctype html>
 <html>
 <head>
+  {%extends'Home.html'%}
   <title></title>
-  <link href="/static/simplecss.css" rel="stylesheet">
 </head>
-{%extends'Home.html'%}
+
 <body>
 
   <header>
     <h2>{% block titleBlock%}  {%endblock%}</h2>
   </header>
-
 
   <div class="main">
     <main>
@@ -23,6 +22,108 @@
 
         {% block mainBlock%}
 
+        <!--adapted from w3schools-->
+        <br>
+        <h2>ROUTES</h2>
+        <div id="myBtnContainer">
+          <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+          <button class="btn" onclick="filterSelection('nature')"> Nature Walks</button>
+          <button class="btn" onclick="filterSelection('city')"> City Walks</button>
+        </div>
+        <br>
+        <br>
+        <!-- Portfolio Gallery Grid -->
+        <div class="row">
+
+
+          {% for row in naturewalksdata %}
+          <div class="column nature">
+            <button id="button" type="button" onclick="window.location.href='/Location';">
+            <div class="content">
+              <img class="image" src="{{row[0]}}" style="width:100%">
+              <h4>{{row[1]}}</h4>
+              <p>{{row[2]}}</p>
+            </div>
+            </button>
+          </div>
+          {% endfor %}
+
+
+
+          {% for row in citywalksdata%}
+          <div class="column city">
+            <div class="content">
+              <img src="{{row[0]}}" style="width:100%">
+              <h4>{{row[1]}}</h4>
+              <p>{{row[2]}}</p>
+            </div>
+          </div>
+          {% endfor %}
+
+        <!-- END GRID -->
+        </div>
+
+
+
+        <script type="text/javascript">
+          filterSelection("all") // Execute the function and show all columns
+        function filterSelection(c) {
+          var x, i;
+          x = document.getElementsByClassName("column");
+          if (c == "all") c = "";
+          // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+          for (i = 0; i < x.length; i++) {
+            w3RemoveClass(x[i], "show");
+            if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+          }
+        }
+
+        // Show filtered elements
+        function w3AddClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            if (arr1.indexOf(arr2[i]) == -1) {
+              element.className += " " + arr2[i];
+            }
+          }
+        }
+
+        // Hide elements that are not selected
+        function w3RemoveClass(element, name) {
+          var i, arr1, arr2;
+          arr1 = element.className.split(" ");
+          arr2 = name.split(" ");
+          for (i = 0; i < arr2.length; i++) {
+            while (arr1.indexOf(arr2[i]) > -1) {
+              arr1.splice(arr1.indexOf(arr2[i]), 1);
+            }
+          }
+          element.className = arr1.join(" ");
+        }
+
+        // Add active class to the current button (highlight it)
+        var btnContainer = document.getElementById("myBtnContainer");
+        var btns = btnContainer.getElementsByClassName("btn");
+        for (var i = 0; i < btns.length; i++) {
+          btns[i].addEventListener("click", function(){
+            var current = document.getElementsByClassName("active");
+            current[0].className = current[0].className.replace(" active", "");
+            this.className += " active";
+          });
+        }
+
+        </script>
+
+
+
+
+
+
+
+
+<!--
         <p class = "TitleInfoCheckpoint">Level 1 Route</p>
         <div class="container1">
         <div class="flexbox-map-1">
@@ -84,7 +185,8 @@
           <br><br>
           <a role="button" class="btn btn-dark" href="/Location">Choose this path</a>
         </div>
-        </div>
+      </div>
+    -->
         {%endblock%}
 
     </main>
