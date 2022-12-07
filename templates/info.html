@@ -1,7 +1,6 @@
-
 <head>
-  <link href="/static/style.css" rel="stylesheet">
-</head>
+    <link href="/static/style.css" rel="stylesheet">
+  </head>
 
 <section id ="info" class = "info">
 {% for row in data %}
@@ -32,10 +31,11 @@
     </section>
 </div>
 
+
 <div id="points" class ="points">
-  <img class ="fire-icon" src= "/static/fire.png">
+  <img class ="rewards-icon" src= "/static/Cookies/prize.png">
   <span class ="message"> Collect your 100 points.</span>
-  <button class="accept" onclick="myFunction()">Collect</button>
+  <button class="accept" onclick="loadCookies()">Collect</button>
   <input type="text" id="noOfPoints" value="100"></input>
   </div>
 
@@ -43,7 +43,7 @@
   {% endfor %}
   <!---  adapted from w3schools -->
   <script>
-    function myFunction() {
+    function loadCookies() {
       var x = document.getElementById("points");
       if (x.style.display === "none") {
         x.style.display = "block";
