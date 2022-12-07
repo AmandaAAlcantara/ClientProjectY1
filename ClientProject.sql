@@ -71,7 +71,12 @@ INSERT INTO Routes ("Picture", "Name", "Info") VALUES ("/static/Routes/BelleVue.
 
 DROP TABLE if EXISTS RoutesC;
 CREATE TABLE if not EXISTS "RoutesC" ( "Picture" TEXT, "Name" TEXT, "Info" TEXT);
-INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/CityCentre.jpg", "City Centre Walk", "Free entry perfect for an afternoon walk");
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/RiverUsk.jpg", "River Usk Path", "Free entry perfect for an afternoon walk");
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/Arcades.jpg", "Arcades, Cafes and Stores", "Free entry perfect for an afternoon walk");
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/BoatClub.jpeg", "Newport Boat Club", "Free entry perfect for an afternoon walk");
+INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/CityCentre.jpg", "City Centre Walk", "Free entry perfect for an afternoon walk");
+
+
+DROP TABLE if EXISTS DisabilityF;
+CREATE TABLE if not EXISTS "DisabilityF" ( "Picture" TEXT, "Name" TEXT, "Info" TEXT);
+INSERT INTO DisabilityF ("Picture", "Name", "Info") VALUES ("/static/Routes/IndorMarket.jpg", "City Tour", "Acessible and has amazing stops for lunch along the way");
