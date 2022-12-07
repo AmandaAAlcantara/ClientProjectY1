@@ -36,6 +36,12 @@ def returnSecond():
     if request.method == 'GET':
         return render_template('Difficulty.html')
 
+
+@app.route("/LevelCoastalPath", methods=['GET'])
+def returnLevelCoastalPath():
+    if request.method == 'GET':
+        return render_template('LevelCoastalPath.html')
+
 @app.route("/Location", methods=['GET'])
 def returnLocation():
         if request.method == 'GET':

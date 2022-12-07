@@ -8,6 +8,9 @@ body {
   padding: 10px;
 }
 
+#FilterMenu{
+  text-align: center;
+}
 /* Center website */
 .main {
   max-width: 900px;
@@ -53,6 +56,7 @@ h2 {
 .content {
   background-color: white;
   padding: 10px;
+  border-radius: 10px;
 }
 
 /* The "show" class is added to the filtered elements */
@@ -81,3 +85,68 @@ h2 {
   outline: inherit;
   text-align: left
 }
+
+#button1{
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  width: 130px;
+}
+
+footer{
+  background-color:#282828;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+
+
+
+/*Level Coastal Path*/
+#box{
+  display: flex;
+}
+
+#container{
+  width: 90%;
+  padding: 8px;
+}
+
+#ImageDemo{
+  text-align: center;
+  flex: 1;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #D0D0D0;
+}
+
+#LandmarkImg{
+  width: 200px;
+  padding: 2.3px;
+  border-radius: 8px;
+}
+.container1, .container2, .container3{
+  display: flex;
+  background-color: white;
+  padding: 5px;
+  }
+
+.flexbox-text-1, .flexbox-text-2, .flexbox-text-3  {
+  min-height: 100px;
+  width: 400px;
+  padding: 5px;
+  margin: 5px;
+}
+#googleMap_hard,#googleMap_medium,#googleMap_easy{
+    width: 404.7px;
+    height: 350px;
+    border-radius: 8px;
+}
+/* End Level Coastal Path*/
