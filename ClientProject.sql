@@ -62,6 +62,7 @@ Reserve can be arranged from here.");
 CREATE TABLE if not EXISTS "Enquiries" ( "Text" TEXT, "Email" TEXT);
 INSERT INTO Enquiries ("Text", "Email") VALUES ("Text", "Email");
 
+
 DROP TABLE if EXISTS Routes;
 CREATE TABLE if not EXISTS "Routes" ( "Picture" TEXT, "Name" TEXT, "Info" TEXT);
 INSERT INTO Routes ("Picture", "Name", "Info") VALUES ("/static/Routes/TredegarHouse.jpg", "Dyffryn Gardens and Tredegar House", "Free entry perfect for an afternoon walk");
@@ -75,3 +76,11 @@ INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/CityCent
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/RiverUsk.jpg", "River Usk Path", "Free entry perfect for an afternoon walk");
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/Arcades.jpg", "Arcades, Cafes and Stores", "Free entry perfect for an afternoon walk");
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/BoatClub.jpeg", "Newport Boat Club", "Free entry perfect for an afternoon walk");
+
+
+DROP TABLE if EXISTS Events;
+CREATE TABLE if not EXISTS "Events" ( "name" TEXT, "Info" TEXT, "Picture" TEXT);
+INSERT INTO Events ("name", "Info", "Picture") VALUES ("Festive 5k", "Come join us on December 16th for a funfilled family day out", "/static/Routes/field.jpg");
+INSERT INTO Events ("name", "Info", "Picture") VALUES ("Newport Coastal Walk", "Join us for a cool coastal walk on December 31st", "/static/Routes/Coalstal.jpg");
+INSERT INTO Events ("name", "Info", "Picture") VALUES ("Countryisde sightsee", "Join us for a day of nature an wildlife on December 20th", "/static/Routes/field.jpg");
+INSERT INTO Events ("name", "Info", "Picture") VALUES ("New Years Coastal Hike", "Kick off your new years by discovering newport on January 1st", "/static/Routes/port.jpg");

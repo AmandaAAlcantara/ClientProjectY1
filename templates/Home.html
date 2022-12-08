@@ -4,10 +4,11 @@
  <title>Newport</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="static/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  <link href="static/style.css" rel="stylesheet">
+
 </head>
 <body>
 
@@ -19,7 +20,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <!--<img class="navbar-brand" src="/static/LandmarkImg/mylogo.jpg" width="100px" ></img>-->
+      <img class="navbar-brand" src="/static/LandmarkImg/mylogo.jpg" width="100px" ></img>
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
@@ -34,7 +35,7 @@
     </div>
   </div>
 </nav>
-{% block titleBlock%}<h2 id = "hometitle"><center>Newport Walking Routes</center></h2>{%endblock%}
+{% block titleBlock%}<h2 id = "hometitle"><center>Newport Coastal Routes</center></h2>{%endblock%}
 <div id="myCarousel" class="carousel slide" data-ride="carousel">
     <!-- Indicators -->
     {%if msg%}
@@ -42,7 +43,6 @@
       {%endif%}
 
       {% block mainBlock%}
-
 
     <ol class="carousel-indicators">
       <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
@@ -79,28 +79,36 @@
     </a>
 </div>
 
-
+<div id= "blockinfohome">
   <div class="row">
-    <div class="column" id=column1>
+    <div class="column" id="column1">
       <h2>Info about Routes</h2>
       <img src="https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=51.58774&lon=-2.99837&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*" id=imageone width="200" height="200">
+      <div id="texthome"
       <p>The Wales Coast Path is 870 miles long. It begins at Chepstow on the banks of the Wye and finishes beside the River Dee a few miles from Cheshire.The Newport section of the path crosses the Caldicot and Wentloog Levels to meet the City of Newport. A distance of 23 miles/38km. The Gwent Levels are registered as a Landscape of Outstanding Historic Interest in Wales.If arriving in Newport by train, it’s a short walk from the railway station to Newport Bus Station - there are frequent buses from here to take you to the start of the route at Redwick.</p>
     </div>
-
-    <div class="column" id=column2>
+    </div>
+<
+    <div class="column" id="column2">
       <h2>What to Wear to a Walk</h2>
       <img src="https://www.millets.co.uk/templates/millets.co.uk/_images/blog/2019/buying-guide-footwear/boots.jpg" id="imagetwo" width="200" height="200">
+      <div id="texthome"
       <p>Comfortable and sensible footwear(no flip-flops or high heels),Water,Sturdy footwear/Hillwalking boots, Tell someone where you are going, Tell someone how long you will be, Remember to let them know when you return.Remember that a poor choice of clothing is one of the best ways of ruining a day's walking and can be potentially fatal!  Also remember to ensure that any clothing you are not wearing is stored somewhere waterproof - there's not much point bringing spare clothes if they are sodden before you put them on!</p>
+    </div>
     </div>
 
 
-    <div class="column"id=column3>
+    <div class="column"id="column3">
       <h2>Health and Fitness</h2>
       <img src="https://www.salomon.com/sites/default/files/2022-03/Teaser-why-running-landscape.jpg" id="imagetwo" width="200" height="200">
-      <p>Maintain a healthy weight and lose body fat.Prevent or manage various conditions, including heart disease, stroke, high blood pressure, cancer and type 2 diabetes. Improve cardiovascular fitness. Strengthen your bones and muscles. Improve muscle endurance. Increase energy levels.The faster, farther and more frequently you walk, the greater the benefits. For example, you may start out as an average walker, and then work your way up to walking faster and walking a mile in a shorter amount of time than an average walker, similar to power walkers. This can be a great way to get aerobic activity, improve your heart health and increase your endurance while burning calories.</p>
+      <div id="texthome"
+      <p>Maintain a healthy weight and lose body fat.Prevent or manage various conditions, including heart disease, stroke, high blood pressure, cancer and type 2 diabetes. Improve cardiovascular fitness. Strengthen your bones and muscles. Improve muscle endurance. Increase energy levels.The faster, farther and more frequently you walk, the greater the benefits. For example, you may start out as an average walker, and then work your way up to walking faster and walking a mile in a shorter
+        amount of time than an average walker, similar to power walkers. This can be a great way to get aerobic activity, improve your heart health and increase your endurance while burning calories.</p>
+      </div>
     </div>
         {%endblock%}
   </div>
+</div>
   {% block javascriptBlock%}
 {%endblock%}
 <footer class="container-fluid text-center">
