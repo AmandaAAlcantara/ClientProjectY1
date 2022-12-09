@@ -25,24 +25,16 @@ def Routes():
             naturewalksdata = cur.fetchall()
             cur.execute("SELECT * FROM RoutesC;")
             citywalksdata = cur.fetchall()
-            cur.execute("SELECT * FROM DisabilityF;")
-            disabilitydata = cur.fetchall()
             data = cur.fetchall()
         except:
             print("There was an error!")
         finally:
-            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata = citywalksdata, disabilitydata = disabilitydata)
+            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata=citywalksdata)
 
 @app.route("/Difficulty", methods=['GET'])
 def returnSecond():
     if request.method == 'GET':
         return render_template('Difficulty.html')
-
-
-@app.route("/LevelCoastalPath", methods=['GET'])
-def returnLevelCoastalPath():
-    if request.method == 'GET':
-        return render_template('LevelCoastalPath.html')
 
 @app.route("/Location", methods=['GET'])
 def returnLocation():
@@ -54,6 +46,28 @@ def returnLocation():
 def returnLogin():
     if request.method == 'GET':
         return render_template('Login.html')
+
+@app.route("/Events", methods=['GET','POST'])
+def retrunEvents():
+        if request.method =='GET':
+
+            try:
+                conn = sqlite3.connect(DATABASE)
+                print("connecting to database")
+                cur = conn.cursor()
+                cur.execute("SELECT * FROM Events")
+                data = cur.fetchall()
+            except:
+                print('there was an error')
+            finally:
+                #conn.close()
+                return render_template('Events.html',data=data)
+
+
+@app.route("/Festive5k", methods=['GET'])
+def returnFestive5k():
+    if request.method == 'GET':
+        return render_template('Festive5k.html')
 
 #@app.route("/Admin", methods=['GET'])
 #def returnFourth():
@@ -205,11 +219,6 @@ def Enquiry():
         finally:
             return msg
             conn.close()
-
-
-
-
-
 
 
 
