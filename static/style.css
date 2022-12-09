@@ -1,4 +1,8 @@
-
+body{
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
 
 #FilterMenu{
   text-align: center;
@@ -83,7 +87,7 @@ h2 {
 
 
 #button1{
-  background-color: #5F8575;
+  background-color: green;
   color: white;
   border: none;
   cursor: pointer;
@@ -132,6 +136,7 @@ footer{
   display: flex;
   background-color: white;
   padding: 5px;
+  border-radius: 10px;
   }
 
 .flexbox-text-1, .flexbox-text-2, .flexbox-text-3  {
@@ -139,6 +144,7 @@ footer{
   width: 400px;
   padding: 5px;
   margin: 5px;
+
 }
 #googleMap_hard,#googleMap_medium,#googleMap_easy{
     width: 404.7px;
@@ -210,13 +216,19 @@ footer{
   font-size: 20px;
   text-align: center;
   background: #616B75;
-
-
 }
 
 .accept:hover {
   background: red;
 }
+
+#logo{
+  width: 80px;
+}
+#TitleLevel{
+  padding: 20px;
+  text-align: center;
+
 /*events*/
 .event-container {
   font-family: "Roboto", sans-serif;
@@ -252,7 +264,10 @@ footer{
 .event-right{
   padding: 10px;
   margin: 10px;
+<<<<<<< HEAD
 }
 #EnquiryForm {
   text-align: center;
 }
+=======
+>>>>>>> 702144134fb547149591ac751d9da42e834063a0
