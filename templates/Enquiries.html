@@ -1,8 +1,10 @@
 <!doctype html>
 <html>
+<meta name="viewport" content="width=device-width, initial-scale=2.0">
 <head>
   <title>Enquiries</title>
-  <link href="/static/simplecss.css" rel="stylesheet">
+  <link href="static/style.css" rel="stylesheet">
+
 </head>
 {%extends'Home.html'%}
 <body>
@@ -19,7 +21,7 @@
         {%endif%}
       <p>
         {% block mainBlock%}
-        <h3>Enquiries</h3>
+        <h3><center>Enquiries</center></h3>
 
         <div id = "block">
 
@@ -51,7 +53,7 @@
 
 
           <label>Opinion/Enquiry:<br>
-            <textarea id = "text" rows="5" cols="50" type="text" name="text" width="20px"></textarea>
+            <textarea id = "text" rows="2" cols="30" type="text"  placeholder="" name="Text" ></textarea>
           </label>
 
           <div class="form-group">

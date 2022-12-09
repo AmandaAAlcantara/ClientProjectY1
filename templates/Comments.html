@@ -1,48 +1,22 @@
+
 <!DOCTYPE html>
+  {%extends'Home.html'%}
 <html lang="en" dir="ltr">
   <head>
+
     <meta charset="utf-8">
+
     <title>Submit your enquiries</title>
+
     <link href="/static/style.css" rel="stylesheet">
+
   </head>
   <body>
 
     <div class="mainAndAside">
       <main>
 
-        <script>
-
-        function validate(){
-          var pass = true;
-          var text = document.forms["Commentssubmission"]["Comment"].value;
-          if (text.length > 300){pass=false; }
-          if (!pass){alert("your character limit has been reached")}
-          return pass;
-        }
-
-        function submission() {
-          var comment = document.forms["Commentssubmission"]["Comment"].value;
-          var nameOfRoute = document.forms["Commentssubmission"]["NameOfRoute"].value;
-          var nameOfLocation = document.forms["Commentssubmission"]["NameOfLocation"].value;
-          params = 'comment='+comment+'&nameOfRoute='+nameOfRoute+'&nameOfLocation='+nameOfLocation;
-
-          var xhttp = new XMLHttpRequest();
-            xhttp.open("POST",'Comment', true);
-            xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-            xhttp.onload = function(){
-              if(xhttp.readyState === 4 && xhttp.status === 300) {
-                console.log(xhttp.responseText);
-                document.getElementById("message").innerHTML = xhttp.responseText;
-              } else {
-                console.error(xhttp.statusText);
-              }
-            };
-            xhttp.send(params);
-            return false;
-          }
-
-        </script>
-
+  {% block mainBlock%}
 <div id="Comments">
     <h1> Submit your comments! </h1>
   <h3> Got any comments or concerns about the walk and/or location? Type them out right here!<h3>
@@ -59,9 +33,46 @@
   <button type="submit" onclick="submission()" onclick="validate()">Submit</button>
 
   </form>
-</div>
 
+</div>
+      {%endblock%}
 </main>
 
+
+
+{% block javascriptBlock%}
+<script>
+function validate(){
+  var pass = true;
+  var text = document.forms["Commentssubmission"]["Comment"].value;
+  if (text.length > 300){pass=false; }
+  if (!pass){alert("your character limit has been reached")}
+  return pass;
+}
+
+function submission() {
+  var comment = document.forms["Commentssubmission"]["Comment"].value;
+  var nameOfRoute = document.forms["Commentssubmission"]["NameOfRoute"].value;
+  var nameOfLocation = document.forms["Commentssubmission"]["NameOfLocation"].value;
+  params = 'comment='+comment+'&nameOfRoute='+nameOfRoute+'&nameOfLocation='+nameOfLocation;
+
+  var xhttp = new XMLHttpRequest();
+    xhttp.open("POST",'Comment', true);
+    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhttp.onload = function(){
+      if(xhttp.readyState === 4 && xhttp.status === 300) {
+        console.log(xhttp.responseText);
+        document.getElementById("message").innerHTML = xhttp.responseText;
+      } else {
+        console.error(xhttp.statusText);
+      }
+    };
+    xhttp.send(params);
+    return false;
+  }
+
+</script>
+
+  {%endblock%}
   </body>
 </html>
