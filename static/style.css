@@ -1,7 +1,13 @@
-
+body{
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
 
 #FilterMenu{
   text-align: center;
+}
+
 }
 /* Center website */
 .main {
@@ -15,6 +21,7 @@ h1 {
 }
 
 h2 {
+  font-size:10vw
   font-family: sans-serif;
   font-weight: bold;
   color: black;
@@ -80,7 +87,7 @@ h2 {
 
 
 #button1{
-  background-color: #5F8575;
+  background-color: green;
   color: white;
   border: none;
   cursor: pointer;
@@ -129,6 +136,7 @@ footer{
   display: flex;
   background-color: white;
   padding: 5px;
+  border-radius: 10px;
   }
 
 .flexbox-text-1, .flexbox-text-2, .flexbox-text-3  {
@@ -136,6 +144,7 @@ footer{
   width: 400px;
   padding: 5px;
   margin: 5px;
+
 }
 #googleMap_hard,#googleMap_medium,#googleMap_easy{
     width: 404.7px;
@@ -207,28 +216,30 @@ footer{
   font-size: 20px;
   text-align: center;
   background: #616B75;
-
-
 }
 
 .accept:hover {
   background: red;
 }
+
+#logo{
+  width: 80px;
+}
+#TitleLevel{
+  padding: 20px;
+  text-align: center;
+}
 /*events*/
+
 .event-container {
   font-family: "Roboto", sans-serif;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.event-container h3.year {
-  font-size: 40px;
-  text-align: center;
-  border-bottom: 1px solid #b1b1b1;
-}
 
 .event-container .event {
-  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px -8px ;
   display: flex;
   border-radius: 8px;
   margin: 32px 0;
@@ -248,11 +259,14 @@ footer{
 }
 
 .event .event-left .date {
-  font-size: 40px;
+  font-size: 15px;
 }
-
 
 .event-right{
   padding: 10px;
   margin: 10px;
+
+}
+#EnquiryForm {
+  text-align: center;
 }
