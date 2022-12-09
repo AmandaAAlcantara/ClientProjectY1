@@ -1,151 +1,61 @@
-{%extends'Home.html'%}
+<!doctype html>
 <html>
 <head>
-  <title>Events</title>
-  <link href="/static/style.css" rel="stylesheet">
+  {%extends'Home.html'%}
+  <title>Events Calendar</title>
 </head>
 
 <body>
 
+  <header>
+    <h2>{% block titleBlock%}  {%endblock%}</h2>
+  </header>
 
-  <div class="mainAndAside">
+  <div class="main">
     <main>
       <p>
         {%if msg%}
         {{msg}}
         {%endif%}
-      <p>
+      </p>
 
 
         {% block mainBlock%}
-        <id = "events">
+        <div class="event-container">
+            <h3 class="year">2022-2023</h3>
 
-      <!-- MAIN (Center website) -->
-      <div class="main">
+          <button id="button" type="button" onclick="window.location.href='/templates/Festive5k.html';">
+      {% for row in data %}
 
-      <h1><center>Events</center></h1>
-      <hr>
+            <div class="event">
+              <div class="event-left">
+                <div class="event-date">
+                  <div class="date">{{row[0]}}</div>
+                  <div class="month"></div>
+                </div>
+              </div>
 
-      <div id="myBtnContainer">
-        <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-        <button class="btn" onclick="filterSelection('december')"> December</button>
-        <button class="btn" onclick="filterSelection('january')"> January</button>
-        <button class="btn" onclick="filterSelection('feburary')"> Feburary</button>
-      </div>
+              <div class="event-right">
+                <h3 class="event-title">{{row[1]}}</h3>
 
-      <!-- Portfolio Gallery Grid -->
-      <div class="row">
-        <div class="column december">
-          <div class="content">
-            <img src="/static/Routes/field.jpg" alt="Mountains" style="width:100%">
-            <h4>Festive 5k</h4>
-            <p>Come join us on December 16th for a funfilled family day out </p>
-          </div>
-        </div>
-        <div class="column december">
-          <div class="content">
-          <img src="/static/Routes/Coalstal.jpg" alt="Lights" style="width:100%">
-            <h4> Newport Coastal Walk</h4>
-            <p>Join us for a cool coastal walk on December 31st </p>
-          </div>
-        </div>
-        <div class="column december ">
-          <div class="content">
-          <img src="/static/Routes/field.jpg" alt="Nature" style="width:100%">
-            <h4>Countryisde sightsee</h4>
-            <p>Join us for a day of nature an wildlife on December 20th</p>
-          </div>
-        </div>
+                <div class="event-description">
+                {{row[2]}}
+                </div>
 
-        <div class="column january">
-          <div class="content">
-            <img src="/static/Routes/port.jpg" alt="Car" style="width:100%">
-            <h4>New Years Coastal Hike</h4>
-            <p> Kick off your new years by discovering newport on January 1st</p>
-          </div>
-        </div>
-
-        <div class="column nature">
-          <div class="content">
-          <img src="/static/Routes/field.jpg" alt="Nature" style="width:100%">
-            <h4>Forest Hike</h4>
-            <p>Lorem ipsum dolor..</p>
-          </div>
-        </div>
-        <div class="column january">
-          <div class="content">
-          <img src="/static/Routes/castle.jpeg" alt="Car" style="width:100%">
-            <h4>Fast</h4>
-            <p>Lorem ipsum dolor..</p>
-          </div>
-        </div>
-
-        <div class="column feburary">
-         <div class="content">
-         <img src="/static/Routes/field.jpg" alt="Car" style="width:100%">
-           <h4>Woman</h4>
-           <p>Lorem ipsum dolor..</p>
-         </div>
-       </div>
-
-      <!-- END GRID -->
-      </div>
-
-      <!-- END MAIN -->
-      </div>
-
-      <script>
-      filterSelection("all")
-      function filterSelection(c) {
-        var x, i;
-        x = document.getElementsByClassName("column");
-        if (c == "all") c = "";
-        for (i = 0; i < x.length; i++) {
-          w3RemoveClass(x[i], "show");
-          if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
-        }
-      }
-
-      function w3AddClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-          if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
-        }
-      }
-
-      function w3RemoveClass(element, name) {
-        var i, arr1, arr2;
-        arr1 = element.className.split(" ");
-        arr2 = name.split(" ");
-        for (i = 0; i < arr2.length; i++) {
-          while (arr1.indexOf(arr2[i]) > -1) {
-            arr1.splice(arr1.indexOf(arr2[i]), 1);
-          }
-        }
-        element.className = arr1.join(" ");
-      }
+                <div class="event-timing">
+                  <img src="images/time.png" alt="" />{{row[3]}}
+                </div>
+              </div>
+            </div>
+          </button>
+{% endfor %}
+            <
+        {% endblock %}
 
 
-      // Add active class to the current button (highlight it)
-      var btnContainer = document.getElementById("myBtnContainer");
-      var btns = btnContainer.getElementsByClassName("btn");
-      for (var i = 0; i < btns.length; i++) {
-        btns[i].addEventListener("click", function(){
-          var current = document.getElementsByClassName("active");
-          current[0].className = current[0].className.replace(" active", "");
-          this.className += " active";
-        });
-      }
-      </script>
-
-    </id= "events">
-
-        {%endblock%}
     </main>
-
   </div>
+
   <footer>
 
   </footer>

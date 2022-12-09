@@ -72,15 +72,20 @@ INSERT INTO Routes ("Picture", "Name", "Info") VALUES ("/static/Routes/BelleVue.
 
 DROP TABLE if EXISTS RoutesC;
 CREATE TABLE if not EXISTS "RoutesC" ( "Picture" TEXT, "Name" TEXT, "Info" TEXT);
-INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/CityCentre.jpg", "City Centre Walk", "Free entry perfect for an afternoon walk");
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/RiverUsk.jpg", "River Usk Path", "Free entry perfect for an afternoon walk");
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/Arcades.jpg", "Arcades, Cafes and Stores", "Free entry perfect for an afternoon walk");
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/BoatClub.jpeg", "Newport Boat Club", "Free entry perfect for an afternoon walk");
 
 
+DROP TABLE if EXISTS DisabilityF;
+CREATE TABLE if not EXISTS "DisabilityF" ( "Picture" TEXT, "Name" TEXT, "Info" TEXT);
+INSERT INTO DisabilityF ("Picture", "Name", "Info") VALUES ("/static/Routes/IndorMarket.jpg", "City Tour", "Acessible and has amazing stops for lunch along the way");
+
+
 DROP TABLE if EXISTS Events;
-CREATE TABLE if not EXISTS "Events" ( "name" TEXT, "Info" TEXT, "Picture" TEXT);
-INSERT INTO Events ("name", "Info", "Picture") VALUES ("Festive 5k", "Come join us on December 16th for a funfilled family day out", "/static/Routes/field.jpg");
-INSERT INTO Events ("name", "Info", "Picture") VALUES ("Newport Coastal Walk", "Join us for a cool coastal walk on December 31st", "/static/Routes/Coalstal.jpg");
-INSERT INTO Events ("name", "Info", "Picture") VALUES ("Countryisde sightsee", "Join us for a day of nature an wildlife on December 20th", "/static/Routes/field.jpg");
-INSERT INTO Events ("name", "Info", "Picture") VALUES ("New Years Coastal Hike", "Kick off your new years by discovering newport on January 1st", "/static/Routes/port.jpg");
+CREATE TABLE if not EXISTS "Events" ( "Date" TEXT, "Name" TEXT, "Info" TEXT, "Time" INTEGER);
+INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("18th December", "Festive 5k", "Newport Council envites you to join us as we vist all of Newports historical sites", "10:00");
+INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("26th December", "Boxing Day Path", "Join us on the 26th as we explore newport coasts","10:45 ");
+INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("8th January", "Wildlife Protection Path", "For all the wildlife lovers!", "11:00");
+INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("19th January","New Years Coastal Hike", "Kick off your new years by discovering newport on January 1st", "10:00");
+
