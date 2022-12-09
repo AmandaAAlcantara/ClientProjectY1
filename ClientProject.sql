@@ -75,3 +75,8 @@ INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/CityCent
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/RiverUsk.jpg", "River Usk Path", "Free entry perfect for an afternoon walk");
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/Arcades.jpg", "Arcades, Cafes and Stores", "Free entry perfect for an afternoon walk");
 INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/BoatClub.jpeg", "Newport Boat Club", "Free entry perfect for an afternoon walk");
+
+DROP TABLE if EXISTS Commentssubmission;
+CREATE TABLE if not EXISTS "Commentssubmission" ("NameOfRoute" TEXT, "NameOfLocation" TEXT, "Comment" TEXT);
+
+INSERT INTO Commentssubmission ("NameOfRoute", "NameOfLocation", "Comment") VALUES ("?" , "?" , "?")

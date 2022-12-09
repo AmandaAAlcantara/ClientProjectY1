@@ -204,21 +204,32 @@ def Comments():
       if request.method == 'GET':
              return render_template('Comments.html')
       if request.method == 'POST':
-         location = request.form.get('NameOfLocation', default="Error")
-         Route = request.form.get('NameOfRoute', default="Error")
+         NameOfRoute = request.form.get('NameOfRoute', default="Error")
+         NameOfLocation = request.form.get('NameOfLocation', default="Error")
+         Comment = request.form.get('Comment', default="Error")
+         print (NameOfRoute)
+         print (NameOfLocation)
+         print (Comment)
+
 
          try:
              conn = sqlite3.connect(DATABASE)
              cur = conn.cursor()
-             cur.execute("INSERT INTO Commentssubmission ('NameOfRoute','NameOfLocation','Comment')VALUES (?,?,?)" , [NameOfRoute] , [NameOfLocation] , [Comments])
+             print ("created cursor")
+             # cur.execute("INSERT INTO Commentssubmission ('NameOfRoute','NameOfLocation','Comment')VALUES (?,?,?)" , (NameOfRoute , NameOfLocation , Comments))
+             cur.execute("INSERT INTO Commentssubmission ('NameOfRoute','NameOfLocation','Comment')VALUES (?,?,?)" , (NameOfRoute , NameOfLocation , Comment))
+             #data = cur.fetchall()
              conn.commit()
+             print ("inserted data")
              msg = "Thank you for your comment, we will look into it as soon as possible"
-         except:
+         except Exception as e:
+             print(e)
              conn.rollback()
              msg = "Failed"
          finally:
              return msg
              conn.close()
+             return render_template('Comments.html', data =data)
 
 if __name__ == "__main__":
     app.run(debug=True)
