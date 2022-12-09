@@ -2,7 +2,7 @@
 <html>
 <head>
   <title>Newport</title>
-  <link href="/static/simplecss.css" rel="stylesheet">
+  <link href="static/style.css" rel="stylesheet">
 </head>
 {%extends'Home.html'%}
 <body>
@@ -11,9 +11,9 @@
     {% block titleBlock%}{%endblock%}
 
   </header>
-
+  <main>
   <div class="mainAndAside">
-    <main>
+
       <p>
         {%if msg%}
         {{msg}}
@@ -97,7 +97,6 @@
        </div>
        </div>
       <div id = "ImageDemo">
-
         <img id = "LandmarkImg" src="static/Routes/Coalstal.jpg">
         <img id = "LandmarkImg" src="static/LandmarkImg/Redwick.jpg">
         <img id = "LandmarkImg" src="static/Routes/Coast.jpg">
@@ -107,14 +106,12 @@
         <img id = "LandmarkImg" src="static/Routes/Coast4.jpg">
         <img id = "LandmarkImg" src="static/LandmarkImg/TheWetlandsCentre.jpg">
       </div>
-      <section>
-
+      </div>
        {%endblock%}
-
     </main>
 
-  </div>
+
 
   <footer>
   </footer>
-</body>
+  </body>
