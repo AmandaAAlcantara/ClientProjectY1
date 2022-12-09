@@ -7,6 +7,8 @@ body{
 #FilterMenu{
   text-align: center;
 }
+
+}
 /* Center website */
 .main {
   max-width: 900px;
@@ -19,6 +21,7 @@ h1 {
 }
 
 h2 {
+  font-size:10vw
   font-family: sans-serif;
   font-weight: bold;
   color: black;
@@ -225,22 +228,18 @@ footer{
 #TitleLevel{
   padding: 20px;
   text-align: center;
-
+}
 /*events*/
+
 .event-container {
   font-family: "Roboto", sans-serif;
   max-width: 800px;
   margin: 0 auto;
 }
 
-.event-container h3.year {
-  font-size: 40px;
-  text-align: center;
-  border-bottom: 1px solid #b1b1b1;
-}
 
 .event-container .event {
-  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 16px -8px ;
   display: flex;
   border-radius: 8px;
   margin: 32px 0;
@@ -260,10 +259,14 @@ footer{
 }
 
 .event .event-left .date {
-  font-size: 40px;
+  font-size: 15px;
 }
-
 
 .event-right{
   padding: 10px;
   margin: 10px;
+
+}
+#EnquiryForm {
+  text-align: center;
+}
