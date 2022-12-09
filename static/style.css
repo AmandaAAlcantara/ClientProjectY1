@@ -1,39 +1,136 @@
-main {
-  padding: 20px;
-  width: 90%;
-  margin-left: auto;
-  margin-right: auto;
-}
-#footer{
-  display: flex;
-  justify-content: center;
+
+
+#FilterMenu{
   text-align: center;
 }
+/* Center website */
+.main {
+  max-width: 900px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+h2 {
+  font-family: sans-serif;
+  font-weight: bold;
+  color: black;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide columns by default */
+}
+
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn.active {
+  background-color: #666;
+   color: white;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
 
 
-/*Styling for ChooseyourRoutes*/
-.container1{
+#button{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-align: left
+}
+
+
+#button1{
+  background-color: #5F8575;
+  color: white;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  width: 130px;
+}
+
+footer{
+  background-color:#282828;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+
+
+
+
+/*Level Coastal Path*/
+#box{
   display: flex;
-  background-color: #AFEEEE;
+}
+
+#container{
+  width: 90%;
+  padding: 8px;
+}
+
+#ImageDemo{
+  text-align: center;
+  flex: 1;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #D0D0D0;
+}
+
+#LandmarkImg{
+  width: 200px;
+  padding: 2.3px;
+  border-radius: 8px;
+}
+.container1, .container2, .container3{
+  display: flex;
+  background-color: white;
   padding: 5px;
   }
-.container2{
-  display: flex;
-  background-color: #66BB046A;
-  padding: 5px;
-  }
-.container3{
-  display: flex;
-  background-color: coral;
-  padding: 5px;
-}
-.flexbox-map-1, .flexbox-map-2, .flexbox-map-3 {
-  min-height: 100px;
-  width: 410px;
-  margin: 10px;
-  border: 3px solid black;
-  background-color: #d5f3fe;
-}
+
 .flexbox-text-1, .flexbox-text-2, .flexbox-text-3  {
   min-height: 100px;
   width: 400px;
@@ -41,397 +138,121 @@ main {
   margin: 5px;
 }
 #googleMap_hard,#googleMap_medium,#googleMap_easy{
-    width: 400px;
-    height: 300px;
+    width: 404.7px;
+    height: 350px;
+    border-radius: 8px;
 }
-/*End Styling for ChooseyourRoutes*/
+/* End Level Coastal Path*/
 
-/*Styling Location*/
-#Location{
-  padding: 10px;
-  display: flex;
-  flex-direction: row;
-  text-align: center;
-  background-color: #e4e4e4 ;
-}
-#mapImg{
-  padding: 5px;
-}
-#Check{
-  text-align: right;
-  padding: 10px;
-}
 
-#c {
-  padding: 10px;
-  margin-top: 10px;
-  width: 100%;
-  font-size: 13px;
+#ChosenRouteTitle{
   text-align: center;
 }
 
-#checkpointTitle{
-  text-align: left;
-  padding: 30px;
-  margin-top: 20px;
-}
-
-.TitleInfoCheckpoint{
-  font-size: 22px;
-  font-weight: bold;
-  padding-right: 20px:
-}
-
-
-.BlockCheckpoint{
+#qrCodeFlex{
   display: flex;
-  margin: auto;
+}
+
+#MapForC{
+  margin-left: 50px;
+
+}
+
+#myBtnContainer{
+  text-align: center;
+}
+
+
+.points {
+  margin-left: 23%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: #5F8575;
+  height: 250px;
+  width: 50%;
   padding: 10px;
-  background:#e4e4e4 ;
-}
+  border-radius: 5px;
+  position: fixed;
+  bottom:0%;
 
-.a{
-  flex: 3;
-  padding: 5px;
-  text-align: left;
-  font-size: 19px;
-}
-
-.b {
-  flex: 2;
-  font-size: 19px;
-}
-
-.MoreInfo{
-  padding-bottom: 20px;
-}
-
-.image{
-   width: 500px;
-   padding-bottom: 20px;
-}
-
-#ContactsCheckpoints{
-  text-align: left;
-}
-
-#GoogleMap{
-  width: 300px;
-  height: 400px;
 }
 
 
-#TitleCheckpoint{
-  width: 100%;
+
+
+.rewards-icon {
+
+  font-size: 50px;
   height: 70px;
+  width: 70px;
+}
+
+.message {
+  height: 36px;
+  padding: 0px 10px;
+  line-height: 36px;
+  color: #FFFFFF;
+  font-size: 30px;
+
+}
+
+.accept {
+  height: 30px;
+  padding: 0 15px;
+  line-height: 30px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 20px;
   text-align: center;
+  background: #616B75;
+
+
+}
+
+.accept:hover {
+  background: red;
+}
+/*events*/
+.event-container {
+  font-family: "Roboto", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.event-container h3.year {
+  font-size: 40px;
+  text-align: center;
+  border-bottom: 1px solid #b1b1b1;
+}
+
+.event-container .event {
+  box-shadow: 0 4px 16px -8px rgba(0, 0, 0, 0.4);
+  display: flex;
+  border-radius: 8px;
+  margin: 32px 0;
+}
+
+.event .event-left {
+  background: #222;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eee;
+  padding: 8px 48px;
   font-weight: bold;
-  font-size: 35px;
-  color: #55b4b0;
-}
-
-#HistoricFacts{
-  padding: 5px;
-  margin-right: 2px;
-}
-/*End Styling Location*/
-
-/*end of style for Checkpoints*/
-
-
-
-
-/* adapted from   https://www.w3schools.com/css/css_form.asp */
-input[type=text], select #inputcheck {
- width: 100%;
- padding: 12px 20px;
- margin: 8px 0;
- display: inline-block;
- border: 1px solid #ccc;
- border-radius: 4px;
- box-sizing: border-box;
-}
-
-input[type=submit] #inputcheck {
- width: 100%;
- background-color: #4CAF50;
- color: white;
- padding: 14px 20px;
- margin: 8px 0;
- border: none;
- border-radius: 4px;
- cursor: pointer;
-
-
-}
-
-input[type=submit]:hover #inputcheck {
- background-color: #45a049;
-}
-
-
-
-
-#addCheckTitle{
- text-align: center;
-}
-
-#formForCheckpoints{
-text-align: center;
-border: solid black;
-width: 50%;
-margin: 0 auto;
-padding-bottom: 10px;
-border-radius: 5px;
-background-color: #f2f2f2;
-padding: 20px;
-}
-
-#message {
- text-align: center;
- font-size: 20px;
-}
-#addingcheckpoints{
-  background-color: #50C878;
-  padding: 5px;
-}
-
-/*See checkpoint button */
-#SeeCheckpoints{
   text-align: center;
-  padding-bottom: 20px;
-
-}
-/*adding admin changes
-input[type=text], select, textarea {
-  width: 100%;
-  padding: 12px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  margin-top: 6px;
-  margin-bottom: 16px;
-  resize: vertical;
+  border-radius: 8px 0 0 8px;
 }
 
-input[type=submit] {
-  background-color: #04AA6D;
-  color: white;
-  padding: 12px 20px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-}
-
-input[type=submit]:hover {
-  background-color: #45a049;
-}
-*/
-
-
-{box-sizing: border-box;}
-body {font-family: Verdana, sans-serif;}
-.mySlides {display: none;}
-img {vertical-align: middle;}
-
-/* Slideshow container */
-.slideshow-container {
-  max-width: 450px;
-  position: relative;
-  margin: auto;
-}
-
-/* Caption text */
-.text {
-  color: #f2f2f2;
-  font-size: 15px;
-  padding: 8px 12px;
-  position: absolute;
-  bottom: 8px;
-  width: 100%;
-  text-align: center;
-}
-
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
-
-/* The dots/bullets/indicators */
-.dot {
-  height: 15px;
-  width: 15px;
-  margin: 0 2px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-  transition: background-color 0.6s
-}
-
-.active {
-  background-color: #717171;
-}
-
-/* Fading animation */
-.fade {
-  animation-name: fade;
-  animation-duration: 1.5s;
-}
-
-@keyframes fade {
-  from {opacity: 1}
-  to {opacity: 1}
-}
-
-/* On smaller screens, decrease text size */
-@media only screen and (max-width: 300px) {
-  .text {font-size: 11px}
-}
-#column1{
-float: left;
- width: 33.33%;
- padding: 30px;
-}
-#column2{
-float: left;
- width: 33.33%;
- padding: 30px;
-}
-#column3{
-float: left;
- width: 33.33%;
- padding: 30px;
-}
-#imageone{
-  border: 2px solid #000000;
-
-}
-#imagetwo{
-  border: 2px solid #000000;
-}
-body {font-family: Arial, Helvetica, sans-serif;}
-
-/* Full-width input fields */
-input[type=text], input[type=password] {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  box-sizing: border-box;
-}
-
-/* Set a style for all buttons */
-
-#menu{
-  border: none;
-  cursor: pointer;
-}
-button {
-  text-align: center;
-  background-color: #023020;
-  color: white;
-  padding: 14px 20px;
-  margin: 8px 0;
-  border: none;
-  cursor: pointer;
-  width: 100%;
-}
-
-button:hover {
-  opacity: 0.8;
-}
-
-/* Extra styles for the cancel button */
-.cancelbtn {
-  width: auto;
-  padding: 10px 18px;
-  background-color: #f44336;
-}
-
-/* Center the image and position the close button */
-.imgcontainer {
-  text-align: center;
-  margin: 24px 0 12px 0;
-  position: relative;
+.event .event-left .date {
+  font-size: 40px;
 }
 
 
-
-.container {
-  padding: 16px;
-}
-
-span.psw {
-  float: right;
-  padding-top: 16px;
-}
-
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-  background-color: rgb(0,0,0); /* Fallback color */
-  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  padding-top: 60px;
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 5% auto 15% auto; /* 5% from the top, 15% from the bottom and centered */
-  border: 1px solid #888;
-  width: 80%; /* Could be more or less, depending on screen size */
-}
-
-/* The Close Button (x) */
-.close {
-  position: absolute;
-  right: 25px;
-  top: 0;
-  color: #000;
-  font-size: 35px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: red;
-  cursor: pointer;
-}
-
-/* Add Zoom Animation */
-.animate {
-  -webkit-animation: animatezoom 0.6s;
-  animation: animatezoom 0.6s
-}
-
-@-webkit-keyframes animatezoom {
-  from {-webkit-transform: scale(0)}
-  to {-webkit-transform: scale(1)}
-}
-
-@keyframes animatezoom {
-  from {transform: scale(0)}
-  to {transform: scale(1)}
-}
-
-/* Change styles for span and cancel button on extra small screens */
-@media screen and (max-width: 300px) {
-  span.psw {
-     display: block;
-     float: none;
-  }
-  .cancelbtn {
-     width: 100%;
+.event-right{
+  padding: 10px;
+  margin: 10px;
 }

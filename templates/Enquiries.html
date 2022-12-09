@@ -1,9 +1,13 @@
 <!doctype html>
 <html>
+<<<<<<< HEAD
 <meta name="viewport" content="width=device-width, initial-scale=2.0">
+=======
+<meta name="viewport" content="width=device-width, initial-scale=1">
+>>>>>>> 17ba3c421136c83f3bd49d63aec10a72dd3b2ba6
 <head>
   <title>Enquiries</title>
-  <link href="/static/simplecss.css" rel="stylesheet">
+  <link href="/static/style.css" rel="stylesheet">
 </head>
 {%extends'Home.html'%}
 <body>
@@ -52,7 +56,11 @@
 
 
           <label>Opinion/Enquiry:<br>
+<<<<<<< HEAD
             <textarea id = "text" rows="2" cols="30" type="text"  placeholder="" name="Text" ></textarea>
+=======
+            <textarea id = "text" rows="5" cols="50" type="text" name="text" width="20px"></textarea>
+>>>>>>> 17ba3c421136c83f3bd49d63aec10a72dd3b2ba6
           </label>
 
           <div class="form-group">
@@ -61,15 +69,15 @@
           <label>So we can contact you<br>Email:<br>
             <input id = "email" type="email" name="email" placeholder="(optional)" class="form-control"/>
           </label><br><br>
-          <button id="myBtn" type="submit" onclick="return submission()">Submit</button>
-
-
+          <button id="myBtn" type="submit" onclick="return submission()">Submit</button><br>
           </div>
           </div>
           </form>
+          <span id= "message" </span>
         </div>
         </div>
         {%endblock%}
+
     </main>
 
   </div>
