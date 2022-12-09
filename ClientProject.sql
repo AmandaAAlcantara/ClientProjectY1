@@ -88,7 +88,4 @@ INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("18th December", "Fe
 INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("26th December", "Boxing Day Path", "Join us on the 26th as we explore newport coasts","10:45 ");
 INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("8th January", "Wildlife Protection Path", "For all the wildlife lovers!", "11:00");
 INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("19th January","New Years Coastal Hike", "Kick off your new years by discovering newport on January 1st", "10:00");
-<<<<<<< HEAD
-=======
 
->>>>>>> 17ba3c421136c83f3bd49d63aec10a72dd3b2ba6
