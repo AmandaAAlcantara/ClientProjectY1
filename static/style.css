@@ -1,5 +1,6 @@
 * {
   box-sizing: border-box;
+
 }
 
 body {
@@ -20,12 +21,11 @@ body {
 h1 {
   font-size: 50px;
   word-break: break-all;
+  font-family: Arial;
 }
 
 h2 {
-  font-family: sans-serif;
   font-weight: bold;
-  color: black;
 }
 
 .row {
@@ -88,7 +88,7 @@ h2 {
 
 
 #button1{
-  background-color: #5F8575;
+  background-color: green;
   color: white;
   border: none;
   cursor: pointer;
@@ -137,6 +137,7 @@ footer{
   display: flex;
   background-color: white;
   padding: 5px;
+  border-radius: 8px;
   }
 
 .flexbox-text-1, .flexbox-text-2, .flexbox-text-3  {
@@ -145,6 +146,7 @@ footer{
   padding: 5px;
   margin: 5px;
 }
+
 #googleMap_hard,#googleMap_medium,#googleMap_easy{
     width: 404.7px;
     height: 350px;
@@ -164,3 +166,19 @@ footer{
 #MapForC{
   margin-left: 50px;
 }
+
+/*Style forms*/
+#BlockForm{
+  display: flex;
+  border-color: 2px solid black;
+}
+
+#CheckpointForm{
+  flex:1;
+  text-align: center;
+}
+
+#formForCheckpoints{
+  border-color: 2px solid black;
+}
+/*End style forms*/

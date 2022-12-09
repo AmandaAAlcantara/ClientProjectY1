@@ -1,10 +1,12 @@
 
 <!doctype html>
 <html>
+<body>
 <head>
   <title></title>
   <link href="/static/simplecss.css" rel="stylesheet">
 </head>
+<main>
 {%extends'Home.html'%}
 
     <h2>{% block titleBlock%} {%endblock%}</h2>
@@ -16,11 +18,13 @@
 
 
 
+<div id = "BlockForm">
 
-        <div id="SeeCheckpoints">
-        <a id="seecheck-btn" href="/AllCheckpoints" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> See All Checkpoints</a>
-        </div>
 
+<div id = "CheckpointForm">
+<div id="SeeCheckpoints">
+  <a id="seecheck-btn" href="/AllCheckpoints" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> See All Checkpoints</a>
+</div>
 <div id="formForCheckpoints">
   <h2> Add checkpoint </h2>
   <form id='addCheckForm' onsubmit="return loadCheck()">
@@ -37,32 +41,10 @@
   <span id= "message"></span>
 </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+</div>
+</main>
         {%endblock%}
-    </main>
+
 
 
     {% block javascriptBlock%}
@@ -90,3 +72,4 @@
 
 </script>
     {%endblock%}
+</body>
