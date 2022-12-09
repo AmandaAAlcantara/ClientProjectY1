@@ -15,6 +15,11 @@ def returnHome():
     if request.method == 'GET':
         return render_template('Home.html')
 
+@app.route("/LevelCoastalPath", methods=['GET'])
+def returnLevel():
+    if request.method == 'GET':
+        return render_template('LevelCoastalPath.html')
+
 @app.route("/ChooseyourRoutes", methods=['GET'])
 def Routes():
     if request.method == 'GET':
@@ -25,11 +30,13 @@ def Routes():
             naturewalksdata = cur.fetchall()
             cur.execute("SELECT * FROM RoutesC;")
             citywalksdata = cur.fetchall()
+            cur.execute("SELECT * FROM DisabilityF;")
+            disabilitydata = cur.fetchall()
             data = cur.fetchall()
         except:
             print("There was an error!")
         finally:
-            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata=citywalksdata)
+            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata=citywalksdata,disabilitydata=disabilitydata)
 
 @app.route("/Difficulty", methods=['GET'])
 def returnSecond():
