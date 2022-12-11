@@ -81,7 +81,7 @@ h2 {
   background: none;
   color: inherit;
   border: none;
-  padding: 0;
+  padding: 0px;;
   font: inherit;
   cursor: pointer;
   outline: inherit;
@@ -296,6 +296,7 @@ footer{
 
 #TitleCheckpoint{
   display: flex;
+  padding:0px;
 }
 
 #BlockCheckpoint{
@@ -305,7 +306,7 @@ footer{
 
 #BlockCheckpoint2{
   padding-top: 20px;
-  margin-top: 190px;
+  margin-top: 300px;
 }
 
 #ImgCheckpoint{
@@ -325,6 +326,5 @@ footer{
 #Home{
   width: 42px;
   height: 42px;
-  text-align: left;
   margin-left: 800px;
 }
