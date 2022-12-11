@@ -1,47 +1,108 @@
+<body>
 <head>
     <link href="/static/style.css" rel="stylesheet">
   </head>
 
-<section id ="info" class = "info">
+
+{%block mainBlock%}
+
+
 {% for row in data %}
+
+
   <div id = "TitleCheckpoint">
-    {{row[1]}}
+    <img src="/static/LandmarkImg/Google-Map-Logo-Transparent.png" style="width: 150px">
+    <h1>{{row[1]}}</h1>
+    <button id = "button" type=button onclick="window.location.href='/Home';"">
+    <img src="/static/LandmarkImg/Home.png" id = "Home"></img>
+    </button>
   </div>
-  <div class = "BlockCheckpoint">
-    <section class = "a">
-      <p class = "TitleInfoCheckpoint">Historic Facts </p>
-      {{row[3]}}
-      <div id = "ContactsCheckpoints">
-        <br>
-      <h1 class = "TitleInfoCheckpoint">Contacts</h1>
-      {{row[4]}}
+
+<div id="BlockCheckpoint">
+
+<div id="B">
+<div id = "BlockHF">
+    <img src="/static/LandmarkImg/MapNewport.jpg" style="width: 335px">
+<div id="HFCheckpoint">
+    <div class="dropdown">
+      <button id="HFbutton" class="dropbtn"><h2 style="color:white">Historic<br> Facts</h2></button>
+      <div id="HistoricFacts" class="dropdown-content">
+          {{row[3]}}
       </div>
-    <div>
-      <br>
-      <p class = "TitleInfoCheckpoint">Places to take a break near you</p>
-      <iframe id = "GoogleMap"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1967.657321130371!2d-2.9181597448416454!3d51.542918546494064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871e5eb5afe50af%3A0xc6a15829106a1a04!2sThe%20Farmers%20Arms!5e1!3m2!1sen!2suk!4v1669666476137!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
-    </section>
-    <section class = "b">
-      <img class="image" src="{{row[2]}}">
-      <section class = "MoreInfo">
-        <h1 class = "TitleInfoCheckpoint">Wildlife</h1>
-        {{row[3]}}
-      </section>
-    </section>
+</div>
+</div>
 </div>
 
 
-<div id="points" class ="points">
-  <img class ="rewards-icon" src= "/static/Cookies/prize.png">
-  <span class ="message"> Collect your 100 points.</span>
-  <button class="accept" onclick="loadCookies()">Collect</button>
-  <input type="text" id="noOfPoints" value="100"></input>
+<div id="B">
+<div id="BlockW">
+  <img src="/static/LandmarkImg/Wildlife.jpg" style="width: 325px">
+<div id= "WCheckpoint">
+  <div class="dropdown">
+    <button id="Wbutton" class="dropbtn"><h2 style="color:white">Wildlife</h2></button>
+    <div id="Wildlife" class="dropdown-content">
+        {{row[3]}}
+    </div>
+  </div>
+</div>
+</div>
+</div>
+
+
+<div id="B">
+<div id="BlockM">
+  <img src="/static/LandmarkImg/Rest.jpg" style="width: 300px">
+<div id="MapCheckpoint">
+    <button id = "button"type=button onclick="window.location.href='https://www.google.com/maps?ll=51.543082,-2.9164&z=17&t=h&hl=en&gl=GB&mapclient=embed&cid=14312818024152439300';""><h2 style="color:white">Places to take a break<br> near you</h2></button>
+</div>
+</div>
+</div>
+</div>
+
+<div id="BlockCheckpoint2">
+
+  <div id="BlockC">
+  <div id="CCheckpoint">
+    <div class="dropdown">
+      <button id="Cbutton" class="dropbtn"><h2>Contacts</h2></button>
+      <div id="Contacts" class="dropdown-content">
+        {{row[4]}}
+      </div>
+    </div>
+  </div>
+  </div>
   </div>
 
 
+<div id="ImgCheckpoint">
+  <img class="image" src="{{row[2]}}">
+</div>
+
+
+
+
+  <div id="points" class ="points">
+    <img class ="rewards-icon" src= "/static/Cookies/prize.png">
+    <span class ="message"> Collect your 100 points.</span>
+    <button class="accept" onclick="loadCookies()">Collect</button>
+    <input type="text" id="noOfPoints" value="100"></input>
+  </div>
+
+
+
+
+
+
+
+
+</body>
+
   {% endfor %}
+  {%endblock%}
+
   <!---  adapted from w3schools -->
+    {% block javascriptBlock%}
   <script>
     function loadCookies() {
       var x = document.getElementById("points");
@@ -61,8 +122,22 @@
     writeValue();
     }
 
+    // Get the button, and when the user clicks on it, execute myFunction
+  document.getElementById("HFbutton").onclick = function() {HistoricFacts()};
+  document.getElementById("Wbutton").onclick = function() {Wildlife()};
+  document.getElementById("Cbutton").onclick = function() {Contacts()};
 
-    </script>
-  {% block javascriptBlock%}
 
-  {%endblock%}
+/* myFunction toggles between adding and removing the show class, which is used to hide and show the dropdown content */
+  function HistoricFacts() {
+    document.getElementById("HistoricFacts").classList.toggle("show");
+  }
+  function Wildlife() {
+    document.getElementById("Wildlife").classList.toggle("show");
+  }
+  function Contacts() {
+    document.getElementById("Contacts").classList.toggle("show");
+  }
+
+</script>
+{%endblock%}
