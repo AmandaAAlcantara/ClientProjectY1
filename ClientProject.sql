@@ -89,3 +89,40 @@ INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("18th December", "Fe
 INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("26th December", "Boxing Day Path", "Join us on the 26th as we explore newport coasts","10:45 ");
 INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("8th January", "Wildlife Protection Path", "For all the wildlife lovers!", "11:00");
 INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("19th January","New Years Coastal Hike", "Kick off your new years by discovering newport on January 1st", "10:00");
+
+
+DROP TABLE if EXISTS LevelCoastalPath;
+CREATE TABLE if not EXISTS "LevelCoastalPath" ( "Title" TEXT, "Vist" TEXT, "Info" TEXT, "Link" INTEGER);
+INSERT INTO LevelCoastalPath ("Title", "Vist", "Info", "Link") VALUES ("Recomended for Families", " - You will visit: Redwick and Whitson", "
+The coast path runs adjacent to the Severn
+Estuary for a distance of approximately 6.3 miles
+which is generally flat. The majority of this
+section of path has been established on top
+of the sea defence, allowing easy walking and
+rewarding walkers with striking views over the
+estuary and the historic Gwent Levels landscape.
+Much of the coast path and many link paths
+around the reserve have been surfaced allowing
+access for less able users.", "https://www.google.com/maps/embed?pb=!1m24!1m8!1m3!1d39691.64490755491!2d-2.873471!3d51.55489!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x4871eed1cf38b5c5%3A0x64e130abcc5f88e4!2sRedwick%2C%20Caldicot!3m2!1d51.5527349!2d-2.8492979999999997!4m5!1s0x4871ef59d31ce16f%3A0xc7a92322c2501770!2sWhitson%2C%20Newport!3m2!1d51.5485799!2d-2.9008209999999996!5e0!3m2!1sen!2suk!4v1670367292123!5m2!1sen!2suk");
+INSERT INTO LevelCoastalPath ("Title", "Vist", "Info", "Link") VALUES ("Recomended for Aspiring Walkers", "- You will visit: Redwick, Whitson and, Goldcliff SeaWall and Priory", "
+The coast path runs adjacent to the Severn
+Estuary for a distance of approximately 6.3 miles
+which is generally flat. The majority of this
+section of path has been established on top
+of the sea defence, allowing easy walking and
+rewarding walkers with striking views over the
+estuary and the historic Gwent Levels landscape.
+Much of the coast path and many link paths
+around the reserve have been surfaced allowing
+access for less able users.","https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d15739.585442966294!2d-2.899862707472265!3d51.547755084705685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e2!4m5!1s0x4871eed1cf38b5c5%3A0x64e130abcc5f88e4!2sRedwick%2C%20Caldicot!3m2!1d51.5527349!2d-2.8492979999999997!4m5!1s0x4871ef59d31ce16f%3A0xc7a92322c2501770!2sWhitson%2C%20Newport!3m2!1d51.5485799!2d-2.9008209999999996!4m5!1s0x4871e5f240aa56c9%3A0x76e8df6c5c6cd78e!2sGoldcliff%2C%20Newport%2C%20Newport!3m2!1d51.5433151!2d-2.9154731!5e1!3m2!1sen!2suk!4v1670361161244!5m2!1sen!2suk");
+INSERT INTO LevelCoastalPath ("Title", "Vist", "Info", "Link") VALUES ("Recomended for Avid Walkers", "- You will visit: Redwick, Whitson, Goldcliff SeaWall and Priory and, The Wetlands Centre", "
+The coast path runs adjacent to the Severn
+Estuary for a distance of approximately 6.3 miles
+which is generally flat. The majority of this
+section of path has been established on top
+of the sea defence, allowing easy walking and
+rewarding walkers with striking views over the
+estuary and the historic Gwent Levels landscape.
+Much of the coast path and many link paths
+around the reserve have been surfaced allowing
+access for less able users.", "https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d31479.15512520936!2d-2.9406132580842033!3d51.54777786385373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e2!4m5!1s0x4871eed1cf38b5c5%3A0x64e130abcc5f88e4!2sRedwick%2C%20Caldicot!3m2!1d51.5527349!2d-2.8492979999999997!4m5!1s0x4871ef59d31ce16f%3A0xc7a92322c2501770!2sWhitson%2C%20Newport!3m2!1d51.5485799!2d-2.9008209999999996!4m5!1s0x4871e5f240aa56c9%3A0x76e8df6c5c6cd78e!2sGoldcliff%2C%20Newport!3m2!1d51.5433151!2d-2.9154731!4m5!1s0x4871e5ccf863c5bb%3A0xd497b7e2268011f6!2sRSPB%20Newport%20Wetlands%2C%20West%20Nash%20Road%2C%20Newport!3m2!1d51.5442454!2d-2.9613909!5e1!3m2!1sen!2suk!4v1670361262829!5m2!1sen!2suk");

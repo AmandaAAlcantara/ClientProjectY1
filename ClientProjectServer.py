@@ -15,10 +15,19 @@ def returnHome():
     if request.method == 'GET':
         return render_template('Home.html')
 
-@app.route("/LevelCoastalPath", methods=['GET'])
+@app.route("/LevelCoastalPath", methods=['GET','POST'])
 def returnLevel():
     if request.method == 'GET':
-        return render_template('LevelCoastalPath.html')
+            try:
+                conn = sqlite3.connect(DATABASE)
+                print("connecting to database")
+                cur = conn.cursor()
+                cur.execute("SELECT * FROM LevelCoastalPath")
+                data = cur.fetchall()
+            except:
+                print('there was an error')
+            finally:
+                return render_template('LevelCoastalPath.html',data=data)
 
 @app.route("/ChooseyourRoutes", methods=['GET'])
 def Routes():
