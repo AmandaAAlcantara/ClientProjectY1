@@ -1,90 +1,39 @@
-<!-- <!doctype html>
-<html>
-<head>
-  <title>Page3</title>
-  <link href="/static/style.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-</head> -->
+
 {%extends'Home.html'%}
-<!-- <body>
-
-
-{% block titleBlock %} {%endblock%}
-
+ 
+ 
+{% block titleBlock%}<h2 id="ChosenRouteTitle">Newport Coastal Walk</h2>{%endblock%}
 <div class="mainAndAside">
-  <main>
-      {% block mainBlock %}
-        <script src="../static/html5-qrcode.min.js"></script>
-        <h2> Scan  the QR code at each checkpoint</h2>
-      <div id="qrCodeFlex">
-      <body onload= "qrScanner()">
-        <div style="width:100%; length:100%" id = "reader"></div>
-        <div id="MapForC">
-        <iframe id="googleMap_coastal" src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d39697.85079829358!2d-2.945432808084188!3d51.54777786385373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e2!4m5!1s0x4871eeca6e6b4463%3A0x6270b195437fd996!2sRedwick%2C%20Newport!3m2!1d51.5486329!2d-2.8588722!4m5!1s0x4871ef59d31ce16f%3A0xc7a92322c2501770!2sWhitson%2C%20Newport!3m2!1d51.5485799!2d-2.9008209999999996!4m5!1s0x4871e5f240aa56c9%3A0x76e8df6c5c6cd78e!2sGoldcliff%2C%20Newport!3m2!1d51.5433151!2d-2.9154731!4m5!1s0x4871e5ccf863c5bb%3A0xd497b7e2268011f6!2sRSPB%20Newport%20Wetlands%2C%20West%20Nash%20Road%2C%20Newport!3m2!1d51.5442454!2d-2.9613909!5e0!3m2!1sen!2suk!4v1669228386097!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-</body>
+  <main>
+ 
+      {% block mainBlock%}
+      <script src="../static/html5-qrcode.min.js"></script>
+        <h3> Scan  the QR code at each checkpoint</h3>
+      <div id="qrCodeFlex">
+      <body onload= "qrScanner()">
+        <div style="width:100%; length:100%" id = "reader"></div>
+<div id="MapForC">
+        <iframe id="googleMap_coastal" src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d39697.85079829358!2d-2.945432808084188!3d51.54777786385373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e2!4m5!1s0x4871eeca6e6b4463%3A0x6270b195437fd996!2sRedwick%2C%20Newport!3m2!1d51.5486329!2d-2.8588722!4m5!1s0x4871ef59d31ce16f%3A0xc7a92322c2501770!2sWhitson%2C%20Newport!3m2!1d51.5485799!2d-2.9008209999999996!4m5!1s0x4871e5f240aa56c9%3A0x76e8df6c5c6cd78e!2sGoldcliff%2C%20Newport!3m2!1d51.5433151!2d-2.9154731!4m5!1s0x4871e5ccf863c5bb%3A0xd497b7e2268011f6!2sRSPB%20Newport%20Wetlands%2C%20West%20Nash%20Road%2C%20Newport!3m2!1d51.5442454!2d-2.9613909!5e0!3m2!1sen!2suk!4v1669228386097!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
 </div>
-      {%endblock%}
-</main>
+      </body>
+ 
 </div>
-
-
-
+      {%endblock%}
+  </main>
+ 
+</div>
+ 
 {% block javascriptBlock%}
+<!--addapted from w3schools and colleague Cole Pearson -->
 <script>
-function loadDoc1() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("info").innerHTML = this.responseText;
-    }
-
-  };
-  xhttp.open("GET", "/Location/1", true);
-  xhttp.send();
+function qrScanner(){
+  function onScanSuccess(decodedText, decodedResult){ //adapted from https://blog.minhazav.dev/research/html5-qrcode
+    console.log("Scan result: ${decodedText}", decodedResult);
+    window.open(decodedText);  //opens a new tab with the URL
+  }
+  var qrScanner = new Html5QrcodeScanner(
+    "reader", { fps: 10, qrbox: 250 }); //inserts the scanner in div in scanner.html with the id "reader"
+  qrScanner.render(onScanSuccess);
 }
-
-function loadDoc2() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("info").innerHTML = this.responseText;
-    }
-
-  };
-  xhttp.open("GET", "/Location/2", true);
-  xhttp.send();
-}
-
-function loadDoc3() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("info").innerHTML = this.responseText;
-    }
-
-  };
-  xhttp.open("GET", "/Location/3", true);
-  xhttp.send();
-}
-
-function loadDoc4() {
-  var xhttp = new XMLHttpRequest();
-  xhttp.onreadystatechange = function() {
-    if (this.readyState == 4 && this.status == 200) {
-     document.getElementById("info").innerHTML = this.responseText;
-    }
-
-  };
-  xhttp.open("GET", "/Location/4", true);
-  xhttp.send();
-}
-
-
-
-
 </script>
-
 {%endblock%}
-
-<!-- </body> -->
