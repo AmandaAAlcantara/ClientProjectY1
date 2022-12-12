@@ -1,18 +1,17 @@
 <!doctype html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=5.0">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
 <head>
   {%extends'Home.html'%}
   <title></title>
+  <link href="static/style.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
-
-<body>
-
-  <header>
-    <h2>{% block titleBlock%}  {%endblock%}</h2>
-  </header>
-
+<header>
+  <h2>{% block titleBlock%}  {%endblock%}</h2>
+</header>
+{% block mainBlock%}
   <div class="main">
     <main>
       <p>
@@ -21,8 +20,6 @@
         {%endif%}
       </p>
 
-
-        {% block mainBlock%}
 
         <!--adapted from w3schools-->
         <br>
@@ -37,7 +34,6 @@
         <!-- Portfolio Gallery Grid -->
         <div class="row">
 
-
           {% for row in naturewalksdata %}
           <div class="column nature">
             <button id="button" type="button" onclick="window.location.href='/Location';">
@@ -49,8 +45,6 @@
             </button>
           </div>
           {% endfor %}
-
-
 
           {% for row in citywalksdata%}
           <div class="column city">
@@ -65,8 +59,7 @@
         <!-- END GRID -->
         </div>
 
-
-
+        <!--Adapted from w3schools-->
         <script type="text/javascript">
           filterSelection("all") // Execute the function and show all columns
         function filterSelection(c) {
@@ -118,85 +111,9 @@
 
         </script>
 
-
-
-
-
-
-
-
-<!--
-        <p class = "TitleInfoCheckpoint">Level 1 Route</p>
-        <div class="container1">
-        <div class="flexbox-map-1">
-          <iframe id="googleMap_easy" src="https://www.google.com/maps/embed?pb=!1m28!1m12!1m3!1d19848.66703164691!2d-2.897356207470458!3d51.54837008435146!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m13!3e2!4m5!1s0x4871eeca6e6b4463%3A0x6270b195437fd996!2sRedwick%2C%20Newport!3m2!1d51.5486329!2d-2.8588722!4m5!1s0x4871ef59d31ce16f%3A0xc7a92322c2501770!2sWhitson%2C%20Newport!3m2!1d51.5485799!2d-2.9008209999999996!5e0!3m2!1sen!2suk!4v1669228700631!5m2!1sen!2suk" width="600" height="450" style="border:0;"
-          allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="flexbox-text-1">The coast path runs adjacent to the Severn
-          Estuary for a distance of approximately 6.3 miles
-          which is generally flat. The majority of this
-          section of path has been established on top
-          of the sea defence, allowing easy walking and
-          rewarding walkers with striking views over the
-          estuary and the historic Gwent Levels landscape.
-          Much of the coast path and many link paths
-          around the reserve have been surfaced allowing
-          access for less able users.
-          <br><br>
-           <button type="button" class="btn btn-dark" href="/#">Choose this path</button>
-        </div>
-        </div>
-
-        <br>
-        <p class = "TitleInfoCheckpoint">Level 2 Route</p>
-        <div class="container2">
-        <div class="flexbox-map-2">
-          <iframe id="googleMap_medium" src="https://www.google.com/maps/embed?pb=!1m34!1m12!1m3!1d19848.93533694271!2d-2.9046822574722495!3d51.547755084705685!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m19!3e2!4m5!1s0x4871eeca6e6b4463%3A0x6270b195437fd996!2sRedwick%2C%20Newport!3m2!1d51.5486329!2d-2.8588722!4m5!1s0x4871ef59d31ce16f%3A0xc7a92322c2501770!2sWhitson%2C%20Newport!3m2!1d51.5485799!2d-2.9008209999999996!4m5!1s0x4871e5f240aa56c9%3A0x76e8df6c5c6cd78e!2sGoldcliff%2C%20Newport%2C%20Newport!3m2!1d51.5433151!2d-2.9154731!5e0!3m2!1sen!2suk!4v1669228848869!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="flexbox-text-2">The coast path runs adjacent to the Severn
-          Estuary for a distance of approximately 6.3 miles
-          which is generally flat. The majority of this
-          section of path has been established on top
-          of the sea defence, allowing easy walking and
-          rewarding walkers with striking views over the
-          estuary and the historic Gwent Levels landscape.
-          Much of the coast path and many link paths
-          around the reserve have been surfaced allowing
-          access for less able users.
-          <br><br>
-          <button type="button" class="btn btn-dark" href="/#">Choose this path</button>
-        </div>
-        </div>
-
-        <br>
-        <p class = "TitleInfoCheckpoint">Level 3 Route</p>
-        <div class="container3">
-        <div class="flexbox-map-3">
-          <iframe id="googleMap_hard" src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d39697.85079829358!2d-2.945432808084188!3d51.54777786385373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e2!4m5!1s0x4871eeca6e6b4463%3A0x6270b195437fd996!2sRedwick%2C%20Newport!3m2!1d51.5486329!2d-2.8588722!4m5!1s0x4871ef59d31ce16f%3A0xc7a92322c2501770!2sWhitson%2C%20Newport!3m2!1d51.5485799!2d-2.9008209999999996!4m5!1s0x4871e5f240aa56c9%3A0x76e8df6c5c6cd78e!2sGoldcliff%2C%20Newport!3m2!1d51.5433151!2d-2.9154731!4m5!1s0x4871e5ccf863c5bb%3A0xd497b7e2268011f6!2sRSPB%20Newport%20Wetlands%2C%20West%20Nash%20Road%2C%20Newport!3m2!1d51.5442454!2d-2.9613909!5e0!3m2!1sen!2suk!4v1669228386097!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="flexbox-text-2">The coast path runs adjacent to the Severn
-          Estuary for a distance of approximately 6.3 miles
-          which is generally flat. The majority of this
-          section of path has been established on top
-          of the sea defence, allowing easy walking and
-          rewarding walkers with striking views over the
-          estuary and the historic Gwent Levels landscape.
-          Much of the coast path and many link paths
-          around the reserve have been surfaced allowing
-          access for less able users.
-          <br><br>
-          <a role="button" class="btn btn-dark" href="/Location">Choose this path</a>
-        </div>
-      </div>
-    -->
-        {%endblock%}
-
     </main>
   </div>
-
-
-
-
+  {%endblock%}
   <footer>
 
   </footer>

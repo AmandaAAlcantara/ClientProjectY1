@@ -9,72 +9,27 @@
 <!-- <body>
 
 
+{% block titleBlock %} {%endblock%}
 
-
-
-    <main> -->
-
-        {% block mainBlock%}
-      <div id = "Location">
-        <div id="mapImg">
-          <img src="/static/Maps/Map.JPG" style="width:700px">
-        </div>
-        <div id="Check">
-          <h3 id="checkpointTitle">Checkpoints</h3>
-            <button id="c" type="button" onclick="loadDoc1()" class="btn btn-outline-danger">1</button>
-            <br>
-            <button id="c" type="button" onclick="loadDoc2()" class="btn btn-outline-danger">2</button>
-            <br>
-            <button  id="c" type="button" onclick="loadDoc3()" class="btn btn-outline-danger">3</button>
-            <br>
-            <button  id="c" type="button" onclick="loadDoc4()"class="btn btn-outline-danger"> 4</button>
-        </div>
+<div class="mainAndAside">
+  <main>
+      {% block mainBlock %}
+        <script src="../static/html5-qrcode.min.js"></script>
+        <h2> Scan  the QR code at each checkpoint</h2>
+      <div id="qrCodeFlex">
+      <body onload= "qrScanner()">
+        <div style="width:100%; length:100%" id = "reader"></div>
+        <div id="MapForC">
+        <iframe id="googleMap_coastal" src="https://www.google.com/maps/embed?pb=!1m40!1m12!1m3!1d39697.85079829358!2d-2.945432808084188!3d51.54777786385373!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m25!3e2!4m5!1s0x4871eeca6e6b4463%3A0x6270b195437fd996!2sRedwick%2C%20Newport!3m2!1d51.5486329!2d-2.8588722!4m5!1s0x4871ef59d31ce16f%3A0xc7a92322c2501770!2sWhitson%2C%20Newport!3m2!1d51.5485799!2d-2.9008209999999996!4m5!1s0x4871e5f240aa56c9%3A0x76e8df6c5c6cd78e!2sGoldcliff%2C%20Newport!3m2!1d51.5433151!2d-2.9154731!4m5!1s0x4871e5ccf863c5bb%3A0xd497b7e2268011f6!2sRSPB%20Newport%20Wetlands%2C%20West%20Nash%20Road%2C%20Newport!3m2!1d51.5442454!2d-2.9613909!5e0!3m2!1sen!2suk!4v1669228386097!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       </div>
+</body>
+</div>
+      {%endblock%}
+</main>
+</div>
 
 
 
-
-<section id= "info" class = "info">
-  {% for row in data %}
-    <div id = "TitleCheckpoint">
-      {{row[1]}}
-    </div>
-    <div class = "BlockCheckpoint">
-      <section class = "a">
-        <p class = "TitleInfoCheckpoint">Historic Facts </p>
-        <div id = "HistoricFacts">
-        {{row[3]}}
-        </div>
-        <div id = "ContactsCheckpoints">
-          <br>
-        <h1 class = "TitleInfoCheckpoint">Contacts</h1>
-        {{row[4]}}
-        </div>
-      <div>
-        <br>
-        <p class = "TitleInfoCheckpoint">Places to take a break near you</p>
-        <iframe id = "GoogleMap"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1967.657321130371!2d-2.9181597448416454!3d51.542918546494064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871e5eb5afe50af%3A0xc6a15829106a1a04!2sThe%20Farmers%20Arms!5e1!3m2!1sen!2suk!4v1669666476137!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-      </div>
-      </section>
-      <section class = "b">
-        <img class="image" src="{{row[2]}}">
-        <section class = "MoreInfo">
-          <h1 class = "TitleInfoCheckpoint">Wildlife</h1>
-          {{row[3]}}
-        </section>
-      </section>
-  </div>
-    {% endfor %}
-</section>
-
-
-
-        {%endblock%}
-    <!-- </main>
- -->
-
-
-<!--  adpated from w3schools-->
 {% block javascriptBlock%}
 <script>
 function loadDoc1() {
@@ -129,6 +84,7 @@ function loadDoc4() {
 
 
 </script>
+
 {%endblock%}
 
 <!-- </body> -->
