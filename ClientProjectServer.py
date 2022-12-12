@@ -226,7 +226,31 @@ def Enquiry():
         finally:
             return msg
             conn.close()
+#addRouteForm
 
+#Add Routes
+@app.route("/addRoute", methods = ['POST','GET'])
+def loadRoute():
+    if request.method == 'GET':
+        return render_template('addRoute.html')
+    if request.method == 'POST':
+        routepicture = request.form.get('routepicture',default="Error")
+        routename = request.form.get('routename',default="Error")
+        routeinfo = request.form.get('routeinfo',default="Error")
+        print("Add Routes:" + routename)
+        try:
+            conn = sqlite3.connect(DATABASE)
+            cur = conn.cursor()
+            cur.execute("INSERT INTO ROUTES ('Picture','Name, Info')VALUES (?,?,?)",
+            (routepicture,routename,routeinfo))
+            conn.commit()
+            msgRoute = "YES"
+        except:
+            conn.rollback()
+            msgRoute = "failed"
+        finally:
+            return msgRoute
+            conn.close()
 
 
 

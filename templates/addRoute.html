@@ -1,0 +1,66 @@
+<!doctype html>
+<html>
+<meta name="viewport" content="width=device-width, initial-scale=2.0">
+<head>
+  <title>Enquiries</title>
+  <link href="static/style.css" rel="stylesheet">
+
+</head>
+{%extends'Home.html'%}
+<body>
+  <header>
+
+    <h2>{% block titleBlock%} {%endblock%}</h2>
+  </header>
+
+        {% block mainBlock%}
+
+
+
+            <div id="rotueform">
+            <form id="addRouteForm" onsubmit="return loadRoute()">
+                <label>Route Name</label>
+                <input type="text" id="routei" placeholder="Route Name" name="routeinfo">
+
+                <label>Info On Route</label>
+                <input type="text" id="routei" placeholder="Route Informaion" name="routepicture">
+
+                <label >Upload a Picture</label>
+      <input type="text" id="routei" name="routepicture">
+
+
+
+
+            <button type="submit" type= "submit">Submit</button>
+
+        </form>
+<span id= "routemessage"></span>
+</div>
+          {%endblock%}
+
+
+        {%block javascript%}
+
+<script>
+function loadRoute() {
+    var routepicture = document.forms["addRouteForm"]["routepicture"].value;
+    var routename = document.forms["addRouteForm"]["routename"].value;
+    var routeinfo = document.forms["addRouteForm"]["routeinfo"].value;
+
+    params = 'routepicture='+routepicture+'&routename='+routename+'&routeinfo='+routeinfo;
+var xhttp = new XMLHttpRequest();
+xhttp.open("POST", '/addRoute', true);
+xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+xhttp.onload = function() {
+  if (xhttp.readyState === 4 && xhttp.status === 200) {
+    console.log(xhttp.responseText);
+    document.getElementById("routemessage").innerHTML = xhttp.responseText;
+  } else {
+    console.error(xhttp.statusText);
+  }
+};
+xhttp.send(params);
+return false;
+}
+</script>
+{%endblock%}
