@@ -10,22 +10,23 @@
 {% for row in data %}
 
 
+  <button id = "button" type=button onclick="window.location.href='/Home';"">
+  <img src="/static/LandmarkImg/Home.png" id = "Home"></img>
+  </button>
   <div id = "TitleCheckpoint">
     <img src="/static/LandmarkImg/Google-Map-Logo-Transparent.png" style="width: 125px">
     <h1>{{row[1]}}</h1>
-    <button id = "button" type=button onclick="window.location.href='/Home';"">
-    <img src="/static/LandmarkImg/Home.png" id = "Home"></img>
-    </button>
   </div>
+
 
 <div id="BlockCheckpoint">
 
 <div id="B">
 <div id = "BlockHF">
-    <img src="/static/LandmarkImg/MapNewport.jpg" style="width: 335px">
+    <img src="/static/LandmarkImg/MapNewport.jpg" style="width: 382px">
 <div id="HFCheckpoint">
     <div class="dropdown">
-      <button id="HFbutton" class="dropbtn"><h2 style="color:white">Historic<br> Facts</h2></button>
+      <button id="HFbutton" class="dropbtn"><h2 style="color:white">Historic Facts</h2></button>
       <div id="HistoricFacts" class="dropdown-content">
           {{row[3]}}
       </div>
@@ -52,9 +53,9 @@
 
 <div id="B">
 <div id="BlockM">
-  <img src="/static/LandmarkImg/Rest.jpg" style="width: 300px">
+  <img src="/static/LandmarkImg/Rest.jpg" style="width: 350px">
 <div id="MapCheckpoint">
-    <button id = "button"type=button onclick="window.location.href='{{row[5]}}';""><h2 style="color:white">Places to take a break<br> near you</h2></button>
+    <button id = "button"type=button onclick="window.location.href='{{row[5]}}';""><h2 style="color:white">Places to take a break</h2></button>
 </div>
 </div>
 </div>
@@ -75,9 +76,9 @@
   </div>
 
 
-<div id="ImgCheckpoint">
-  <img class="image" src="{{row[2]}}">
-</div>
+
+  <img class="image" src="{{row[2]}}" id="ImgCheckpoints">
+
 
 
 

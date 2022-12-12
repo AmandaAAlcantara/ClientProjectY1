@@ -1,6 +1,6 @@
 body{
   background-color: #f1f1f1;
-  padding: 20px;
+  padding: 3px;;
   font-family: Arial;
 }
 
@@ -13,6 +13,7 @@ body{
 .main {
   max-width: 900px;
   margin: auto;
+  background-color: #f1f1f1;
 }
 
 h1 {
@@ -26,8 +27,6 @@ h2 {
   font-weight: bold;
   color: black;
 }
-
-
 
 .row {
   margin: 8px -16px;
@@ -102,7 +101,7 @@ h2 {
 }
 
 footer{
-  background-color:#282828;
+  background-color:#808080;
   color: white;
   padding: 20px;
   border-radius: 8px;
@@ -296,7 +295,7 @@ footer{
 
 #TitleCheckpoint{
   display: flex;
-  padding:0px;
+
 }
 
 #BlockCheckpoint{
@@ -309,14 +308,16 @@ footer{
   margin-top: 300px;
 }
 
-#ImgCheckpoint{
-  min-width: 300px;
+#ImgCheckpoints{
+  width: 500px;
+  border-radius:10px;
 }
 
 #BlockHF,#BlockW,#BlockM{
   border-radius: 10px;
   background-color: #2A2A2A;
-  padding: 20px;
+  padding: 12px;
+  text-align: center;
 }
 
 #B{
@@ -324,7 +325,7 @@ footer{
 }
 
 #Home{
-  width: 42px;
-  height: 42px;
-  margin-left: 800px;
+  width: 37px;
+  height: 37px;
+  margin-left: 1170px;
 }

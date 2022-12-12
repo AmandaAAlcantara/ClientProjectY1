@@ -219,12 +219,12 @@ def Enquiry():
             cur.execute("INSERT INTO Enquiries ('Text','Email')VALUES (?,?)",
             (text,email))
             conn.commit()
-            msg = "Thank you for sending us an enquiry"
+            Enquirymsg = "Enquiry submitted"
         except:
             conn.rollback()
-            msg = "failed"
+            Enquirymsg = "failed"
         finally:
-            return msg
+            return Enquirymsg
             conn.close()
 
 
