@@ -23,23 +23,20 @@
 
         <!--adapted from w3schools-->
         <br>
-        <div id="FilterMenu">
-          <h2>Routes</h2>
-          <div id="myBtnContainer">
-            <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-            <button class="btn" onclick="filterSelection('nature')"> Nature Walks</button>
-            <button class="btn" onclick="filterSelection('city')"> City Walks</button>
-            <button class="btn" onclick="filterSelection('SpecialNeeds')">Disability Friendly</button>
-          </div>
+        <h2>ROUTES</h2>
+        <div id="myBtnContainer">
+          <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+          <button class="btn" onclick="filterSelection('nature')"> Nature Walks</button>
+          <button class="btn" onclick="filterSelection('city')"> City Walks</button>
         </div>
         <br>
-
+        <br>
         <!-- Portfolio Gallery Grid -->
         <div class="row">
 
           {% for row in naturewalksdata %}
           <div class="column nature">
-            <button id="button" type="button" onclick="window.location.href='/LevelCoastalPath';">
+            <button id="button" type="button" onclick="window.location.href='/Location';">
             <div class="content">
               <img class="image" src="{{row[0]}}" style="width:100%">
               <h4>{{row[1]}}</h4>
@@ -51,16 +48,6 @@
 
           {% for row in citywalksdata%}
           <div class="column city">
-            <div class="content">
-              <img src="{{row[0]}}" style="width:100%">
-              <h4>{{row[1]}}</h4>
-              <p>{{row[2]}}</p>
-            </div>
-          </div>
-          {% endfor %}
-
-          {% for row in disabilitydata%}
-          <div class="column SpecialNeeds">
             <div class="content">
               <img src="{{row[0]}}" style="width:100%">
               <h4>{{row[1]}}</h4>
@@ -121,6 +108,7 @@
             this.className += " active";
           });
         }
+
         </script>
 
     </main>

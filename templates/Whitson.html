@@ -1,0 +1,63 @@
+<!--
+<!doctype html>
+<html>
+<head>
+
+  <title id = "title">Checkpoint B</title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+
+</head>
+{%extends'Home.html'%}
+<body>
+
+  <header>
+    <h2>{% block titleBlock%}  {%endblock%}</h2>
+  </header>
+
+  <div>
+    <main>
+        {% block mainBlock%}
+        <section class = "info">
+          {% for row in data %}
+            <div id = "TitleCheckpoint">
+              {{row[1]}}
+            </div>
+            <div class = "BlockCheckpoint">
+              <section class = "a">
+                <p class = "TitleInfoCheckpoint">Historic Facts </p>
+                {{row[3]}}
+                <div id = "ContactsCheckpoints">
+                  <br>
+                <h1 class = "TitleInfoCheckpoint">Contacts</h1>
+                {{row[4]}}
+                </div>
+              <div>
+                <br>
+                <p class = "TitleInfoCheckpoint">Places to take a break near you</p>
+                <iframe id = "GoogleMap"src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1967.657321130371!2d-2.9181597448416454!3d51.542918546494064!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4871e5eb5afe50af%3A0xc6a15829106a1a04!2sThe%20Farmers%20Arms!5e1!3m2!1sen!2suk!4v1669666476137!5m2!1sen!2suk" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              </div>
+              </section>
+              <section class = "b">
+                <img class="image" src="{{row[2]}}">
+                <section class = "MoreInfo">
+                  <h1 class = "TitleInfoCheckpoint">Wildlife</h1>
+                  {{row[3]}}
+                </section>
+              </section>
+          </div>
+            {% endfor %}
+        </section>
+
+        {%endblock%}
+
+
+
+
+    </main>
+  </div>
+
+  <footer>
+    even cooler footer stuff..............
+  </footer>
+</body>
+-->
