@@ -4,10 +4,7 @@
 
 body {
   background-color: #f1f1f1;
-<<<<<<< HEAD
-=======
   padding: 3px;;
->>>>>>> 33267ad8d8aa071d5ed7540c229a65b9e29a2ada
   font-family: Arial;
   padding: 10px;
 }
@@ -144,7 +141,7 @@ footer{
   border-radius: 10px;
   }
 
-.flexbox-text-1, .flexbox-text-2, .flexbox-text-3{
+.flexbox-text-1, .flexbox-text-2, .flexbox-text-3  {
   min-height: 100px;
   width: 400px;
   padding: 5px;
@@ -331,4 +328,9 @@ footer{
   width: 37px;
   height: 37px;
   margin-left: 1170px;
+}
+
+#Comments{
+  font-family: arial;
+
 }
