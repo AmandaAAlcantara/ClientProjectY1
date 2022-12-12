@@ -1,6 +1,6 @@
 body{
   background-color: #f1f1f1;
-  padding: 20px;
+  padding: 3px;;
   font-family: Arial;
 }
 
@@ -13,6 +13,7 @@ body{
 .main {
   max-width: 900px;
   margin: auto;
+  background-color: #f1f1f1;
 }
 
 h1 {
@@ -38,12 +39,13 @@ h2 {
 }
 
 /* Create three equal columns that floats next to each other */
+@media only screen and (min-width: 500px){
 .column {
   float: left;
   width: 33.33%;
   display: none; /* Hide columns by default */
 }
-
+}
 /* Clear floats after rows */
 .row:after {
   content: "";
@@ -78,7 +80,7 @@ h2 {
   background: none;
   color: inherit;
   border: none;
-  padding: 0;
+  padding: 0px;;
   font: inherit;
   cursor: pointer;
   outline: inherit;
@@ -99,7 +101,7 @@ h2 {
 }
 
 footer{
-  background-color:#282828;
+  background-color:#808080;
   color: white;
   padding: 20px;
   border-radius: 8px;
@@ -178,21 +180,17 @@ footer{
   justify-content: center;
   align-items: center;
   align-content: center;
-  background: #5F8575;
+  background: #34A853;
   height: 250px;
   width: 50%;
   padding: 10px;
-  border-radius: 5px;
+  border-radius: 10px;
   position: fixed;
-  bottom:0%;
+  bottom:30%;
 
 }
 
-
-
-
 .rewards-icon {
-
   font-size: 50px;
   height: 70px;
   width: 70px;
@@ -202,7 +200,7 @@ footer{
   height: 36px;
   padding: 0px 10px;
   line-height: 36px;
-  color: #FFFFFF;
+  color: white;
   font-size: 30px;
 
 }
@@ -219,12 +217,13 @@ footer{
 }
 
 .accept:hover {
-  background: red;
+  background: #EA4335;
 }
 
 #logo{
-  width: 80px;
+  width: 60px;
 }
+
 #TitleLevel{
   padding: 20px;
   text-align: center;
@@ -236,7 +235,6 @@ footer{
   max-width: 800px;
   margin: 0 auto;
 }
-
 
 .event-container .event {
   box-shadow: 0 4px 16px -8px ;
@@ -265,8 +263,69 @@ footer{
 .event-right{
   padding: 10px;
   margin: 10px;
+}
+
+/*Style for dropdown info.html*/
+.dropbtn {
+  border: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-align: left
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  text-align: center;
+  padding: 10px;
+}
+.show {display:block;}
+
+#TitleCheckpoint{
+  display: flex;
 
 }
-#EnquiryForm {
+
+#BlockCheckpoint{
+  display: flex;
+  padding: 20px;
+}
+
+#BlockCheckpoint2{
+  padding-top: 20px;
+  margin-top: 300px;
+}
+
+#ImgCheckpoints{
+  width: 500px;
+  border-radius:10px;
+}
+
+#BlockHF,#BlockW,#BlockM{
+  border-radius: 10px;
+  background-color: #2A2A2A;
+  padding: 12px;
   text-align: center;
+}
+
+#B{
+  padding: 13px;
+}
+
+#Home{
+  width: 37px;
+  height: 37px;
+  margin-left: 1170px;
 }
