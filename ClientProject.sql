@@ -78,5 +78,31 @@ INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/BoatClub
 
 DROP TABLE if EXISTS Commentssubmission;
 CREATE TABLE if not EXISTS "Commentssubmission" ("NameOfRoute" TEXT, "NameOfLocation" TEXT, "Comment" TEXT);
-
 INSERT INTO Commentssubmission ("NameOfRoute", "NameOfLocation", "Comment") VALUES ("?" , "?" , "?")
+
+DROP TABLE if EXISTS DisabilityF;
+CREATE TABLE if not EXISTS "DisabilityF" ( "Picture" TEXT, "Name" TEXT, "Info" TEXT);
+INSERT INTO DisabilityF ("Picture", "Name", "Info") VALUES ("/static/Routes/IndorMarket.jpg", "City Tour", "Acessible and has amazing stops for lunch along the way");
+
+
+DROP TABLE if EXISTS Events;
+CREATE TABLE if not EXISTS "Events" ( "Date" TEXT, "Name" TEXT, "Info" TEXT, "Time" INTEGER);
+INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("18th December", "Festive 5k", "Newport Council envites you to join us as we vist all of Newports historical sites", "10:00");
+INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("26th December", "Boxing Day Path", "Join us on the 26th as we explore newport coasts","10:45 ");
+INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("8th January", "Wildlife Protection Path", "For all the wildlife lovers!", "11:00");
+INSERT INTO Events ("Date", "Name", "Info", "Time") VALUES ("19th January","New Years Coastal Hike", "Kick off your new years by discovering newport on January 1st", "10:00");
+
+
+DROP TABLE if EXISTS LevelCoastalPath;
+CREATE TABLE if not EXISTS "LevelCoastalPath" ( "Title" TEXT, "Vist" TEXT, "Info" TEXT);
+INSERT INTO LevelCoastalPath ("Title", "Vist", "Info") VALUES ("Recomended for Avid Walkers", " - You will visit: Redwick, Whitson, Goldcliff SeaWall and Priory and, The Wetlands Centre ", "
+The coast path runs adjacent to the Severn
+Estuary for a distance of approximately 6.3 miles
+which is generally flat. The majority of this
+section of path has been established on top
+of the sea defence, allowing easy walking and
+rewarding walkers with striking views over the
+estuary and the historic Gwent Levels landscape.
+Much of the coast path and many link paths
+around the reserve have been surfaced allowing
+access for less able users.");
