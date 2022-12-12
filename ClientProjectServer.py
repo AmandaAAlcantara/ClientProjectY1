@@ -15,6 +15,20 @@ def returnHome():
     if request.method == 'GET':
         return render_template('Home.html')
 
+@app.route("/LevelCoastalPath", methods=['GET','POST'])
+def returnLevel():
+    if request.method == 'GET':
+        try:
+            conn = sqlite3.connect(DATABASE)
+            print("connecting to database")
+            cur = conn.cursor()
+            cur.execute("SELECT * FROM LevelCoastalPath")
+            data = cur.fetchall()
+        except:
+            print('there was an error')
+        finally:
+            return render_template('LevelCoastalPath.html',data=data)
+
 @app.route("/ChooseyourRoutes", methods=['GET'])
 def Routes():
     if request.method == 'GET':
@@ -25,11 +39,13 @@ def Routes():
             naturewalksdata = cur.fetchall()
             cur.execute("SELECT * FROM RoutesC;")
             citywalksdata = cur.fetchall()
+            cur.execute("SELECT * FROM DisabilityF;")
+            disabilitydata = cur.fetchall()
             data = cur.fetchall()
         except:
             print("There was an error!")
         finally:
-            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata=citywalksdata)
+            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata=citywalksdata,disabilitydata=disabilitydata)
 
 @app.route("/Difficulty", methods=['GET'])
 def returnSecond():
@@ -51,6 +67,24 @@ def returnLogin():
 #def returnFourth():
 #    if request.method == 'GET':
 #        return render_template('Admin.html')
+@app.route("/Events", methods=['GET','POST'])
+def retrunEvents():
+        if request.method =='GET':
+
+
+
+            try:
+                conn = sqlite3.connect(DATABASE)
+                print("connecting to database")
+                cur = conn.cursor()
+                cur.execute("SELECT * FROM Events")
+                data = cur.fetchall()
+            except:
+                print('there was an error')
+            finally:
+                #conn.close()
+                return render_template('Events.html',data=data)
+
 
 @app.route("/Admin", methods = ['POST','GET'])
 def AddCheckpoints():
