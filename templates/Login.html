@@ -13,30 +13,87 @@
 
         {% block mainBlock%}
 
-        <link href="style.css" rel="stylesheet">
-
-          <title>Login</title>
-          <link href="login.css" rel="stylesheet">
-        <head>
-
-        <body class="text-center" id="form">
-          <main class="form-signin">
-            <form onsubmit="return login()">
-              <img class="mb-4" src="./logo.png" alt="" height="300">
-              <h1 class="h3 mb-3 fw-normal">Login</h1>
-
-              <div class="form-floating">
-                <input type="email" class="form-control" id="username" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-              </div>
-              <div class="form-floating">
-                <input type="password" class="form-control" id="password" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-              </div>
-
-              <a role="button" id="loginbutton" class="btn btn-success btn-lg" href="/Admin">Login</a>
 
 
-</html>
+        <body>
+          <form action="/Admin.html" method="POST">
+          		<div>
+          			<label for="username">Username</label>
+          			<input type="text" name="username" placeholder="Username">
+          			<span></span>
+          		</div>
+          		<div>
+          			<label for="password">Password</label>
+          			<input type="password" name="password" placeholder="Password">
+          			<span></span>
+          		</div>
+          		<button id="log-in">Log-in</button>
+          	</form>
+
 
         {%endblock%}
+  {% block javascript %}
+<script>
+window.onload = ()=>{
+		this.sessionStorage.setItem('username', 'sakaos_user');
+		this.sessionStorage.setItem('password', 'sakaos_password');
+	}
+
+	var input = document.getElementsByTagName('input');
+	var login = document.getElementById('log-in');
+	var form = document.querySelector('form');
+	form.onsubmit = ()=>{return false;}
+
+	login.onclick = ()=>{
+
+		if ((input[0].value != "") && (input[1].value != ""))
+		 {
+		 	if ((input[0].value == sessionStorage.getItem('username')) && (input[1].value == sessionStorage.getItem('password')))
+		 	 {
+		 	 	form.onsubmit = ()=>{return 1;}
+				  document.cookie = "username="+input[0].value;
+				  document.cookie = "password="+input[1].value;
+		 	 }
+		 	 else
+		 	 {
+		 	 	if ((input[0].value != sessionStorage.getItem('username')) )
+			 	 {
+			 	 	input[0].nextElementSibling.textContent = "Username NOT match";
+					setTimeout(()=>{
+						input[0].nextElementSibling.textContent = "";
+					}, 2000);
+
+			 	 }
+			 	 if ((input[1].value != sessionStorage.getItem('password')) )
+			 	 {
+			 	 	input[1].nextElementSibling.textContent = "Password NOT match";
+					setTimeout(()=>{
+						input[1].nextElementSibling.textContent = "";
+					}, 2000);
+
+			 	 }
+
+		 	 }
+
+		 }
+		else
+		 {
+			if (input[0].value == "")
+			{
+				input[0].nextElementSibling.textContent = "Username is empty";
+				setTimeout(()=>{
+					input[0].nextElementSibling.textContent = "";
+				}, 2000);
+			}
+			if (input[1].value == "")
+			{
+				input[1].nextElementSibling.textContent = "Password is empty";
+				setTimeout(()=>{
+					input[1].nextElementSibling.textContent = "";
+				}, 2000);
+			}
+		 }
+	}
+
+</script>
+  {% endblock %}
