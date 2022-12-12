@@ -1,17 +1,19 @@
 <!doctype html>
 <html>
 <meta name="viewport" content="width=device-width, initial-scale=5.0">
-<body>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 <head>
   {%extends'Home.html'%}
   <title></title>
   <link href="static/style.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+
+<body>
+
+
 <header>
   <h2>{% block titleBlock%}  {%endblock%}</h2>
 </header>
-{% block mainBlock%}
   <div class="main">
     <main>
       <p>
@@ -20,23 +22,25 @@
         {%endif%}
       </p>
 
-
+{% block mainBlock%}
         <!--adapted from w3schools-->
         <br>
-        <h2>ROUTES</h2>
-        <div id="myBtnContainer">
-          <button class="btn active" onclick="filterSelection('all')"> Show all</button>
-          <button class="btn" onclick="filterSelection('nature')"> Nature Walks</button>
-          <button class="btn" onclick="filterSelection('city')"> City Walks</button>
-        </div>
-        <br>
-        <br>
+<div id="FilterMenu">
+  <h2>Routes</h2>
+  <div id="myBtnContainer">
+    <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+    <button class="btn" onclick="filterSelection('nature')"> Nature Walks</button>
+    <button class="btn" onclick="filterSelection('city')"> City Walks</button>
+    <button class="btn" onclick="filterSelection('SpecialNeeds')">Disability Friendly</button>
+  </div>
+</div>
+<br>
         <!-- Portfolio Gallery Grid -->
         <div class="row">
 
           {% for row in naturewalksdata %}
           <div class="column nature">
-            <button id="button" type="button" onclick="window.location.href='/Location';">
+            <button id="button" type="button" onclick="window.location.href='/LevelCoastalPath';">
             <div class="content">
               <img class="image" src="{{row[0]}}" style="width:100%">
               <h4>{{row[1]}}</h4>
@@ -55,6 +59,20 @@
             </div>
           </div>
           {% endfor %}
+
+          {% for row in disabilitydata%}
+        <div class="column SpecialNeeds">
+          <div class="content">
+            <img src="{{row[0]}}" style="width:100%">
+            <h4>{{row[1]}}</h4>
+            <p>{{row[2]}}</p>
+          </div>
+        </div>
+          {% endfor %}
+
+
+
+
 
         <!-- END GRID -->
         </div>
@@ -108,13 +126,14 @@
             this.className += " active";
           });
         }
-
         </script>
+
+  {%endblock%}
 
     </main>
   </div>
-  {%endblock%}
-  <footer>
 
+  <footer>
   </footer>
+
 </body>
