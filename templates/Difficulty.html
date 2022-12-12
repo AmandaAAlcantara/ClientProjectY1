@@ -1,0 +1,35 @@
+<!doctype html>
+<html>
+<head>
+  <title>Page2</title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+  <script src="/static/scripts.js"></script>
+</head>
+{%extends'Home.html'%}
+<body>
+  <header>
+
+    <h2>{% block titleBlock%} page2 {%endblock%}</h2>
+  </header>
+
+  <div class="mainAndAside">
+    <main>
+      <p>
+        {%if msg%}
+        {{msg}}
+        {%endif%}
+      <p>
+        {% block mainBlock%}
+        <script src="../static/html5-qrcode.min.js"></script>
+        <body onload= "qrScanner()">
+          <div style="width:100%; length:100%" id = "reader"></div>
+        </body>
+        {%endblock%}
+    </main>
+
+  </div>
+
+  <footer>
+
+  </footer>
+</body>

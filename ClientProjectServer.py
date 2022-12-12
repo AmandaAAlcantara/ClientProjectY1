@@ -15,11 +15,6 @@ def returnHome():
     if request.method == 'GET':
         return render_template('Home.html')
 
-@app.route("/LevelCoastalPath", methods=['GET'])
-def returnLevel():
-    if request.method == 'GET':
-        return render_template('LevelCoastalPath.html')
-
 @app.route("/ChooseyourRoutes", methods=['GET'])
 def Routes():
     if request.method == 'GET':
@@ -30,13 +25,11 @@ def Routes():
             naturewalksdata = cur.fetchall()
             cur.execute("SELECT * FROM RoutesC;")
             citywalksdata = cur.fetchall()
-            cur.execute("SELECT * FROM DisabilityF;")
-            disabilitydata = cur.fetchall()
             data = cur.fetchall()
         except:
             print("There was an error!")
         finally:
-            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata=citywalksdata,disabilitydata=disabilitydata)
+            return render_template('ChooseyourRoutes.html',naturewalksdata = naturewalksdata, citywalksdata=citywalksdata)
 
 @app.route("/Difficulty", methods=['GET'])
 def returnSecond():
@@ -53,28 +46,6 @@ def returnLocation():
 def returnLogin():
     if request.method == 'GET':
         return render_template('Login.html')
-
-@app.route("/Events", methods=['GET','POST'])
-def retrunEvents():
-        if request.method =='GET':
-
-            try:
-                conn = sqlite3.connect(DATABASE)
-                print("connecting to database")
-                cur = conn.cursor()
-                cur.execute("SELECT * FROM Events")
-                data = cur.fetchall()
-            except:
-                print('there was an error')
-            finally:
-                #conn.close()
-                return render_template('Events.html',data=data)
-
-
-@app.route("/Festive5k", methods=['GET'])
-def returnFestive5k():
-    if request.method == 'GET':
-        return render_template('Festive5k.html')
 
 #@app.route("/Admin", methods=['GET'])
 #def returnFourth():
@@ -242,7 +213,7 @@ def Enquiry():
         try:
             conn = sqlite3.connect(DATABASE)
             cur = conn.cursor()
-            cur.execute("INSERT INTO Enquiries ('Text','Email')VALUES (?,?)",
+            cur.execute("INSERT INTO Enquiries ('text','email')VALUES (?,?)",
             (text,email))
             conn.commit()
             Enquirymsg = "Enquiry submitted"
@@ -253,10 +224,38 @@ def Enquiry():
             return Enquirymsg
             conn.close()
 
+#Comments.html
+@app.route("/Commentssubmission" , methods = ['POST','GET'])
+def Comments():
+      if request.method == 'GET':
+             return render_template('Comments.html')
+      if request.method == 'POST':
+         NameOfRoute = request.form.get('NameOfRoute', default="Error")
+         NameOfLocation = request.form.get('NameOfLocation', default="Error")
+         Comment = request.form.get('Comment', default="Error")
+         print (NameOfRoute)
+         print (NameOfLocation)
+         print (Comment)
 
 
-
-#Enquiry page
+         try:
+             conn = sqlite3.connect(DATABASE)
+             cur = conn.cursor()
+             print ("created cursor")
+             # cur.execute("INSERT INTO Commentssubmission ('NameOfRoute','NameOfLocation','Comment')VALUES (?,?,?)" , (NameOfRoute , NameOfLocation , Comments))
+             cur.execute("INSERT INTO Commentssubmission ('NameOfRoute','NameOfLocation','Comment')VALUES (?,?,?)" , (NameOfRoute , NameOfLocation , Comment))
+             #data = cur.fetchall()
+             conn.commit()
+             print ("inserted data")
+             msg = "Thank you for your comment, we will look into it as soon as possible"
+         except Exception as e:
+             print(e)
+             conn.rollback()
+             msg = "Failed"
+         finally:
+             return msg
+             conn.close()
+             return render_template('Comments.html', data =data)
 
 if __name__ == "__main__":
     app.run(debug=True)
