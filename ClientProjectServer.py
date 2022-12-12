@@ -108,6 +108,32 @@ def AddCheckpoints():
 
 
 
+@app.route("/AddEvents", methods = ['POST','GET'])
+def AddEvent():
+	if request.method =='GET':
+		return render_template('addEvents.html')
+	if request.method =='POST':
+		eventdate = request.form.get('eventdate', default="Error")
+		eventname = request.form.get('eventname', default="Error")
+		eventinfo= request.form.get('eventinfo', default="Error")
+		eventtime = request.form.get('eventtime', default="Error")
+		print("Your Event is "+eventname)
+
+		try:
+			conn = sqlite3.connect(DATABASE)
+			cur = conn.cursor()
+			cur.execute("INSERT INTO Events ('Date', 'Name','Info' , 'Time')VALUES (?,?,?,?)",
+			(eventdate,eventname,eventinfo,eventtime,))
+			conn.commit()
+			msgevent = "Event Added"
+		except:
+			conn.rollback()
+			msgevent = "failed"
+		finally:
+			return msgevent
+			conn.close()
+
+
 #@app.route("/TheWetlandsCentre", methods=['GET'])
 #def CheckpointsD():
     #if request.method == 'GET':

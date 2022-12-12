@@ -16,26 +16,47 @@
         <a id="seecheck-btn" href="/AllCheckpoints" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> See All Checkpoints</a>
         </div>
 
-      <div id = "form">
-        <div id="formForCheckpoints">
-          <h2> Add checkpoint </h2>
-          <form id='addCheckForm' onsubmit="return loadCheck()">
-            <label>Name:
-            <input  id="inputcheck" type="text" name ="name"><br>
-            <label>Link for Picture:
-            <input  id="inputcheck" type="text" name ="picture"><br>
-            <label>Facts:
-            <input  id="inputcheck" type="text" name ="facts"><br>
-            <label>Contacts:
-            <input  id="inputcheck" type="text" name ="contacts"><br>
-            <button id="button1" type = "submit"> Add Checkpoint </button>
-          </form>
-          <span id= "message"></span>
-        </div>
-      </div>
+<div id="formForCheckpoints">
+  <h2> Add checkpoint </h2>
+  <form id='addCheckForm' onsubmit="return loadCheck()">
+    <label>Name:
+    <input  id="inputcheck" type="text" name ="name"><br>
+    <label>Link for Picture:
+    <input  id="inputcheck" type="text" name ="picture"><br>
+    <label>Facts:
+    <input  id="inputcheck" type="text" name ="facts"><br>
+    <label>Contacts:
+    <input  id="inputcheck" type="text" name ="contacts"><br>
+    <button id="addingcheckpoints" type = "submit"> Add Checkpoint </button>
+  </form>
+  <span id= "message"></span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         {%endblock%}
 
-    </main>
 
 
     {% block javascriptBlock%}
@@ -61,6 +82,13 @@
   return false;
 }
 
+
+
+
+
+
+
+
 </script>
     {%endblock%}
-</body>
+  </body>

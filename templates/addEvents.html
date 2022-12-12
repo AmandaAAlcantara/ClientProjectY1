@@ -1,0 +1,95 @@
+
+<!doctype html>
+<html>
+<head>
+  <title></title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+</head>
+{%extends'Home.html'%}
+
+    <h2>{% block titleBlock%} {%endblock%}</h2>
+
+
+
+        {% block mainBlock%}
+
+
+
+
+
+
+
+<div id="formForEvents">
+  <h2> Add an Event </h2>
+  <form id='addEventsForm' onsubmit="return loadEvents()">
+    <label>Date of Event:
+    <input  id="inputevent" type="text" name ="eventdate"><br>
+    <label>Name of Event:
+    <input  id="inputevent" type="text" name ="eventname"><br>
+    <label>Info about Event:
+    <input  id="inputevent" type="text" name ="eventinfo"><br>
+    <label>Time:
+    <input  id="inputevent" type="text" name ="eventtime"><br>
+    <button id="addingEvents" type = "submit"> Add Event </button>
+  </form>
+  <span id= "eventmessage"></span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {%endblock%}
+
+
+
+    {% block javascriptBlock%}
+    <script>
+    function loadEvents() {
+      var eventdate = document.forms["addEventsForm"]["eventdate"].value;
+      var eventname = document.forms["addEventsForm"]["eventname"].value;
+      var eventinfo = document.forms["addEventsForm"]["eventinfo"].value;
+      var eventtime = document.forms["addEventsForm"]["eventtime"].value;
+      params = 'eventdate='+eventdate+'&eventname='+eventname+'&eventinfo='+eventinfo+'&eventtime='+eventtime;
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", '/AddEvents', true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.onload = function() {
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
+      console.log(xhttp.responseText);
+      document.getElementById("eventmessage").innerHTML = xhttp.responseText;
+    } else {
+      console.error(xhttp.statusText);
+    }
+  };
+  xhttp.send(params);
+  return false;
+}
+
+
+
+
+
+</script>
+    {%endblock%}
