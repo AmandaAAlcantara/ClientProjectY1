@@ -291,5 +291,38 @@ def Comments():
              conn.close()
              return render_template('Comments.html', data =data)
 
+@app.route("/AddRoutes", methods = ['POST','GET'])
+def AddRoute():
+	if request.method =='GET':
+		return render_template('addRoutes.html')
+	if request.method =='POST':
+		routepic = request.form.get('routepic', default="Error")
+		routename = request.form.get('routename', default="Error")
+		routeinfo= request.form.get('routeinfo', default="Error")
+		print("Your Route is "+routename)
+
+		try:
+			conn = sqlite3.connect(DATABASE)
+			cur = conn.cursor()
+			cur.execute("INSERT INTO Routes ('Picture', 'Name','Info')VALUES (?,?,?)",
+			(routepic,routename,routeinfo,))
+			conn.commit()
+			msgroute = "Route Added"
+		except:
+			conn.rollback()
+			msgroute = "failed"
+		finally:
+			return msgroute
+			conn.close()
+
+
+
+
+
+
 if __name__ == "__main__":
     app.run(debug=True)
+
+
+
+ #addRoute
