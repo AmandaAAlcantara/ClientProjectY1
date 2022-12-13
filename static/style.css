@@ -358,3 +358,10 @@ footer{
   height: 37px;
   margin-left: 1170px;
 }
+#allbtns{
+  text-align: center;
+}
+
+#adminbtns{
+  display: inline-block;
+}
