@@ -11,83 +11,20 @@
 
 
         {% block mainBlock%}
-        <div id="SeeCheckpoints">
-        <a id="seecheck-btn" href="/AllCheckpoints" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> See All Checkpoints</a>
+        <div id ="alladminbtns">
+        <div id="adminbtns">
+        <a  id="seecheck-btn" href="/AllCheckpoints" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> See All Checkpoints</a>
         </div>
-
-<div id="formForCheckpoints">
-  <h2> Add checkpoint </h2>
-  <form id='addCheckForm' onsubmit="return loadCheck()">
-    <label>Name:
-    <input  id="inputcheck" type="text" name ="name"><br>
-    <label>Link for Picture:
-    <input  id="inputcheck" type="text" name ="picture"><br>
-    <label>Facts:
-    <input  id="inputcheck" type="text" name ="facts"><br>
-    <label>Contacts:
-    <input  id="inputcheck" type="text" name ="contacts"><br>
-    <button id="addingcheckpoints" type = "submit"> Add Checkpoint </button>
-  </form>
-  <span id= "message"></span>
-</div>
+        <div id="adminbtns">
+        <a  id="addcheck-btn" href="/AddCheckpoints" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> Add a Checkpoint</a>
+        </div>
+        <div id="adminbtns">
+        <a  id="addroute-btn" href="/AddRoutes" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> Add a Route</a>
+        </div>
+        <div id="adminbtns">
+        <a id="addevent-btn" href="/AddEvents" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true"> Add a events</a>
+      </div>
+    </div>
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        {%endblock%}
-
-
-
-    {% block javascriptBlock%}
-    <script>
-    function loadCheck() {
-      var name = document.forms["addCheckForm"]["name"].value;
-      var picture = document.forms["addCheckForm"]["picture"].value;
-      var facts = document.forms["addCheckForm"]["facts"].value;
-      var contacts = document.forms["addCheckForm"]["contacts"].value;
-      params = 'name='+name+'&picture='+picture+'&facts='+facts+'&contacts='+contacts;
-  var xhttp = new XMLHttpRequest();
-  xhttp.open("POST", '/Admin', true);
-  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-  xhttp.onload = function() {
-    if (xhttp.readyState === 4 && xhttp.status === 200) {
-      console.log(xhttp.responseText);
-      document.getElementById("message").innerHTML = xhttp.responseText;
-    } else {
-      console.error(xhttp.statusText);
-    }
-  };
-  xhttp.send(params);
-  return false;
-}
-
-
-
-
-
-
-
-
-</script>
-    {%endblock%}
-  </body>
+{%endblock%}

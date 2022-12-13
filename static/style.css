@@ -333,7 +333,6 @@ footer{
   margin-left: 1170px;
 }
 
-
 /*Comments page*/
 #Comment{
   font family: arial;
@@ -363,4 +362,10 @@ footer{
   border-radius: 8px;
   padding: 10px;
 
+#allbtns{
+  text-align: center;
+}
+
+#adminbtns{
+  display: inline-block;
 }
