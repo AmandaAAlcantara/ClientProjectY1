@@ -1,0 +1,92 @@
+
+<!doctype html>
+<html>
+<head>
+  <title></title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+</head>
+{%extends'Home.html'%}
+
+    <h2>{% block titleBlock%} {%endblock%}</h2>
+
+
+
+        {% block mainBlock%}
+
+
+
+
+
+
+
+<div id="formForroutes">
+  <h2> Add an route </h2>
+  <form id='addRouteForm' onsubmit="return loadroutes()">
+    <label>Picture of route:
+    <input  id="inputroute" type="text" name ="routepic"><br>
+    <label>Name of routes:
+    <input  id="inputroute" type="text" name ="routename"><br>
+    <label>Info about routes:
+    <input  id="inputroute" type="text" name ="routeinfo"><br>
+    <button id="addingroutes" type = "submit"> Add route </button>
+  </form>
+  <span id= "routemessage"></span>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {%endblock%}
+
+
+
+    {% block javascriptBlock%}
+    <script>
+    function loadroutes() {
+      var routepic = document.forms["addRouteForm"]["routepic"].value;
+      var routename = document.forms["addRouteForm"]["routename"].value;
+      var routeinfo = document.forms["addRouteForm"]["routeinfo"].value;
+      params = 'routepic='+routepic+'&routename='+routename+'&routeinfo='+routeinfo;
+  var xhttp = new XMLHttpRequest();
+  xhttp.open("POST", '/AddRoutes', true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.onload = function() {
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
+      console.log(xhttp.responseText);
+      document.getElementById("routemessage").innerHTML = xhttp.responseText;
+    } else {
+      console.error(xhttp.statusText);
+    }
+  };
+  xhttp.send(params);
+  return false;
+}
+
+
+
+
+
+</script>
+    {%endblock%}
