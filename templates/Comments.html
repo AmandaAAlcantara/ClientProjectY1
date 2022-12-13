@@ -18,15 +18,15 @@
 
   {% block mainBlock%}
 <div id="Comments">
-    <h1> Submit your comments! </h1>
-  <h3> Got any comments or concerns about the walk and/or location? Type them out right here!<h3>
+    <h1 style="font-family:verdana"> Submit your comments! </h1>
+  <h3 style="font-family:verdana"> Got any comments or concerns about the walk and/or location? Type them out right here!<h3>
   <form id="Commentssubmission" action="/Commentssubmission" method="POST">
   <label for="NameOfRoute">name of route:</label>
   <input type="text" name="NameOfRoute" id="NameOfRoute" maxlength="20">
-
+  <br>
   <label for="name of location">name of location:</label>
   <input type="text" name="NameOfLocation" id="NameOfLocation" maxlength="20">
-
+  <br>
   <label for="Comment">Comment:</label>
   <input type="text" name="Comment" id="Comment" maxlength="300" style="height:100px; width:200px;">
 
