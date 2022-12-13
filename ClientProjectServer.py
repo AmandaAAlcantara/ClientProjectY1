@@ -86,10 +86,10 @@ def retrunEvents():
                 return render_template('Events.html',data=data)
 
 
-@app.route("/Admin", methods = ['POST','GET'])
+@app.route("/AddCheckpoints", methods = ['POST','GET'])
 def AddCheckpoints():
 	if request.method =='GET':
-		return render_template('Admin.html')
+		return render_template('addCheckpoints.html')
 	if request.method =='POST':
 		name = request.form.get('name', default="Error")
 		picture = request.form.get('picture', default="Error")
@@ -314,6 +314,13 @@ def AddRoute():
 		finally:
 			return msgroute
 			conn.close()
+
+
+#admin page
+@app.route("/Admin", methods=['GET'])
+def returnAdmin():
+    if request.method == 'GET':
+        return render_template('Admin.html')
 
 
 
