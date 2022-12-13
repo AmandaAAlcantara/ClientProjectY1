@@ -1,4 +1,371 @@
-form{
+body {
+  background-color: #f1f1f1;
+  font-family: Arial;
+  padding: 10px;
+}
+#FilterMenu{
+  text-align: center;
+}
+
+/* Center website */
+.main {
+  max-width: 900px;
+  margin: auto;
+  background-color: #f1f1f1;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+h2 {
+  font-size:10vw
+  font-weight: bold;
+  color: black;
+}
+
+.row {
+  margin: 8px -16px;
+}
+
+/* Add padding BETWEEN each column (if you want) */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+@media only screen and (min-width: 500px ){
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide columns by default */
+}
+}
+/* Clear floats after rows */
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn.active {
+  background-color: #666;
+   color: white;
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+
+#button{
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 0px;;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-align: left
+}
+
+
+
+#button1{
+  background-color: green;
+  color: white;
+  border: none;
+  cursor: pointer;
+  outline: inherit;
+  padding: 10px;
+  border-radius: 5px;
+  margin: 5px;
+  width: 130px;
+}
+
+footer{
+  background-color:#242424;
+  color: white;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 15px;
+}
+.fa:hover {
+    opacity: 0.7;
+}
+
+.fa {
+  margin: 10px;
+  padding: 10px;
+  font-size: 33px;
+  width: 40px;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+
+/*Level Coastal Path*/
+#box{
+  display: flex;
+}
+
+#container{
+  width: 90%;
+  padding: 8px;
+}
+
+#ImageDemo{
+  text-align: center;
+  flex: 1;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: #D0D0D0;
+}
+
+#LandmarkImg{
+  width: 200px;
+  padding: 2.3px;
+  border-radius: 8px;
+}
+.container1, .container2, .container3{
+  display: flex;
+  background-color: white;
+  padding: 5px;
+  border-radius: 10px;
+  }
+
+.flexbox-text-1, .flexbox-text-2, .flexbox-text-3{
+  min-height: 100px;
+  width: 400px;
+  padding: 5px;
+  margin: 5px;
+
+}
+#googleMap_hard,#googleMap_medium,#googleMap_easy{
+    width: 404.7px;
+    height: 350px;
+    border-radius: 8px;
+}
+/* End Level Coastal Path*/
+
+
+#ChosenRouteTitle{
+  text-align: center;
+}
+
+#qrCodeFlex{
+  display: flex;
+}
+
+#MapForC{
+  margin-left: 50px;
+
+}
+
+#myBtnContainer{
+  text-align: center;
+}
+
+
+.points {
+  margin-left: 23%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  background: #34A853;
+  height: 250px;
+  width: 50%;
+  padding: 10px;
+  border-radius: 10px;
+  position: fixed;
+  bottom:30%;
+
+}
+
+.rewards-icon {
+  font-size: 50px;
+  height: 70px;
+  width: 70px;
+}
+
+.message {
+  height: 36px;
+  padding: 0px 10px;
+  line-height: 36px;
+  color: white;
+  font-size: 30px;
+
+}
+
+.accept {
+  height: 30px;
+  padding: 0 15px;
+  line-height: 30px;
+  border-radius: 10px;
+  color: #FFFFFF;
+  font-size: 20px;
+  text-align: center;
+  background: #616B75;
+}
+
+.accept:hover {
+  background: #EA4335;
+}
+
+#logo{
+  width: 138px;
+}
+
+#TitleLevel{
+  padding: 20px;
+  text-align: center;
+}
+/*events*/
+
+.event-container {
+  font-family: "Roboto", sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.event-container .event {
+  box-shadow: 0 4px 16px -8px ;
+  display: flex;
+  border-radius: 8px;
+  margin: 32px 0;
+}
+
+.event .event-left {
+  background: #222;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #eee;
+  padding: 8px 48px;
+  font-weight: bold;
+  text-align: center;
+  border-radius: 8px 0 0 8px;
+}
+
+.event .event-left .date {
+  font-size: 15px;
+}
+
+.event-right{
+  padding: 10px;
+  margin: 10px;
+}
+
+/*Style for dropdown info.html*/
+.dropbtn {
+  border: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
+  text-align: left
+}
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  border-radius: 15px;
+  text-align: center;
+  padding: 10px;
+}
+.show {display:block;}
+
+#TitleCheckpoint{
+  display: flex;
+
+}
+
+#BlockCheckpoint{
+  display: flex;
+  padding: 20px;
+}
+
+#BlockCheckpoint2{
+  padding-top: 20px;
+  margin-top: 300px;
+}
+
+#ImgCheckpoints{
+  width: 500px;
+  border-radius:10px;
+}
+
+#BlockHF,#BlockW,#BlockM{
+  border-radius: 10px;
+  background-color: #2A2A2A;
+  padding: 12px;
+  text-align: center;
+}
+
+#B{
+  padding: 13px;
+}
+
+#Home{
+  width: 37px;
+  height: 37px;
+  margin-left: 1170px;
+}
+#allbtns{
+  text-align: center;
+}
+
+#adminbtns{
+  display: inline-block;
+}
+
+
+/*form{
 			width: 600px;
 			margin: 200px auto;
 		}
@@ -37,4 +404,4 @@ form{
 		    margin-left: 20px;
 		    color: red;
 		    font-style: italic;
-		}
+		}*/
