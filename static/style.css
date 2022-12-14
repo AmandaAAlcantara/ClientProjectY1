@@ -1,8 +1,19 @@
+<<<<<<< HEAD
+=======
+
+>>>>>>> e0ef64744f70e04da15e4cff10a10d9b8695a864
 body {
   background-color: #f1f1f1;
   font-family: Arial;
   padding: 10px;
 }
+#body {
+  background-color: #f1f1f1;
+  font-family: Arial;
+  padding: 10px;
+}
+
+
 #FilterMenu{
   text-align: center;
 }
