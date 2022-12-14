@@ -3,110 +3,197 @@
 <head>
 <title>Newport</title>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="static/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
  
 </head>
 <body>
+  <!-- inspired from bootstrap and stackoverflow-->
+  <nav class="navbar navbar-inverse navbar-static-top" role="navigation">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                  </button>
+      </div>
 
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+        <ul class="nav navbar-nav">
+          <li><a href="/Home">Home</a></li>
+          <li><a href="/ChooseyourRoutes">Choose your Route</a></li>
+          <li><a href="/Events">Events</a></li>
+          <li><a href="/Enquiries">Enquiries</a></li>
+          <li><a href="/Commentssubmission">Comments</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+           <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+      </div>
+    </div>
+  </nav>
+
+{% block titleBlock%}<h1 id="homestyle"><center></center></h1>{%endblock%}
+<div class="wrapper" id="wrapper">
+    <i id="left" class="fa-solid fa-angle-left"></i>
+    <!-- Indicators -->
+    {%if msg%}
+      {{msg}}
+      {%endif%}
+ 
+      {% block mainBlock%}
+ 
+<div class="carousel">
+      <img src="https://www.visitwales.com/sites/visit/files/styles/o_herostandard_fullwidth_1x/public/media-library/2019-10/Transporter%20Bridge%20gondola-small.jpg?h=375e8eb3&itok=LVF87itn" alt="img" draggable="false">
+      <img src="https://i2-prod.walesonline.co.uk/incoming/article20266641.ece/ALTERNATES/s615b/0_MRW_SWA_091220_ChrisKnightPicsV2_02.jpg" alt="img" draggable="false">
+      <img src="https://hips.hearstapps.com/countryliving.cdnds.net/18/09/1519899589-portmeirion.jpg" alt="img" draggable="false">
+      <img src="https://www.wales247.co.uk/wp-content/uploads/2019/12/AdobeStock_303827738.jpeg" alt="img" draggable="false">
+      <img src="https://cdn.forestresearch.gov.uk/2021/11/forestry-home-1.jpg" alt="img" draggable="false">
+      <img src="https://www.newport-discovery-guide.com/images/newport-cliff-walk-35.jpg" alt="img" draggable="false">
+      <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/13/41/25/72/tredegar-house.jpg?w=500&h=-1&s=1" alt="img" draggable="false">
+      <img src="https://cdn.londonandpartners.com/-/media/images/london/visit/things-to-do/place/greenwich-park-640x360.jpg?mw=640&hash=154B00A4E4191E1AC7AFA1AB4BE03733503CFD24" alt="img" draggable="false">
 
     </div>
-    <div class="collapse navbar-collapse" id="myNavbar">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="/Home">Home</a></li>
-        <li><a href="/ChooseyourRoutes">Choose your Routes</a></li>
-        <li><a href="/Events">Events</a></li>
-        <li><a href="/Enquiries">Enquiries</a></li>
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <li><a href="/Login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul>
-    </div>
+    <i id="right" class="fa-solid fa-angle-right"></i>
   </div>
-</nav>
-{% block titleBlock%}<h2 id = "hometitle"><center>Newport Coastal Routes</center></h2>{%endblock%}
-<div id="myCarousel" class="carousel slide" data-ride="carousel">
-    <!-- Indicators -->
-    {%if msg%}
-      {{msg}}
-      {%endif%}
-
-      {% block mainBlock%}
-
-    <ol class="carousel-indicators">
-      <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#myCarousel" data-slide-to="1"></li>
-    </ol>
-
-    <!-- Wrapper for slides -->
-    <div class="carousel-inner" role="listbox">
-      <div class="item active">
-        <img src="https://theculturetrip.com/wp-content/uploads/2020/08/caerleon-roman-fortress-amphitheatre-cymru.jpg" alt="Image">
-        <div class="carousel-caption">
-          <h3>Sell $</h3>
-          <p>Money Money.</p>
-        </div>
-      </div>
-
-      <div class="item">
-        <img src="https://theculturetrip.com/wp-content/uploads/2020/08/caerleon-roman-fortress-amphitheatre-cymru.jpg" alt="Image">
-        <div class="carousel-caption">
-          <h3>Newport Countrysides</h3>
-          <p>Lets get you walking</p>
-        </div>
-      </div>
-    </div>
-
-    <!-- Left and right controls -->
-    <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
-      <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
-      <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+ 
+<br>
+<div class="team-title">
+ Overview
 </div>
+<br>
+<div class="container">
+  <div class="row center-block">
+    <div class="col-md-4">
 
+      <div class="card-base">
+          <img src=https://www.celtictrailswalkingholidays.co.uk/wp-content/uploads/Llanddwyn-Island-Anglesey.jpg>
+          <div class="card-data">
+            <div class="card-title">
+            <h2>Info on a Route</h2>
+            </div>
+            <p class="card-block text-center">
+              <div>The Wales Coast Path is 870 miles long. It begins at Chepstow on the banks of the Wye and finishes beside the River Dee a few miles from Cheshire.The Newport section of the path crosses the Caldicot and Wentloog Levels to meet the City of Newport. A distance of 23 miles/38km. The Gwent Levels are registered as a Landscape of Outstanding Historic Interest in Wales.If arriving in Newport by train, it’s a short walk from the railway station to Newport Bus Station - there are frequent buses from here to take you to the start of the route at Redwick</div>
+            </p>
+          </div>
+      </div><!-- card-base -->
 
-  <div class="row">
-    <div class="column1" id=column1>
-      <h2>Info about Routes</h2>
-      <img src="https://map.viamichelin.com/map/carte?map=viamichelin&z=10&lat=51.58774&lon=-2.99837&width=550&height=382&format=png&version=latest&layer=background&debug_pattern=.*" id=imageone width="200" height="200">
-      <p>The Wales Coast Path is 870 miles long. It begins at Chepstow on the banks of the Wye and finishes beside the River Dee a few miles from Cheshire.The Newport section of the path crosses the Caldicot and Wentloog Levels to meet the City of Newport. A distance of 23 miles/38km. The Gwent Levels are registered as a Landscape of Outstanding Historic Interest in Wales.If arriving in Newport by train, it’s a short walk from the railway station to Newport Bus Station - there are frequent buses from here to take you to the start of the route at Redwick.</p>
     </div>
 
-    <div class="column2" id=column2>
-      <h2>What to Wear to a Walk</h2>
-      <img src="https://www.millets.co.uk/templates/millets.co.uk/_images/blog/2019/buying-guide-footwear/boots.jpg" id="imagetwo" width="200" height="200">
-      <p>Comfortable and sensible footwear(no flip-flops or high heels),Water,Sturdy footwear/Hillwalking boots, Tell someone where you are going, Tell someone how long you will be, Remember to let them know when you return.Remember that a poor choice of clothing is one of the best ways of ruining a day's walking and can be potentially fatal!  Also remember to ensure that any clothing you are not wearing is stored somewhere waterproof - there's not much point bringing spare clothes if they are sodden before you put them on!</p>
+    <div class="col-md-4">
+
+       <div class="card-base">
+          <img src="data:image/jpeg;base64,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">
+          <div class="card-data">
+            <div class="card-title">
+            <h2>What to wear</h2>
+            </div>
+            <p class="card-block text-center">
+              <div>Comfortable and sensible footwear(no flip-flops or high heels),Water,Sturdy footwear/Hillwalking boots, Tell someone where you are going, Tell someone how long you will be, Remember to let them know when you return.Remember that a poor choice of clothing is one of the best ways of ruining a day's walking and can be potentially fatal!  Also remember to ensure that any clothing you are not wearing is stored somewhere waterproof - there's not much point bringing spare clothes if they are sodden before you put them on!</div>
+            </p>
+          </div>
+      </div><!-- card-base -->
     </div>
 
-
-    <div class="column3"id=column3>
-      <h2>Health and Fitness</h2>
-      <img src="https://www.salomon.com/sites/default/files/2022-03/Teaser-why-running-landscape.jpg" id="imagetwo" width="200" height="200">
-      <p>Maintain a healthy weight and lose body fat.Prevent or manage various conditions, including heart disease, stroke, high blood pressure, cancer and type 2 diabetes. Improve cardiovascular fitness. Strengthen your bones and muscles. Improve muscle endurance. Increase energy levels.The faster, farther and more frequently you walk, the greater the benefits. For example, you may start out as an average walker, and then work your way up to walking faster and walking a mile in a shorter amount of time than an average walker, similar to power walkers. This can be a great way to get aerobic activity, improve your heart health and increase your endurance while burning calories.</p>
+    <div class="col-md-4">
+      <div class="card-base">
+          <img src="https://www.walkingwomen.com/wp-content/uploads/2022/05/walking-holidays-4-women-2023.jpg">
+          <div class="card-data">
+            <div class="card-title">
+            <h2>Why should you walk?</h2>
+            </div>
+            <p class="card-block text-center">
+              <div>Maintain a healthy weight and lose body fat.Prevent or manage various conditions, including heart disease, stroke, high blood pressure, cancer and type 2 diabetes. Improve cardiovascular fitness. Strengthen your bones and muscles. For example, you may start out as an average walker, and then work your way up to walking faster and walking a mile in a shorter amount of time than an average walker, similar to power walkers. This can be a great way to get aerobic activity, improve your heart health and increase your endurance while burning calories.</div>
+            </p>
+          </div>
+      </div><!-- card-base -->
     </div>
-        {%endblock%}
-  </div>
-  {% block javascriptBlock%}
-{%endblock%}
+  </div><!-- end row -->
+
+</div> <!-- end container -->
+<br>
+
+ {%endblock%}
+ 
+ 
+      {% block javascriptBlock%}   
+
+<script>
+const carousel = document.querySelector(".carousel"),
+firstImg = carousel.querySelectorAll("img")[0],
+arrowIcons = document.querySelectorAll(".wrapper i");
+let isDragStart = false, isDragging = false, prevPageX, prevScrollLeft, positionDiff;
+const showHideIcons = () => {
+    // showing and hiding prev/next icon according to carousel scroll left value
+    let scrollWidth = carousel.scrollWidth - carousel.clientWidth; // getting max scrollable width
+    arrowIcons[0].style.display = carousel.scrollLeft == 0 ? "none" : "block";
+    arrowIcons[1].style.display = carousel.scrollLeft == scrollWidth ? "none" : "block";
+}
+arrowIcons.forEach(icon => {
+    icon.addEventListener("click", () => {
+        let firstImgWidth = firstImg.clientWidth + 14; // getting first img width & adding 14 margin value
+        // if clicked icon is left, reduce width value from the carousel scroll left else add to it
+        carousel.scrollLeft += icon.id == "left" ? -firstImgWidth : firstImgWidth;
+        setTimeout(() => showHideIcons(), 60); // calling showHideIcons after 60ms
+    });
+});
+const autoSlide = () => {
+    // if there is no image left to scroll then return from here
+    if(carousel.scrollLeft - (carousel.scrollWidth - carousel.clientWidth) > -1 || carousel.scrollLeft <= 0) return;
+    positionDiff = Math.abs(positionDiff); // making positionDiff value to positive
+    let firstImgWidth = firstImg.clientWidth + 14;
+    // getting difference value that needs to add or reduce from carousel left to take middle img center
+    let valDifference = firstImgWidth - positionDiff;
+    if(carousel.scrollLeft > prevScrollLeft) { // if user is scrolling to the right
+        return carousel.scrollLeft += positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+    }
+    // if user is scrolling to the left
+    carousel.scrollLeft -= positionDiff > firstImgWidth / 3 ? valDifference : -positionDiff;
+}
+const dragStart = (e) => {
+    // updatating global variables value on mouse down event
+    isDragStart = true;
+    prevPageX = e.pageX || e.touches[0].pageX;
+    prevScrollLeft = carousel.scrollLeft;
+}
+const dragging = (e) => {
+    // scrolling images/carousel to left according to mouse pointer
+    if(!isDragStart) return;
+    e.preventDefault();
+    isDragging = true;
+    carousel.classList.add("dragging");
+    positionDiff = (e.pageX || e.touches[0].pageX) - prevPageX;
+    carousel.scrollLeft = prevScrollLeft - positionDiff;
+    showHideIcons();
+}
+const dragStop = () => {
+    isDragStart = false;
+    carousel.classList.remove("dragging");
+    if(!isDragging) return;
+    isDragging = false;
+    autoSlide();
+}
+carousel.addEventListener("mousedown", dragStart);
+carousel.addEventListener("touchstart", dragStart);
+document.addEventListener("mousemove", dragging);
+carousel.addEventListener("touchmove", dragging);
+document.addEventListener("mouseup", dragStop);
+carousel.addEventListener("touchend", dragStop);
+</script>
+   {%endblock%}
+ 
 <footer>
 
-
+<!--footer using bootstrap-->
 <div class="container">
   <div class="row">
     <div class="col-sm-4">
