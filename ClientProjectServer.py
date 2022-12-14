@@ -289,7 +289,7 @@ def Comments():
          finally:
              return msg
              conn.close()
-             return render_template('Comments.html', data =data)
+             return redirect(request.referrer)
 
 @app.route("/AddRoutes", methods = ['POST','GET'])
 def AddRoute():
@@ -314,7 +314,7 @@ def AddRoute():
 		finally:
 			return msgroute
 			conn.close()
-
+            return render_template('Comments.html', data =data)
 
 #admin page
 @app.route("/Admin", methods=['GET'])

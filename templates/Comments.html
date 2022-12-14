@@ -6,7 +6,7 @@
 
     <meta charset="utf-8">
 
-    <title>Submit your enquiries</title>
+    <title>Submit your comments</title>
 
     <link href="/static/style.css" rel="stylesheet">
 
@@ -18,8 +18,8 @@
 
   {% block mainBlock%}
 <div id="Comments">
-    <h1 style="font-family:verdana"> Submit your comments! </h1>
-  <h3 style="font-family:verdana"> Got any comments or concerns about the walk and/or location? Type them out right here!<h3>
+    <h1 style="font-family:Arial"> Submit your comments</h1>
+  <h3 style="font-family:Arial"> Got any comments or concerns about the walk and/or location? Type them out right here!<h3>
   <form id="Commentssubmission" action="/Commentssubmission" method="POST">
   <label for="NameOfRoute">name of route:</label>
   <input type="text" name="NameOfRoute" id="NameOfRoute" maxlength="20">
@@ -28,8 +28,8 @@
   <input type="text" name="NameOfLocation" id="NameOfLocation" maxlength="20">
   <br>
   <label for="Comment">Comment:</label>
+  <br>
   <input type="text" name="Comment" id="Comment" maxlength="300" style="height:100px; width:200px;">
-
   <button type="submit" onclick="submission()" onclick="validate()">Submit</button>
 
   </form>
