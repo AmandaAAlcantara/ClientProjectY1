@@ -364,7 +364,7 @@ footer{
   height: 37px;
   margin-left: 1170px;
 }
-#allbtns{
+#alladminbtns{
   text-align: center;
 }
 
@@ -372,7 +372,9 @@ footer{
   display: inline-block;
 }
 
-
+#bottompage-nav{
+text-align: center; 
+}
 /*form{
 			width: 600px;
 			margin: 200px auto;
