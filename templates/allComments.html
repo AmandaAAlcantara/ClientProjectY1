@@ -1,0 +1,22 @@
+{%block mainBlock%}
+<div id="allcommentstitle">
+<h2>  All Comments</h2>
+</div>
+<table border = 1>
+   <thead>
+      <td>NameOfRoute</td>
+      <td>NameOfLocation</td>
+      <td>Comment</td>
+    </thead>
+ {% for row in data %}
+      <tr>
+
+
+        <td>{{row[0]}}</td>
+        <td>{{row[1]}}</td>
+        <td>{{row[2]}}</td>
+
+      </tr>
+   {% endfor %}
+</table>
+{%endblock%}
