@@ -236,27 +236,35 @@ def SeeCheckpoints():
 
 #Enquiry page
 @app.route("/Enquiries", methods = ['POST','GET'])
-def Enquiry():
-    if request.method == 'GET':
-        return render_template('Enquiries.html')
-    if request.method == 'POST':
-        text = request.form.get('text',default="Error")
-        email = request.form.get('email',default="Error")
-        print("Enquiry:" + text)
+def enquiry():
+	if request.method =='GET':
+		return render_template('Enquiries.html')
+	if request.method =='POST':
+		email = request.form.get('email', default="Error")
+		text = request.form.get('text', default="Error")
+		print("Your enquiry is "+email)
 
-        try:
-            conn = sqlite3.connect(DATABASE)
-            cur = conn.cursor()
-            cur.execute("INSERT INTO Enquiries ('text','email')VALUES (?,?)",
-            (text,email))
-            conn.commit()
-            Enquirymsg = "Enquiry submitted"
-        except:
-            conn.rollback()
-            Enquirymsg = "failed"
-        finally:
-            return Enquirymsg
-            conn.close()
+		try:
+			conn = sqlite3.connect(DATABASE)
+			cur = conn.cursor()
+			cur.execute("INSERT INTO Enquiries ('Text', 'Email')VALUES (?,?)",
+			(text,email))
+			conn.commit()
+			msg = "Thank you for sending us an enquiry."
+		except:
+			conn.rollback()
+			msg = "failed"
+		finally:
+			return msg
+			conn.close()
+
+
+
+
+
+
+
+
 
 #Comments.html
 @app.route("/Commentssubmission" , methods = ['POST','GET'])

@@ -11,18 +11,18 @@
 
 
         {% block mainBlock%}
-
+<!-- form for checkpoint-->
 <div id="formForCheckpoints">
   <h2> Add checkpoint </h2>
   <form id='addCheckForm' onsubmit="return loadCheck()">
-    <label>Name:
+    <label>Name:<br>
     <input  id="inputcheck" type="text" name ="name"><br>
-    <label>Link for Picture:
+    <label>Link for Picture:<br>
     <input  id="inputcheck" type="text" name ="picture"><br>
-    <label>Facts:
+    <label>Facts:<br>
     <input  id="inputcheck" type="text" name ="facts"><br>
-    <label>Contacts:
-    <input  id="inputcheck" type="text" name ="contacts"><br>
+    <label>Contacts:<br>
+    <input  id="inputcheck" type="text" name ="contacts"><br><br>
     <button id="addingcheckpoints" type = "submit"> Add Checkpoint </button>
   </form>
   <span id= "message"></span>

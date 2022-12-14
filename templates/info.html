@@ -6,7 +6,7 @@
 
 
 {%block mainBlock%}
-
+<!--html page that corresponds with the qr code-->
 
 {% for row in data %}
 
@@ -42,7 +42,7 @@
   <img src="/static/LandmarkImg/Wildlife.jpg" style="width: 245px">
 <div id= "WCheckpoint">
   <div class="dropdown">
-    <button id="Wbutton" class="dropbtn"><h2 style="color:white; text-align: center">Wildlife</h2></button>
+    <button id="Wbutton" class="dropbtn"><h2 style="color:white">Wildlife</h2></button>
     <div id="Wildlife" class="dropdown-content">
         {{row[3]}}
     </div>
@@ -85,8 +85,10 @@
   <div id="points" class ="points" >
     <img class ="rewards-icon" src= "/static/Cookies/prize.png">
     <span class ="message"> Collect your 100 points.</span>
+    <div id="acceptbtm">
     <button class="accept" onclick="loadCookies()">Collect</button>
     <input type="text" id="noOfPoints" value="100"></input>
+    </div>
   </div>
 
 
