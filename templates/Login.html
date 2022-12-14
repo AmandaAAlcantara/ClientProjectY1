@@ -13,95 +13,69 @@
 
         {% block mainBlock%}
 
-
-
-<<<<<<< HEAD
-        <body>
-          <form action="/Admin.html" method="POST">
-          		<div>
-          			<label for="username">Username</label>
-          			<input type="text" name="username" placeholder="Username">
-          			<span></span>
-          		</div>
-          		<div>
-          			<label for="password">Password</label>
-          			<input type="password" name="password" placeholder="Password">
-          			<span></span>
-          		</div>
-          		<button id="log-in">Log-in</button>
-          	</form>
-
-=======
+        <div class="wrapper">
+  	<div class="form">
+  		<div class="title">
+  			Login
+  		</div>
+  		<form method="post" action="/Admin.html" onsubmit="return validation()">
+  			<div class="input_wrap">
+  				<label for="input_text">Email or Username</label>
+  				<div class="input_field">
+  					<input type="text" class="input" id="input_text">
+  				</div>
+  			</div>
+  			<div class="input_wrap">
+  				<label for="input_password">Password</label>
+  				<div class="input_field">
+  					<input type="password" class="input" id="input_password">
+  				</div>
+  			</div>
+  			<div class="input_wrap">
+  				<span class="error_msg">Incorrect username or password. Please try again</span>
+  				<a type="submit" id="login_btn" class="btn disabled" href ="/Admin" disabled="true">Login</a>
+  			</div>
+  		</form>
+  	</div>
+  </div>
 
 
 </body>
 
+ {%endblock%}
+ 
+ 
+      {% block javascriptBlock%}   
+<script>
+function validation(){
+	var input_text = document.querySelector("#input_text");
+	var input_password = document.querySelector("#input_password");
+	var error_msg = document.querySelector(".error_msg");
+
+	if(input_text.value.length <= 3 || input_password.value.length <= 3 ){
+		error_msg.style.display = "inline-block";
+		input_text.style.border = "1px solid #f74040";
+		input_password.style.border = "1px solid #f74040";
+		return false;
+	}
+	else{
+    alert("Successfully Logged in as Admin")
+		return true;
+	}
+}
+
+var input_fields = document.querySelectorAll(".input");
+var login_btn = document.querySelector("#login_btn");
+
+input_fields.forEach(function(input_item){
+	input_item.addEventListener("input", function(){
+		if(input_item.value.length > 3){
+			login_btn.disabled = false;
+			login_btn.className = "btn enabled"
+		}
+	})
+})
+</script>
 </html>
->>>>>>> 911b6a6239a5f578bbcf39a71f9efa4fd15bdc6e
 
         {%endblock%}
-  {% block javascript %}
-<script>
-window.onload = ()=>{
-		this.sessionStorage.setItem('username', 'sakaos_user');
-		this.sessionStorage.setItem('password', 'sakaos_password');
-	}
-
-	var input = document.getElementsByTagName('input');
-	var login = document.getElementById('log-in');
-	var form = document.querySelector('form');
-	form.onsubmit = ()=>{return false;}
-
-	login.onclick = ()=>{
-
-		if ((input[0].value != "") && (input[1].value != ""))
-		 {
-		 	if ((input[0].value == sessionStorage.getItem('username')) && (input[1].value == sessionStorage.getItem('password')))
-		 	 {
-		 	 	form.onsubmit = ()=>{return 1;}
-				  document.cookie = "username="+input[0].value;
-				  document.cookie = "password="+input[1].value;
-		 	 }
-		 	 else
-		 	 {
-		 	 	if ((input[0].value != sessionStorage.getItem('username')) )
-			 	 {
-			 	 	input[0].nextElementSibling.textContent = "Username NOT match";
-					setTimeout(()=>{
-						input[0].nextElementSibling.textContent = "";
-					}, 2000);
-
-			 	 }
-			 	 if ((input[1].value != sessionStorage.getItem('password')) )
-			 	 {
-			 	 	input[1].nextElementSibling.textContent = "Password NOT match";
-					setTimeout(()=>{
-						input[1].nextElementSibling.textContent = "";
-					}, 2000);
-
-			 	 }
-
-		 	 }
-
-		 }
-		else
-		 {
-			if (input[0].value == "")
-			{
-				input[0].nextElementSibling.textContent = "Username is empty";
-				setTimeout(()=>{
-					input[0].nextElementSibling.textContent = "";
-				}, 2000);
-			}
-			if (input[1].value == "")
-			{
-				input[1].nextElementSibling.textContent = "Password is empty";
-				setTimeout(()=>{
-					input[1].nextElementSibling.textContent = "";
-				}, 2000);
-			}
-		 }
-	}
-
-</script>
-  {% endblock %}
