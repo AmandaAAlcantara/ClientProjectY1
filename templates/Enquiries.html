@@ -11,8 +11,8 @@
 
 
         {% block mainBlock%}
-
-<div id="formForCheckpoints">
+<!-- form for enquiries-->
+<div id="formForCheckpoints" style= "text-align: center">
   <h2> Enquiries </h2>
   <form id='Enquiry' onsubmit="return enquiry()">
     <p id="TitleEnquiry">Type of Enquiry</p>
@@ -51,7 +51,7 @@
 
     {% block javascriptBlock%}
     <script>
-
+/*javascript- validation for forms*/
     function validate(){
       var pass = true;
       var text = document.forms["Enquiry"]["text"].value;
