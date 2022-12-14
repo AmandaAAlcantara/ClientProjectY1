@@ -372,6 +372,9 @@ footer{
   display: inline-block;
 }
 
+#page-nav{
+  text-align: center;
+}
 
 /*form{
 			width: 600px;
