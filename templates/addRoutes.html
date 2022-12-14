@@ -14,21 +14,53 @@
         {% block mainBlock%}
 
 
+<!--form for routes-->
+
+
+
+
 <div id="formForroutes">
   <h2> Add an route </h2>
   <form id='addRouteForm' onsubmit="return loadroutes()">
-    <label>Picture of route:<br>
+    <label>Picture of route:
     <input  id="inputroute" type="text" name ="routepic"><br>
-    <label>Name of routes:<br>
+    <label>Name of routes:
     <input  id="inputroute" type="text" name ="routename"><br>
-    <label>Info about routes:<br>
-    <input  id="inputroute" type="text" name ="routeinfo"><br><br>
+    <label>Info about routes:
+    <input  id="inputroute" type="text" name ="routeinfo"><br>
     <button id="addingroutes" type = "submit"> Add route </button>
   </form>
   <span id= "routemessage"></span>
 </div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
         {%endblock%}
+
+<!-- javascript relating to routeform-->
 
     {% block javascriptBlock%}
     <script>
@@ -51,6 +83,9 @@
   xhttp.send(params);
   return false;
 }
+
+
+
 
 
 </script>

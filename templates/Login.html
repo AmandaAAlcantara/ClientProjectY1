@@ -1,0 +1,81 @@
+
+<!doctype html>
+<html>
+<head>
+  <title></title>
+  <link href="/static/simplecss.css" rel="stylesheet">
+</head>
+{%extends'Home.html'%}
+
+    <h2>{% block titleBlock%} {%endblock%}</h2>
+
+
+
+        {% block mainBlock%}
+
+        <div class="wrapper">
+  	<div class="form">
+  		<div class="title">
+  			Login
+  		</div>
+  		<form method="post" action="/Admin.html" onsubmit="return validation()">
+  			<div class="input_wrap">
+  				<label for="input_text">Email or Username</label>
+  				<div class="input_field">
+  					<input type="text" class="input" id="input_text">
+  				</div>
+  			</div>
+  			<div class="input_wrap">
+  				<label for="input_password">Password</label>
+  				<div class="input_field">
+  					<input type="password" class="input" id="input_password">
+  				</div>
+  			</div>
+  			<div class="input_wrap">
+  				<span class="error_msg">Incorrect username or password. Please try again</span>
+  				<a type="submit" id="login_btn" class="btn disabled" href ="/Admin" disabled="true">Login</a>
+  			</div>
+  		</form>
+  	</div>
+  </div>
+
+
+</body>
+
+ {%endblock%}
+ 
+ 
+      {% block javascriptBlock%}   
+<script>
+function validation(){
+	var input_text = document.querySelector("#input_text");
+	var input_password = document.querySelector("#input_password");
+	var error_msg = document.querySelector(".error_msg");
+
+	if(input_text.value.length <= 3 || input_password.value.length <= 3 ){
+		error_msg.style.display = "inline-block";
+		input_text.style.border = "1px solid #f74040";
+		input_password.style.border = "1px solid #f74040";
+		return false;
+	}
+	else{
+    alert("Successfully Logged in as Admin")
+		return true;
+	}
+}
+
+var input_fields = document.querySelectorAll(".input");
+var login_btn = document.querySelector("#login_btn");
+
+input_fields.forEach(function(input_item){
+	input_item.addEventListener("input", function(){
+		if(input_item.value.length > 3){
+			login_btn.disabled = false;
+			login_btn.className = "btn enabled"
+		}
+	})
+})
+</script>
+</html>
+
+        {%endblock%}
