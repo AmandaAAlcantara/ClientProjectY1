@@ -45,6 +45,9 @@
 
 
 
+
+  {% block mainBlock%}
+
   <!-- Adapted from w3schools -->
   <div id="myloginModal" class="loginmodal">
 
@@ -88,9 +91,6 @@
 
     </div>
     </div>
-
-  {% block mainBlock%}
-
 
 
 {% block titleBlock%}<h1 id="homestyle"><center></center></h1>{%endblock%}
@@ -197,6 +197,15 @@
 
 
 
+
+
+
+
+
+
+
+      {% block javascriptBlock%}   
+
 <script>
 
 //Following function gets values of the username and password fields and checks to see if they match a hard coded username and password
@@ -248,20 +257,6 @@ window.onclick = function(event) {
     modal.style.display = "none";
   }
 }
-</script>
-
-
-
-
-
-
-
-
-      {% block javascriptBlock%}   
-
-<script>
-
-
 
 
 
