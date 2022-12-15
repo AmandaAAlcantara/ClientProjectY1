@@ -370,9 +370,15 @@ footer{
 
 
 
+#bottompage-nav{
+text-align: center;
+}
+
+
 #page-nav{
   text-align: center;
 }
+
 
 /*form{
 			width: 600px;
