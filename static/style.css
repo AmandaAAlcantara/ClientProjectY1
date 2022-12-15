@@ -368,9 +368,7 @@ footer{
   text-align: center;
 }
 
-#adminbtns{
-  display: inline-block;
-}
+
 
 #page-nav{
   text-align: center;
@@ -590,3 +588,7 @@ footer{
 		.year{
 			text-align: center;
 		}
+
+#adminpp{
+  text-align: center;
+}
