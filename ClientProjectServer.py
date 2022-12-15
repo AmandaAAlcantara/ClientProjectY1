@@ -234,6 +234,22 @@ def SeeCheckpoints():
 			conn.close()
 			return render_template('AllCheckpoints.html', data =data)
 
+
+@app.route("/AllComments", methods = ['GET'])
+def SeeComments():
+	if request.method =='GET':
+		try:
+			conn = sqlite3.connect(DATABASE)
+			cur = conn.cursor()
+			cur.execute("SELECT * FROM Commentssubmission;")
+			data = cur.fetchall()
+			print("getting data")
+		except:
+			print('there was an error',)
+		finally:
+			conn.close()
+			return render_template('AllComments.html', data =data)
+
 #Enquiry page
 @app.route("/Enquiries", methods = ['POST','GET'])
 def enquiry():
