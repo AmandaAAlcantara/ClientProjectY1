@@ -330,26 +330,12 @@ def returnAdmin():
     if request.method == 'GET':
         return render_template('Admin.html')
 
-#see all comments page
-@app.route("/AllComments", methods = ['GET'])
-def SeeComments():
-	if request.method =='GET':
-		try:
-			conn = sqlite3.connect(DATABASE)
-			cur = conn.cursor()
-			cur.execute("SELECT * FROM Commentssubmission;")
-			data = cur.fetchall()
 
-
-			print("getting data")
-		except:
-			print('there was an error',)
-		finally:
-			conn.close()
-			return render_template('allComments.html', data =data)
-
-
-
+#admin page
+@app.route("/Festive5k", methods=['GET'])
+def returnFestive5k():
+    if request.method == 'GET':
+        return render_template('/Festive5k.html')
 
 
 
