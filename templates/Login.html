@@ -1,81 +1,75 @@
-
 <!doctype html>
 <html>
+<body>
 <head>
   <title></title>
-  <link href="/static/simplecss.css" rel="stylesheet">
+  <link href="/static/style.css" rel="stylesheet">
 </head>
 {%extends'Home.html'%}
 
     <h2>{% block titleBlock%} {%endblock%}</h2>
 
 
-
         {% block mainBlock%}
 
-        <div class="wrapper">
-  	<div class="form">
-  		<div class="title">
-  			Login
-  		</div>
-  		<form method="post" action="/Admin.html" onsubmit="return validation()">
-  			<div class="input_wrap">
-  				<label for="input_text">Email or Username</label>
-  				<div class="input_field">
-  					<input type="text" class="input" id="input_text">
-  				</div>
-  			</div>
-  			<div class="input_wrap">
-  				<label for="input_password">Password</label>
-  				<div class="input_field">
-  					<input type="password" class="input" id="input_password">
-  				</div>
-  			</div>
-  			<div class="input_wrap">
-  				<span class="error_msg">Incorrect username or password. Please try again</span>
-  				<a type="submit" id="login_btn" class="btn disabled" href ="/Admin" disabled="true">Login</a>
-  			</div>
-  		</form>
-  	</div>
-  </div>
+
+        <div  id="loginicon">
+        <h2><center>Welcome Admin</center></h2>
+        <img  src="https://static.vecteezy.com/system/resources/previews/002/002/300/non_2x/beautiful-woman-avatar-character-icon-free-vector.jpg" height="100px" width="auto" >
+        </div>
+
+<!--
+    Added onsubmit attribute to form so that it will trigger the JS function (authenticate).
+    if the function returns false it will prevent the form from submitting
+--><!--inspired by stack overflow-->
+<form action="/Admin" onsubmit="return authenticate()">
+      <label for="username">Username</label>
+      <!-- added IDs to the inputs -->
+      <input
+        id="username"
+        type="text"
+        placeholder="Enter Username"
+        name="username"
+        required
+      />
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        placeholder="Enter Password"
+        name="password"
+        required
+      />
+      <button type="submit">Submit</button>
+    </form>
+    {%endblock%}
 
 
-</body>
+{% block javascriptBlock%}
+    <script>
 
- {%endblock%}
- 
- 
-      {% block javascriptBlock%}   
-<script>
-function validation(){
-	var input_text = document.querySelector("#input_text");
-	var input_password = document.querySelector("#input_password");
-	var error_msg = document.querySelector(".error_msg");
+    //Following function gets values of the username and password fields and checks to see if they match a hard coded username and password
+      function authenticate(){
+        var authorised;
 
-	if(input_text.value.length <= 3 || input_password.value.length <= 3 ){
-		error_msg.style.display = "inline-block";
-		input_text.style.border = "1px solid #f74040";
-		input_password.style.border = "1px solid #f74040";
-		return false;
-	}
-	else{
-    alert("Successfully Logged in as Admin")
-		return true;
-	}
-}
+        //get input values
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
 
-var input_fields = document.querySelectorAll(".input");
-var login_btn = document.querySelector("#login_btn");
+        //check to see if the password and username match
+        if(username == "admin" && password == "admin12345"){
+          authorised = true;
+          window.location.href="/Admin"
+        }else{ // username or password do not match
+          authorised = false;
+          //alert user
+          alert("Sorry, password is incorrect.");
+        }
+        //return result
+        return authorised;
+      }
+    </script>
 
-input_fields.forEach(function(input_item){
-	input_item.addEventListener("input", function(){
-		if(input_item.value.length > 3){
-			login_btn.disabled = false;
-			login_btn.className = "btn enabled"
-		}
-	})
-})
-</script>
-</html>
-
-        {%endblock%}
+      {%endblock%}
+      </body>
+    </html>

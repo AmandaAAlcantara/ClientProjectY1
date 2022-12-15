@@ -595,6 +595,14 @@ text-align: center;
 			text-align: center;
 		}
 
+#loginicon{
+	text-align: center;
+}
+#username, #password{
+	text-align: center;
+}
+
 #adminpp{
   text-align: center;
+
 }
