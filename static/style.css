@@ -587,3 +587,9 @@ footer{
 		.year{
 			text-align: center;
 		}
+#loginicon{
+	text-align: center;
+}
+#username, #password{
+	text-align: center;
+}
