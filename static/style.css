@@ -377,6 +377,43 @@ footer{
   height: 37px;
   margin-left: 1170px;
 }
+
+
+/*Comments page*/
+#Comment{
+  font family: arial;
+  text-align: left;
+  flex: 1;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: white;
+
+}
+
+#NameOfLocation{
+  font family: arial;
+  text-align: left;
+  flex: 1;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: white;
+
+}
+
+#NameOfRoute{
+  font family: arial;
+  text-align: left;
+  flex: 1;
+  border-radius: 8px;
+  padding: 10px;
+  background-color: white;
+
+}
+
+
+
+#allbtns{
+
 #alladminbtns{
   text-align: center;
 }
@@ -782,5 +819,11 @@ footer h4 {
 
 #loginform{
   text-align: center;
+
+}
+
+#favicon{
+   width: 10px;
+   height: 100px;
 
 }

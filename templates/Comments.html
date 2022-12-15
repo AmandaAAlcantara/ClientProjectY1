@@ -5,7 +5,7 @@
 
     <meta charset="utf-8">
 
-    <title>Submit your Comments </title>
+    <title>Submit your comments</title>
 
     <link href="/static/style.css" rel="stylesheet">
 
@@ -18,8 +18,8 @@
 <!-- comments form -->
   {% block mainBlock%}
 <div id="Comments" style = "text-align: center">
-    <h2> Submit your comments</h2>
-  <h3> Got any comments or concerns about the walk and/or location? Type them out right here!<h3>
+    <h1> Submit your comments</h1>
+  <h3> Enter any comments and/or concerns you have on your walk down here <h3>
   <form id="Commentssubmission" action="/Commentssubmission" method="POST">
   <br>
   <label for="NameOfRoute">Name of route:</label>
@@ -30,16 +30,19 @@
   <input type="text" name="NameOfLocation" id="NameOfLocation" maxlength="20">
   <br>
   <label for="Comment">Comment:</label><br>
-  <input type="text" name="Comment" id="Comment" maxlength="300" style="height:100px; width:200px;">
+  <input type="text" name="Comment" id="Comment" maxlength="300" style="height:200px; width:400px;">
   <br><br>
   <button type="submit" onclick="submission()" onclick="validate()">Submit</button><br>
 
   </form>
-
+  <span id= "message"></span>
 </div>
       {%endblock%}
 </main>
 
+<style>
+  .hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
+</style>
 
 <!-- validation for comments form-->
 {% block javascriptBlock%}

@@ -313,7 +313,7 @@ def Comments():
          finally:
              return msg
              conn.close()
-             return render_template('Comments.html', data =data)
+
 
 @app.route("/AddRoutes", methods = ['POST','GET'])
 def AddRoute():
@@ -352,6 +352,7 @@ def returnAdmin():
 def returnFestive5k():
     if request.method == 'GET':
         return render_template('/Festive5k.html')
+
 
 
 
