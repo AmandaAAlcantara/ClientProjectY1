@@ -1,110 +1,96 @@
 <!doctype html>
 <html>
-<meta name="viewport" content="width=device-width, initial-scale=2.0">
+<body>
 <head>
-  <title>Enquiries</title>
-  <link href="static/style.css" rel="stylesheet">
-
+  <title></title>
+  <link href="/static/style.css" rel="stylesheet">
 </head>
 {%extends'Home.html'%}
-<body>
-  <header>
 
     <h2>{% block titleBlock%} {%endblock%}</h2>
-  </header>
 
-  <div class="mainAndAside">
-    <main>
-      <p>
-        {%if msg%}
-        {{msg}}
-        {%endif%}
-      <p>
+
         {% block mainBlock%}
-        <h3><center>Enquiries</center></h3>
 
-        <div id = "block">
+<div id="formForCheckpoints">
+  <h2> Enquiries </h2>
+  <form id='Enquiry' onsubmit="return enquiry()">
+    <p id="TitleEnquiry">Type of Enquiry</p>
+    <input type="checkbox" name="General" id="General" value="yes" />
+    <label for="General">General</label>
+    <br>
+    <input type="checkbox" name="Routes" id="Routes" value="yes" />
+    <label for="Routes">Routes</label>
+    <br>
+    <input type="checkbox" name="Level_of_Dificulty" id="Level_of_Dificulty" value="yes" />
+    <label for="Level_of_Dificulty">Level of Dificulty</label>
+    <br>
+    <input type="checkbox" name="Health" id="Health" value="yes" />
+    <label for="Health">Health</label>
+    <br>
+    <input type="checkbox" name="Tips_and_Tricks" id="Tips_and_Tricks" value="yes" />
+    <label for="Tips_and_Tricks">Tips and Tricks</label>
+    <br>
+    <input type="checkbox" name="DS" id="DS" value="yes" />
+    <label for="DS">Direct Contact</label>
+    <br>
+    <input type="checkbox" name="Other" id="Other" value="yes" />
+    <label for="Other">Other</label>
+    <br><br>
+    <label>Enquiry:<br>
+    <input  id="inputcheck" type="text" name ="text"><br><br>
+    <label>Email:<br>
+    <input  id="inputcheck" type="email" placeholder="(optional)" name ="email"><br><br>
+    <button id="addingcheckpoints" type = "submit" class="btn btn-success" onclick="return validate()"> Submit </button>
+  </form>
+  <span id= "message"></span>
+</div>
 
-        <div id = "EnquiryForm">
-        <form method="post" onsubmit="return validate()" name = "Enquiry">
-          <div>
-          <p id="TitleEnquiry">Type of Enquiry</p>
-          <input type="checkbox" name="General" id="General" value="yes" />
-          <label for="General">General</label>
-          <br>
-          <input type="checkbox" name="Routes" id="Routes" value="yes" />
-          <label for="Routes">Routes</label>
-          <br>
-          <input type="checkbox" name="Level_of_Dificulty" id="Level_of_Dificulty" value="yes" />
-          <label for="Level_of_Dificulty">Level of Dificulty</label>
-          <br>
-          <input type="checkbox" name="Health" id="Health" value="yes" />
-          <label for="Health">Health</label>
-          <br>
-          <input type="checkbox" name="Tips_and_Tricks" id="Tips_and_Tricks" value="yes" />
-          <label for="Tips_and_Tricks">Tips and Tricks</label>
-          <br>
-          <input type="checkbox" name="DS" id="DS" value="yes" />
-          <label for="DS">Direct Contact</label>
-          <br>
-          <input type="checkbox" name="Other" id="Other" value="yes" />
-          <label for="Other">Other</label>
-          <br><br>
-          <label>Opinion/Enquiry:<br>
-            <textarea id = "text" rows="2" cols="30" type="text"  placeholder="" name="text" ></textarea>
-          </label>
-
-          <div class="form-group">
-            <br>
-          <label>So we can contact you<br>Email:<br>
-            <input id = "email" type="email" name="email" placeholder="(optional)" class="form-control"/>
-          </label><br><br>
-          <button id="myBtn" type="submit" onclick="return submission()">Submit</button><br>
-          </div>
-          </div>
-          </form>
-          <span id= "EnquiryMessage" </span>
-        </div>
-        </div>
         {%endblock%}
 
-    </main>
 
-  </div>
+    {% block javascriptBlock%}
+    <script>
 
-  <footer>
-
-  </footer>
-{% block javascript %}
-  <script>
-  function validate(){
-    var pass = true;
-    var text = document.forms["Enquiry"]["text"].value;
-    if (text.length > 200){pass=false; }
-    if (!pass){alert("ERROR, number of characters limit reached")}
-    return pass;
-  }
+    function validate(){
+      var pass = true;
+      var text = document.forms["Enquiry"]["text"].value;
+      if (text.length > 30){pass=false; }
+      if (!pass){alert("ERROR, number of characters limit reached")}
+      return pass;
+    }
 
 
-  function submission() {
-    var text = document.forms["Enquiry"]["text"].value;
-    var email = document.forms["Enquiry"]["email"].value;
-    params = 'text='+text+'&email='+email;
-
+    function enquiry() {
+      var email = document.forms["Enquiry"]["email"].value;
+      var text = document.forms["Enquiry"]["text"].value;
+      params = 'email='+email+'&text='+text;
   var xhttp = new XMLHttpRequest();
-    xhttp.open("POST",'Enquiry', true);
-    xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhttp.onload = function(){
-      if(xhttp.readyState === 4 && xhttp.status === 200) {
-        console.log(xhttp.responseText);
-        document.getElementById("message").innerHTML = xhttp.responseText;
-      } else {
-        console.error(xhttp.statusText);
-      }
-    };
-    xhttp.send(params);
-    return false;
-  }
-  </script>
-  {% endblock %}
-</body>
+  xhttp.open("POST", '/Enquiries', true);
+  xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+  xhttp.onload = function() {
+    if (xhttp.readyState === 4 && xhttp.status === 200) {
+      console.log(xhttp.responseText);
+      document.getElementById("message").innerHTML = xhttp.responseText;
+    } else {
+      console.error(xhttp.statusText);
+    }
+  };
+  xhttp.send(params);
+  return false;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+</script>
+    {%endblock%}
+  </body>

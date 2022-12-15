@@ -1,7 +1,7 @@
 DROP TABLE if EXISTS Checkpoints;
-CREATE TABLE if not EXISTS "Checkpoints" ( "ID" INTEGER not NULL PRIMARY KEY AUTOINCREMENT, "Name" TEXT, "Picture" TEXT, "Facts" TEXT, "Contacts" TEXT);
+CREATE TABLE if not EXISTS "Checkpoints" ( "ID" INTEGER not NULL PRIMARY KEY AUTOINCREMENT, "Name" TEXT, "Picture" TEXT, "Facts" TEXT, "Contacts" TEXT,"Map" TEXT);
 
-INSERT INTO Checkpoints ("ID", "Name", "Picture","Facts") VALUES ("1", "Redwick", "/static/LandmarkImg/Redwick.jpg", "Redwick is the best-preserved medieval village
+INSERT INTO Checkpoints ("ID", "Name", "Picture","Facts","Map") VALUES ("1", "Redwick", "/static/LandmarkImg/Redwick.jpg", "Redwick is the best-preserved medieval village
 on the Gwent Levels. The village probably
 originated late in the eleventh century; its
 layout has hardly changed since.
@@ -12,9 +12,9 @@ immersion baptistery and its font originates
 from the 13th Century. Two of the six bells
 in the central tower date from the pre-reformation period and are thought to be
 some of the oldest working church bells in
-the country.");
+the country.","https://www.google.com/maps/dir//Vittorio%E2%80%99s,+113+Stow+Hill,+Newport+NP20+4ED/@51.5826699,-3.0751766,12z/data=!4m17!1m7!3m6!1s0x4871e6c9f7c4d98b:0xe79fbcbde897aa9!2zVml0dG9yaW_igJlz!8m2!3d51.582668!4d-3.0000897!15sCgtSZXN0YXVyYW50c1oNIgtyZXN0YXVyYW50c5IBEml0YWxpYW5fcmVzdGF1cmFudOABAA!4m8!1m0!1m5!1m1!1s0x4871e6c9f7c4d98b:0xe79fbcbde897aa9!2m2!1d-3.0000897!2d51.582668!3e2");
 
-INSERT INTO Checkpoints ("ID", "Name", "Picture","Facts") VALUES ("2", "Whitson","/static/LandmarkImg/Whitson.jpg", "The houses and farmsteads in Whitson are set
+INSERT INTO Checkpoints ("ID", "Name", "Picture","Facts","Map") VALUES ("2", "Whitson","/static/LandmarkImg/Whitson.jpg", "The houses and farmsteads in Whitson are set
 back from the road in long strips of pasture.
 It reflects a medieval ‘cope’ land allocation
 pattern. This fascinating landscape was
@@ -26,9 +26,9 @@ Monkditch carries water from an upland stream
 to the coast, preventing the fresh water from
 flooding the levels. It was first documented in
 the 13th Century and probably constructed by
-the monks at Goldcliff. ");
+the monks at Goldcliff. ","https://www.google.com/maps/dir//The+Farmers+Arms,+Goldcliff+Rd,+Goldcliff,+Newport+NP18+2AU/@51.5430821,-2.9823182,13z/data=!4m18!1m8!3m7!1s0x4871e5eb5afe50af:0xc6a15829106a1a04!2sThe+Farmers+Arms!8m2!3d51.5430841!4d-2.9165704!15sCgtSZXN0YXVyYW50c1oNIgtyZXN0YXVyYW50c5IBCnJlc3RhdXJhbnTgAQA!16s%2Fg%2F1q62hl9z8!4m8!1m0!1m5!1m1!1s0x4871e5eb5afe50af:0xc6a15829106a1a04!2m2!1d-2.9165704!2d51.5430841!3e2");
 
-INSERT INTO Checkpoints ("ID", "Name", "Picture","Facts","Contacts") VALUES ("3", "Goldcliff Sea Wall
+INSERT INTO Checkpoints ("ID", "Name", "Picture","Facts","Contacts","Map") VALUES ("3", "Goldcliff Sea Wall
 and Priory","/static/LandmarkImg/GoldcliffSeaWall.jpg", "Giraldus Cambrensis, who toured Wales in 1188,
 described Gouldclyffe in Latin as ‘glittering with
 a wonderful brightness’.
@@ -46,16 +46,16 @@ they had to reclaim it from the sea – continuing
 the work of the Romans.
 Goldcliff has long been associated with the tidal
 fishing of salmon, which may well have had its
-origins with the Priory or even in Roman times.","Natural Resources Wales - 01633 292 982");
+origins with the Priory or even in Roman times.","Natural Resources Wales - 01633 292 982","https://www.google.com/maps/dir//Harvester,+Seven+Stiles+Ave,+Spytty+Rd,+Newport+NP19+4QR/@51.5739365,-3.0105499,13z/data=!4m18!1m8!3m7!1s0x4871e6656d0d9799:0xffd5f40b5531a5b5!2sHarvester!8m2!3d51.5739515!4d-2.9446868!15sCgtSZXN0YXVyYW50c1oNIgtyZXN0YXVyYW50c5IBEWZhbWlseV9yZXN0YXVyYW504AEA!16s%2Fg%2F11b6q6k8tc!4m8!1m0!1m5!1m1!1s0x4871e6656d0d9799:0xffd5f40b5531a5b5!2m2!1d-2.9446868!2d51.5739515!3e2");
 
-INSERT INTO Checkpoints ("ID", "Name", "Picture","Facts") VALUES ("4","The Wetlands Centre", "/static/LandmarkImg/TheWetLandsCentre.jpg", "The Wetlands Centre is nestled among reeds
+INSERT INTO Checkpoints ("ID", "Name", "Picture","Facts","Map") VALUES ("4","The Wetlands Centre", "/static/LandmarkImg/TheWetLandsCentre.jpg", "The Wetlands Centre is nestled among reeds
 and pools to make it look as if it’s floating.
 The centre was opened in 2008 and is now
 managed by the RSPB. It houses a shop, café,
 an education room and conference facilities to
 provide activities and events as well as a place
 for visitors to relax. Guided walks around the
-Reserve can be arranged from here.");
+Reserve can be arranged from here.","https://www.google.com/maps/place/Marenghi's+Restaurant/@51.5880367,-3.0206214,13z/data=!4m16!1m8!2m7!1sRestaurants!3m5!2sRSPB+Newport+Wetlands!3s0x4871e5ccf863c5bb:0xd497b7e2268011f6!4m2!1d-2.9613909!2d51.5442454!3m6!1s0x4871e6f3fd0e4329:0x1a3e5964198cc7dd!8m2!3d51.5880367!4d-2.9637283!15sCgtSZXN0YXVyYW50c1oNIgtyZXN0YXVyYW50c5IBEml0YWxpYW5fcmVzdGF1cmFudOABAA!16s%2Fg%2F1q6b5648l");
 
 
 
@@ -80,7 +80,7 @@ INSERT INTO RoutesC ("Picture", "Name", "Info") VALUES ("/static/Routes/CityCent
 
 DROP TABLE if EXISTS Commentssubmission;
 CREATE TABLE if not EXISTS "Commentssubmission" ("NameOfRoute" TEXT, "NameOfLocation" TEXT, "Comment" TEXT);
-INSERT INTO Commentssubmission ("NameOfRoute", "NameOfLocation", "Comment") VALUES ("?" , "?" , "?")
+INSERT INTO Commentssubmission ("NameOfRoute", "NameOfLocation", "Comment") VALUES ("?" , "?" , "?");
 
 
 DROP TABLE if EXISTS DisabilityF;

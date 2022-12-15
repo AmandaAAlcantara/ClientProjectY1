@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link href="static/style.css" rel="stylesheet">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
  
@@ -121,21 +122,39 @@
 
   </div>
 </div>
-  {%endblock%}
+ {%endblock%}
  
  
       {% block javascriptBlock%}      {%endblock%}
  
 <footer>
-  <p> Address: Newport City Council, Civic Centre, Newport, South Wales, NP20 4UR</p>
-      <a href="https://twitter.com/NewportCouncil">Twitter</a>
-      <a href="https://www.instagram.com/gumtreeuk/?hl=en">instagram</a>
-      <a href="Info@newport.gov.uk">info@newport.gov.uk </a>
-      <p>General enquiries: (01633) 656 656 between 8.00am and 6.00pm Monday to Friday.<br>
-        <a href = "/Enquiries">Click here to send us an enquiry</a>
-       </p>
-      <p>Contact your councillor<br>
-      Newport City Council’s 51 elected councillors can be contacted by email, telephone or by post</p>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <img src="/static/LandmarkImg/mylogo.png" id = "logo">
+    </div>
+    <div class="col-sm-4">
+      <h3>Contact Us</h3>
+      <p><a href="Info@newport.gov.uk">info@newport.gov.uk </a></p>
+      <p>General enquiries: (01633) 656 656 between 8.00am and 6.00pm Monday to Friday</p>
+      <p><a href = "/Enquiries">Click here to send us an enquiry</a></p>
+    </div>
+    <div class="col-sm-4">
+      <h3></h3>
+      <p>Address: Newport City Council, Civic Centre, Newport, South Wales, NP20 4UR</p>
+      <p>Newport City Council’s 51 elected councillors can be contacted by email, telephone or by post</p>
+      <a href="https://twitter.com/NewportCouncil" class="fa fa-twitter"></a>
+      <a href="https://www.instagram.com/newportcitycouncil/?hl=en" class="fa fa-instagram"></a>
+      <a href="https://en-gb.facebook.com/NewportCityCouncil/" class="fa fa-facebook"></a>
+      <a href="https://www.newport.gov.uk/en/Home.aspx" class="fa fa-google"></a>
+      <p></p>
+
+    </div>
+
+  </div>
+</div>
 </footer>
  
 </body>

@@ -19,7 +19,7 @@
   {% block mainBlock%}
 <div id="Comments">
     <h1 style="font-family:Arial"> Submit your comments</h1>
-  <h3 style="font-family:Arial"> Got any comments or concerns about the walk and/or location? Type them out right here!<h3>
+  <h3 style="font-family:Arial"> Type out any statements and/or concerns regarding your walk<h3>
   <form id="Commentssubmission" action="/Commentssubmission" method="POST">
   <label for="NameOfRoute">name of route:</label>
   <input type="text" name="NameOfRoute" id="NameOfRoute" maxlength="20">
@@ -29,15 +29,18 @@
   <br>
   <label for="Comment">Comment:</label>
   <br>
-  <input type="text" name="Comment" id="Comment" maxlength="300" style="height:100px; width:200px;">
+  <input type="text" name="Comment" id="Comment" maxlength="300" style="height:100px; width:500px;">
   <button type="submit" onclick="submission()" onclick="validate()">Submit</button>
 
   </form>
-
+  <span id= "message"></span>
 </div>
       {%endblock%}
 </main>
 
+<style>
+  .hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
+</style>
 
 
 {% block javascriptBlock%}
