@@ -368,13 +368,18 @@ footer{
   text-align: center;
 }
 
-#adminbtns{
-  display: inline-block;
-}
+
 
 #bottompage-nav{
 text-align: center;
 }
+
+
+#page-nav{
+  text-align: center;
+}
+
+
 /*form{
 			width: 600px;
 			margin: 200px auto;
@@ -589,3 +594,7 @@ text-align: center;
 		.year{
 			text-align: center;
 		}
+
+#adminpp{
+  text-align: center;
+}
