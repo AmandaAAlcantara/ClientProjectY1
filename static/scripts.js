@@ -11,4 +11,3 @@ function qrScanner(){
     "reader", { fps: 10, qrbox: 250 }); //inserts the scanner in div in scanner.html with the id "reader"
   qrScanner.render(onScanSuccess);
 }
-*/
