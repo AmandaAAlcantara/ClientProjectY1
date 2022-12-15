@@ -1,15 +1,17 @@
 
 body {
   background-color: #f1f1f1;
-  font-family: Arial;
-  padding: 10px;
+
 }
 #body {
   background-color: #f1f1f1;
-  font-family: Arial;
+
   padding: 10px;
 }
 
+#ForecasrWeather{
+  padding: 8px;
+}
 
 #FilterMenu{
   text-align: center;
@@ -450,12 +452,12 @@ footer{
 		.card-title {
 		  min-height: 20px !important;
 		  margin-top: -0px;
-		  background: #696969;
+		  background:#8bc34a;
 		  border: 1px solid #e0e0e0;
 		  border-radius: 10px 10px 0px 0px;
 		  -webkit-border-radius: 10px 10px 0px 0px;
 		  -moz-border-radius: 10px 10px 0px 0px;
-		  color: white;
+		  color: black;
 		}
 		.card-base > .card-data {
 		  min-height: 250px !important;
