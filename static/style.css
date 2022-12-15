@@ -691,3 +691,9 @@ text-align: center;
 #loginform{
   text-align: center;
 }
+
+#favicon{
+   width: 10px;
+   height: 100px;
+
+}

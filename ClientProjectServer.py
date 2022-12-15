@@ -297,7 +297,7 @@ def Comments():
          finally:
              return msg
              conn.close()
-             
+
 
 @app.route("/AddRoutes", methods = ['POST','GET'])
 def AddRoute():
@@ -347,6 +347,7 @@ def SeeComments():
 		finally:
 			conn.close()
 			return render_template('allComments.html', data =data)
+
 
 
 
