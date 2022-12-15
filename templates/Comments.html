@@ -18,8 +18,8 @@
 <!-- comments form -->
   {% block mainBlock%}
 <div id="Comments" style = "text-align: center">
-    <h1> Submit your comments! </h1>
-  <h3> Got any comments or concerns about the walk and/or location? Type them out right here!<h3>
+    <h1> Submit your comments</h1>
+  <h3> Enter any comments and/or concerns you have on your walk down here <h3>
   <form id="Commentssubmission" action="/Commentssubmission" method="POST">
   <br>
   <label for="NameOfRoute">Name of route:</label>
@@ -30,7 +30,7 @@
   <input type="text" name="NameOfLocation" id="NameOfLocation" maxlength="20">
   <br>
   <label for="Comment">Comment:</label><br>
-  <input type="text" name="Comment" id="Comment" maxlength="300" style="height:100px; width:200px;">
+  <input type="text" name="Comment" id="Comment" maxlength="300" style="height:200px; width:400px;">
   <br><br>
   <button type="submit" onclick="submission()" onclick="validate()">Submit</button><br>
 
