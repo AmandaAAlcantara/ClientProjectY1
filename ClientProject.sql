@@ -1,7 +1,7 @@
 DROP TABLE if EXISTS Checkpoints;
-CREATE TABLE if not EXISTS "Checkpoints" ( "ID" INTEGER not NULL PRIMARY KEY AUTOINCREMENT, "Name" TEXT, "Picture" TEXT, "Facts" TEXT, "Contacts" TEXT);
+CREATE TABLE if not EXISTS "Checkpoints" ( "ID" INTEGER not NULL PRIMARY KEY AUTOINCREMENT, "Name" TEXT, "Picture" TEXT, "Facts" TEXT, "Contacts" TEXT, "Map" TEXT);
 
-INSERT INTO Checkpoints ("ID", "Name", "Picture","Facts") VALUES ("1", "Redwick", "/static/LandmarkImg/Redwick.jpg", "Redwick is the best-preserved medieval village
+INSERT INTO Checkpoints ("ID", "Name", "Picture","Facts","Map") VALUES ("1", "Redwick", "/static/LandmarkImg/Redwick.jpg", "Redwick is the best-preserved medieval village
 on the Gwent Levels. The village probably
 originated late in the eleventh century; its
 layout has hardly changed since.
@@ -12,7 +12,7 @@ immersion baptistery and its font originates
 from the 13th Century. Two of the six bells
 in the central tower date from the pre-reformation period and are thought to be
 some of the oldest working church bells in
-the country.");
+the country.","https://www.google.com/maps/place/The+Rib+Smokehouse+%26+Grill/@51.6046915,-3.0532923,12z/data=!4m10!1m2!2m1!1sRestaurants!3m6!1s0x4871e76d122dadaf:0xf98af9657984ca12!8m2!3d51.6046985!4d-2.9214237!15sCgtSZXN0YXVyYW50c1oNIgtyZXN0YXVyYW50c5IBCnJlc3RhdXJhbnTgAQA!16s%2Fg%2F11g1dvrz2x");
 
 INSERT INTO Checkpoints ("ID", "Name", "Picture","Facts") VALUES ("2", "Whitson","/static/LandmarkImg/Whitson.jpg", "The houses and farmsteads in Whitson are set
 back from the road in long strips of pasture.

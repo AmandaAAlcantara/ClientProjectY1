@@ -59,7 +59,12 @@ h2 {
   display: table;
   clear: both;
 }
-
+/*forms Enquiry and Comments*/
+.formE{
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+}
 /* Content */
 .content {
   background-color: white;
@@ -278,6 +283,8 @@ footer{
   display: flex;
   border-radius: 8px;
   margin: 32px 0;
+  background-color: white;
+  text-align: left;
 }
 
 .event .event-left {
@@ -312,24 +319,27 @@ footer{
   font: inherit;
   cursor: pointer;
   outline: inherit;
-  text-align: left
+  text-align: left;
 }
 .dropdown {
-  position: relative;
+  position: left;
   display: inline-block;
 }
 .dropdown-content {
   display: none;
-  position: absolute;
+  position: left;
   background-color: #f9f9f9;
-  width: 300px;
+  width: 250px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   border-radius: 15px;
   text-align: center;
   padding: 10px;
 }
 .show {display:block;}
+}
 
+
+@media screen (min-width: 100px) and (max-width: 300px){
 #TitleCheckpoint{
   display: flex;
 
@@ -349,6 +359,7 @@ footer{
   width: 500px;
   border-radius:10px;
 }
+}
 
 #BlockHF,#BlockW,#BlockM{
   border-radius: 10px;
@@ -366,12 +377,19 @@ footer{
   height: 37px;
   margin-left: 1170px;
 }
-#allbtns{
+#alladminbtns{
   text-align: center;
 }
 
-#adminbtns{
-  display: inline-block;
+
+
+#bottompage-nav{
+text-align: center;
+}
+
+
+#page-nav{
+  text-align: center;
 }
 
 
@@ -452,7 +470,7 @@ footer{
 		.card-title {
 		  min-height: 20px !important;
 		  margin-top: -0px;
-		  background:#8bc34a;
+		  background: #a8a064;
 		  border: 1px solid #e0e0e0;
 		  border-radius: 10px 10px 0px 0px;
 		  -webkit-border-radius: 10px 10px 0px 0px;
@@ -462,7 +480,7 @@ footer{
 		.card-base > .card-data {
 		  min-height: 250px !important;
 		  margin-top: -24px;
-		  background: ghostwhite;
+		  background: white;
 		  border: 1px solid #black;
 		  padding: 2px 2px 2px 2px;
 		  border-radius: 1rem;
@@ -471,6 +489,15 @@ footer{
 		  box-shadow: 1px 2px 5px 0 rgba(0, 0, 0, 0.16),
 		    0 2px 10px 0 rgba(0, 0, 0, 0.12);
 		}
+    .team-title {
+           font-family: "Josefin Sans", sans-serif;
+          font-size:24px;
+          text-align: center;
+          color:#242424;
+          border:4px solid #a8a064;
+          border-top-width:0px;
+          border-left-width:0px;
+          border-right-width:0px;}
 		@media only screen and (max-width 600px) and (min-width 200px) {
 		  /* For mobile phones: */
 		  .card-base, .card-title, .card-base, .team-title, .card-data{
@@ -555,9 +582,8 @@ footer{
 		  .carousel img{
 		    width: 100%;
 		  }
-
-
 		}
+
 		@media (max-width: 800px) {
 		   .BlockCheckpoint{
 
@@ -585,3 +611,176 @@ footer{
 		.year{
 			text-align: center;
 		}
+
+#loginicon{
+	text-align: center;
+}
+#username, #password{
+	text-align: center;
+}
+
+#adminpp{
+  text-align: center;
+
+}
+
+@import url(https://fonts.googleapis.com/css?family=Alegreya+Sans:400,700);
+
+/**
+ * RESET Styles
+ *
+ */
+
+
+body {
+	font-size: 16px !important;
+  text-align: center;
+	background: #cdc8a5 !important;
+}
+
+h1, h2, h3, h4, a, p {
+	font-family: 'Alegreya Sans', sans-serif !important;
+}
+
+
+/**
+ * HEADER styles
+ *
+ */
+
+
+header {
+	background: #333;
+	padding: 60px;
+}
+
+header h1,
+header h3,
+footer h4 {
+	color: white;
+}
+
+header h1 {
+	font-weight: 700;
+  text-align:center;
+}
+
+header h3,
+footer h4 {
+	font-weight: 400;
+}
+
+
+/**
+ * SERVICES styles
+ *
+ */
+
+
+.services .row {
+	background: #a8a064;
+	border: 1px solid #8b844e;
+}
+
+.services .services-info {
+	margin: 0 0 30px;
+	padding: 10px;
+	border: 1px solid #9b9357;
+	border-radius: 3px;
+}
+
+.services i {
+	color: #5a5533;
+}
+
+.services a {
+	color: black;
+	padding: 3px;
+	border-bottom: 1px dashed #222;
+}
+
+.services a:hover {
+	text-decoration: none;
+  color: #2A6496;
+}
+
+
+/**
+ * MEDIA QUERIES styles
+ *
+ */
+
+
+@media only screen and (min-width: 641px) {
+
+	header {
+		padding-bottom: 130px;
+	}
+
+	.services .row {
+		margin-top: -70px;
+	}
+
+	.about a {
+		width: 100%;
+	}
+
+}
+
+
+@media only screen and (min-width: 1200px) {
+
+  .services .services-info {
+    margin: 30px 0;
+  }
+
+
+
+
+  /*Adapted from w3schools */
+
+/* The Modal (background) */
+.loginmodal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
+}
+
+/* Modal Content */
+.login-content {
+  background-color: #fefefe!important;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+
+
+#loginform{
+  text-align: center;
+
+}

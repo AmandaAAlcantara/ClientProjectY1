@@ -3,17 +3,12 @@
     <link href="/static/style.css" rel="stylesheet">
      <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-
+{%extends'Home.html'%}
 
 {%block mainBlock%}
 <!--html page that corresponds with the qr code-->
 
 {% for row in data %}
-
-
-  <button id = "button" type=button onclick="window.location.href='/Home';"">
-  <img src="/static/LandmarkImg/Home.png" id = "Home"></img>
-  </button>
   <div id = "TitleCheckpoint">
     <img src="/static/LandmarkImg/Google-Map-Logo-Transparent.png" style="width: 125px">
     <h1>{{row[1]}}</h1>
