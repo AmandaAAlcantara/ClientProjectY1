@@ -364,14 +364,15 @@ footer{
   height: 37px;
   margin-left: 1170px;
 }
-#allbtns{
+#alladminbtns{
   text-align: center;
 }
 
-#adminbtns{
-  display: inline-block;
-}
 
+
+#page-nav{
+  text-align: center;
+}
 
 /*form{
 			width: 600px;
@@ -587,9 +588,15 @@ footer{
 		.year{
 			text-align: center;
 		}
+
 #loginicon{
 	text-align: center;
 }
 #username, #password{
 	text-align: center;
+}
+
+#adminpp{
+  text-align: center;
+
 }
