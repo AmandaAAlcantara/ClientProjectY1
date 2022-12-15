@@ -1,11 +1,12 @@
 <body>
 <head>
     <link href="/static/style.css" rel="stylesheet">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
 
 {%block mainBlock%}
-
+<!--html page that corresponds with the qr code-->
 
 {% for row in data %}
 
@@ -23,7 +24,7 @@
 
 <div id="B">
 <div id = "BlockHF">
-    <img src="/static/LandmarkImg/MapNewport.jpg" style="width: 382px">
+    <img class="image" src="{{row[2]}}" id="ImgCheckpoints" style="width: 245px">
 <div id="HFCheckpoint">
     <div class="dropdown">
       <button id="HFbutton" class="dropbtn"><h2 style="color:white">Historic Facts</h2></button>
@@ -38,7 +39,7 @@
 
 <div id="B">
 <div id="BlockW">
-  <img src="/static/LandmarkImg/Wildlife.jpg" style="width: 325px">
+  <img src="/static/LandmarkImg/Wildlife.jpg" style="width: 245px">
 <div id= "WCheckpoint">
   <div class="dropdown">
     <button id="Wbutton" class="dropbtn"><h2 style="color:white">Wildlife</h2></button>
@@ -53,7 +54,7 @@
 
 <div id="B">
 <div id="BlockM">
-  <img src="/static/LandmarkImg/Rest.jpg" style="width: 350px">
+  <img src="/static/LandmarkImg/Rest.jpg" style="width: 250px">
 <div id="MapCheckpoint">
     <button id = "button"type=button onclick="window.location.href='{{row[5]}}';""><h2 style="color:white">Places to take a break</h2></button>
 </div>
@@ -77,17 +78,17 @@
 
 
 
-  <img class="image" src="{{row[2]}}" id="ImgCheckpoints">
 
 
 
 
-
-  <div id="points" class ="points">
+  <div id="points" class ="points" >
     <img class ="rewards-icon" src= "/static/Cookies/prize.png">
     <span class ="message"> Collect your 100 points.</span>
+    <div id="acceptbtm">
     <button class="accept" onclick="loadCookies()">Collect</button>
     <input type="text" id="noOfPoints" value="100"></input>
+    </div>
   </div>
 
 

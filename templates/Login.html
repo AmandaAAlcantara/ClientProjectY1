@@ -1,46 +1,75 @@
-
 <!doctype html>
 <html>
+<body>
 <head>
   <title></title>
-  <link href="/static/simplecss.css" rel="stylesheet">
+  <link href="/static/style.css" rel="stylesheet">
 </head>
 {%extends'Home.html'%}
 
     <h2>{% block titleBlock%} {%endblock%}</h2>
 
 
-
         {% block mainBlock%}
 
-        <link href="style.css" rel="stylesheet">
 
-          <title>Login</title>
-          <link href="login.css" rel="stylesheet">
-        <head>
+        <div  id="loginicon">
+        <h2><center>Welcome Admin</center></h2>
+        <img  src="https://static.vecteezy.com/system/resources/previews/002/002/300/non_2x/beautiful-woman-avatar-character-icon-free-vector.jpg" height="100px" width="auto" >
+        </div>
 
-        <body class="text-center" id="form">
-          <main class="form-signin">
-            <form onsubmit="return login()">
-              <img class="mb-4" src="./logo.png" alt="" height="300">
-              <h1 class="h3 mb-3 fw-normal">Login</h1>
+<!--
+    Added onsubmit attribute to form so that it will trigger the JS function (authenticate).
+    if the function returns false it will prevent the form from submitting
+--><!--inspired by stack overflow-->
+<form action="/Admin" onsubmit="return authenticate()">
+      <label for="username">Username</label>
+      <!-- added IDs to the inputs -->
+      <input
+        id="username"
+        type="text"
+        placeholder="Enter Username"
+        name="username"
+        required
+      />
+      <label for="password">Password</label>
+      <input
+        id="password"
+        type="password"
+        placeholder="Enter Password"
+        name="password"
+        required
+      />
+      <button type="submit">Submit</button>
+    </form>
+    {%endblock%}
 
-              <div class="form-floating">
-                <input type="email" class="form-control" id="username" placeholder="name@example.com">
-                <label for="floatingInput">Email address</label>
-              </div>
-              <div class="form-floating">
-                <input type="password" class="form-control" id="password" placeholder="Password">
-                <label for="floatingPassword">Password</label>
-              </div>
 
-              <a role="button" id="loginbutton" class="btn btn-success btn-lg" href="/Admin">Login</a>
+{% block javascriptBlock%}
+    <script>
 
+    //Following function gets values of the username and password fields and checks to see if they match a hard coded username and password
+      function authenticate(){
+        var authorised;
 
+        //get input values
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
 
+        //check to see if the password and username match
+        if(username == "admin" && password == "admin12345"){
+          authorised = true;
+          window.location.href="/Admin"
+        }else{ // username or password do not match
+          authorised = false;
+          //alert user
+          alert("Sorry, password is incorrect.");
+        }
+        //return result
+        return authorised;
+      }
+    </script>
 
-</body>
-
-</html>
-
-        {%endblock%}
+      {%endblock%}
+      </body>
+    </html>

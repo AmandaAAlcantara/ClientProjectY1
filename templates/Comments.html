@@ -1,6 +1,5 @@
-
 <!DOCTYPE html>
-  {%extends'Home.html'%}
+{%extends'Home.html'%}
 <html lang="en" dir="ltr">
   <head>
 
@@ -11,26 +10,29 @@
     <link href="/static/style.css" rel="stylesheet">
 
   </head>
-  <body>
 
+  <body>
+{% block titleBlock%}{%endblock%}
     <div class="mainAndAside">
       <main>
-
+<!-- comments form -->
   {% block mainBlock%}
-<div id="Comments">
-    <h1 style="font-family:Arial"> Submit your comments</h1>
-  <h3 style="font-family:Arial"> Type out any statements and/or concerns regarding your walk<h3>
+<div id="Comments" style = "text-align: center">
+    <h1> Submit your comments! </h1>
+  <h3> Got any comments or concerns about the walk and/or location? Type them out right here!<h3>
   <form id="Commentssubmission" action="/Commentssubmission" method="POST">
-  <label for="NameOfRoute">name of route:</label>
+  <br>
+  <label for="NameOfRoute">Name of route:</label>
+  <br>
   <input type="text" name="NameOfRoute" id="NameOfRoute" maxlength="20">
   <br>
-  <label for="name of location">name of location:</label>
+  <label for="name of location">Name of location:</label><br>
   <input type="text" name="NameOfLocation" id="NameOfLocation" maxlength="20">
   <br>
-  <label for="Comment">Comment:</label>
-  <br>
-  <input type="text" name="Comment" id="Comment" maxlength="300" style="height:100px; width:500px;">
-  <button type="submit" onclick="submission()" onclick="validate()">Submit</button>
+  <label for="Comment">Comment:</label><br>
+  <input type="text" name="Comment" id="Comment" maxlength="300" style="height:100px; width:200px;">
+  <br><br>
+  <button type="submit" onclick="submission()" onclick="validate()">Submit</button><br>
 
   </form>
   <span id= "message"></span>
@@ -42,7 +44,7 @@
   .hide { position:absolute; top:-1px; left:-1px; width:1px; height:1px; }
 </style>
 
-
+<!-- validation for comments form-->
 {% block javascriptBlock%}
 <script>
 function validate(){
